@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concerts.API", "Concerts.API\Concerts.API.csproj", "{4262EA6C-CC03-474B-9CBC-F361125509F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcertsDTO", "ConcertsDTO\ConcertsDTO.csproj", "{172E6D6C-94B3-498F-B013-D496BB179F9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4262EA6C-CC03-474B-9CBC-F361125509F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4262EA6C-CC03-474B-9CBC-F361125509F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4262EA6C-CC03-474B-9CBC-F361125509F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4262EA6C-CC03-474B-9CBC-F361125509F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172E6D6C-94B3-498F-B013-D496BB179F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172E6D6C-94B3-498F-B013-D496BB179F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172E6D6C-94B3-498F-B013-D496BB179F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172E6D6C-94B3-498F-B013-D496BB179F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F64A6CD-126E-4FA3-93DD-7AB8E7B92A4C}
+	EndGlobalSection
+EndGlobal
