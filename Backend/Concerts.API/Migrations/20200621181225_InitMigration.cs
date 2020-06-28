@@ -30,7 +30,9 @@ namespace Concerts.API.Migrations
                     FirstName = table.Column<string>(maxLength: 40, nullable: false),
                     LastName = table.Column<string>(maxLength: 60, nullable: false),
                     Email = table.Column<string>(nullable: false),
-                    PhoneNumber = table.Column<int>(nullable: true)
+                    PhoneNumber = table.Column<int>(nullable: true),
+                    PasswordHash = table.Column<byte[]>(nullable: true),
+                    PasswordSalt = table.Column<byte[]>(nullable: true)
                 },
                 constraints: table =>
                 {

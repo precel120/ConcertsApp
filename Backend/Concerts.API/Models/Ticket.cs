@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Concerts.API.Data
+namespace Concerts.API.Models
 {
     public class Ticket : ConcertsDTO.Ticket
     {

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Concerts.API.Data
+namespace Concerts.API.Models
 {
-    public class Concert : ConcertsDTO.Concert
+    public class Artist : ConcertsDTO.Artist
     {
         public virtual ICollection<ConcertArtist> ConcertsArtists { get; set; }
-        public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }

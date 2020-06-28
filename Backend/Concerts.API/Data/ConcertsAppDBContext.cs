@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace Concerts.API.Data
+namespace Concerts.API.Models
 {
     public class ConcertsAppDBContext : DbContext
     {

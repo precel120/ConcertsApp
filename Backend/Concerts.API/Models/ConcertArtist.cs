@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Concerts.API.Data
+namespace Concerts.API.Models
 {
     public class ConcertArtist
     {
