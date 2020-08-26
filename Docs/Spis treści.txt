@@ -2,24 +2,26 @@
  1.1 Problematyka
  1.2 Cel i założenia pracy
  1.3 Struktura pracy inżynierskiej
+
 2. ???? Część teoretyczna ????
  2.1 Analiza istniejących portali do promowania i dystrybucji biletów na wydarzenia kulturowe
  2.2 Płatności internetowe i ich bezpieczeństwo
  2.3 Analiza najpopularniejszych internetowych metod płatności
  2.4 Bazy danych jako środek przechowywania danych
- 2.5 Relacyjne bazy danych
+ 2.5 Nierelacyjne bazy danych
  2.6 Techniki tworzenia aplikacji // teoria związana z IO
  2.7 REST API
  2.8 MVC
- 2.9 Projektowanie systemu informatycznego 
+ 2.9 Projektowanie systemu informatycznego
+
 3. Narzędzia i technologie wybrane do realizacji projektu
- 3.1 ASP.NET Core 3.1
- 3.2 C#
- 3.3 Entity Framework Core
- 3.4 PostgreSQL
- 3.5 Health Checks
- 3.6 Postman
- 3.7 React, Vue lub Razor Pages
+ 3.1 Node.js
+ 3.2 React
+ 3.3 TypeScript
+ 3.4 Wykorzystane biblioteki
+ 3.4 MongoDB
+ 3.5 Postman
+ 
 4. Proces tworzenia aplikacji // to tutaj: Wymagania funkcjonalne Wymagania niefunkcjonalne Diagramy klas i relacji między tabelami w bazie danych.
 5. Podsumowanie
 6. Możliwości dalszego rozwoju aplikacji
