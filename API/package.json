@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc -w",
-    "dev": "nodemon dist/index.js",
+    "start": "node dist/index.js",
+    "watch": "tsc -w",
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
     "build": "tsc"
   },
   "keywords": [],
@@ -13,7 +14,10 @@
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.7",
+    "@types/mongoose": "^5.7.36",
     "@types/node": "^14.6.0",
+    "concurrently": "^5.3.0",
+    "mongoose": "^5.10.2",
     "nodemon": "^2.0.4",
     "ts-node-dev": "^1.0.0-pre.61",
     "tslint": "^6.1.3",

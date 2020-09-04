@@ -16,11 +16,12 @@
 
 3. Narzędzia i technologie wybrane do realizacji projektu
  3.1 Node.js
- 3.2 React
+ 3.2 React.js
  3.3 TypeScript
- 3.4 Wykorzystane biblioteki
- 3.4 MongoDB
- 3.5 Postman
+ 3.4 JavaScript
+ 3.5 Wykorzystane biblioteki
+ 3.6 MongoDB
+ 3.7 Postman
  
 4. Proces tworzenia aplikacji // to tutaj: Wymagania funkcjonalne Wymagania niefunkcjonalne Diagramy klas i relacji między tabelami w bazie danych.
 5. Podsumowanie

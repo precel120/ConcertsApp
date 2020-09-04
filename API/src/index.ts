@@ -1,4 +1,9 @@
 import express from 'express';
+import mongoose from 'mongoose';
+import keys from './config/keys';
+require('./models/Ticket');
+
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
 
