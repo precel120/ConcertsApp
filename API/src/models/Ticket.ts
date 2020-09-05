@@ -9,4 +9,5 @@ const ticketSchema = new Schema({
     purchaseDate: Date,
 });
 
-mongoose.model('tickets', ticketSchema);
+const Ticket = mongoose.model('tickets', ticketSchema);
+export default Ticket;

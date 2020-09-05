@@ -1,14 +1,15 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import keys from './config/keys';
-require('./models/Ticket');
+import { env } from './config/keys';
+import Ticket from './models/Ticket';
 
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(env.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
 
-app.get('/', () => {
-  console.log('działa');
+app.get('/api', (res, req) => {
+  console.log("dziala");
+  req.send({ jaja: "dupa" });
 });
 
 const PORT = process.env.PORT || 5000;

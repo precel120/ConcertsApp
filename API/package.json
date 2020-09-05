@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node dist/index.js",
     "watch": "tsc -w",
-    "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
+    "test": "nodemon dist/index.js",
+    "server": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
+    "client": "yarn --cwd ../client/ start",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
     "build": "tsc"
   },
   "keywords": [],
