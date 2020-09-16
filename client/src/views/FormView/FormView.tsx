@@ -8,7 +8,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY!);
 const FormView = () => {
     return (
         <Elements stripe={stripePromise}>
-            <PaymentForm amount={300} />
+            <PaymentForm />
         </Elements>
     );
 }

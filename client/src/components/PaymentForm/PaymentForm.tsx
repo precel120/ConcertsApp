@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { Input, InputLabel, Button } from '@material-ui/core';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
-type PaymentFormProps = {
-  amount: number
-}
-
-const PaymentForm = ({ amount }: PaymentFormProps) => {
+const PaymentForm = () => {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
 
+  // stripe stuff
+  const [errorOcurred, setErrorOcurred] = useState(false);
+  const [paymentWasSuccessful, setPaymentWasSuccessful] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const elements = useElements();
   const stripe = useStripe();
@@ -36,8 +36,8 @@ const PaymentForm = ({ amount }: PaymentFormProps) => {
       billing_details: {email: email, name: fullName, phone: phoneNumber}
     });
     if (paymentMethodReq.error) {
-      console.log('error', paymentMethodReq.error);
       setIsProcessing(false);
+      setErrorOcurred(true);
       return;
     }
     const { error } = await stripe.confirmCardPayment(clientSecret, {
@@ -45,9 +45,10 @@ const PaymentForm = ({ amount }: PaymentFormProps) => {
     });
     if (error) {
       setIsProcessing(false);
+      setErrorOcurred(true);
       return;
     }
-    console.log('payment method', paymentMethodReq.paymentMethod);
+    setPaymentWasSuccessful(true);
   }
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>): void => {setEmail(e.target.value)};
@@ -84,6 +85,8 @@ const PaymentForm = ({ amount }: PaymentFormProps) => {
         <CardElement options={cardElementOptions} />
         <Button type="submit" disabled={isProcessing || !stripe}>Pay</Button>
       </form>
+      { errorOcurred && <Redirect to="/error" /> }
+      { paymentWasSuccessful && <Redirect to="/temp" /> }
     </>
   );
 };
