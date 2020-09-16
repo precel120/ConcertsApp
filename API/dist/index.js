@@ -19,10 +19,10 @@ const stripe = new stripe_1.Stripe(keys_1.env.stripeSecretKey, { apiVersion: "20
 // mongoose.connect(env.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 const app = express_1.default();
 app.get('/api', (req, res) => {
-    console.log("dziala");
-    res.send({ jaja: "dupa" });
+    console.log("it works!");
+    res.send({ test: "it works!" });
 });
-app.get("/api/payment_intent", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.get("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const paymentIntent = yield stripe.paymentIntents.create({
             amount: 400,

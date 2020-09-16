@@ -10,11 +10,11 @@ const stripe = new Stripe(env.stripeSecretKey, {apiVersion: "2020-08-27"});
 const app = express();
 
 app.get('/api', (req, res) => {
-  console.log("dziala");
-  res.send({ jaja: "dupa" });
+  console.log("it works!");
+  res.send({ test: "it works!" });
 });
 
-app.get("/api/payment_intent", async (req, res) => {
+app.get("/api/checkout", async (req, res) => {
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: 400,
