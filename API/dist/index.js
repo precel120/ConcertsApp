@@ -16,6 +16,7 @@ const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const stripe_1 = require("stripe");
 const keys_1 = require("./config/keys");
+const Ticket_1 = __importDefault(require("./models/Ticket"));
 const Event_1 = __importDefault(require("./models/Event"));
 const stripe = new stripe_1.Stripe(keys_1.env.stripeSecretKey, { apiVersion: "2020-08-27" });
 mongoose_1.default.connect(keys_1.env.mongoURI, {
@@ -28,6 +29,9 @@ app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, functi
     Event_1.default.findById("5f6b8928bb90b180b5c22da7", (error, res) => {
         if (!error) {
             event = res === null || res === void 0 ? void 0 : res.toJSON();
+            if (event.ticketAmount - 1 < 0) {
+                return;
+            }
         }
     });
     try {
@@ -36,6 +40,17 @@ app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, functi
             currency: "pln",
             payment_method_types: ["card"],
             metadata: { integration_check: "accept a payment" },
+        });
+        const ticket = new Ticket_1.default({
+            firstName: "test",
+            lastName: "test",
+            eventId: "test",
+            purchaseDate: new Date(),
+        });
+        ticket.save((error) => {
+            if (error) {
+                res.status(500).json({ statusCode: 500, message: error.message });
+            }
         });
         res.status(200).send(paymentIntent.client_secret);
     }

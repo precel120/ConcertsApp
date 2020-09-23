@@ -18,6 +18,9 @@ app.post("/api/checkout", async (req, res) => {
   Event.findById("5f6b8928bb90b180b5c22da7", (error, res) => {
     if(!error) {
       event = res?.toJSON();
+      if(event.ticketAmount - 1 < 0) {
+        return;
+      }
     }
   });
   try {
@@ -26,6 +29,17 @@ app.post("/api/checkout", async (req, res) => {
       currency: "pln",
       payment_method_types: ["card"],
       metadata: { integration_check: "accept a payment" },
+    });
+    const ticket = new Ticket({
+      firstName: "test",
+      lastName: "test",
+      eventId: "test",
+      purchaseDate: new Date(),
+    });
+    ticket.save((error) => {
+      if(error) {
+        res.status(500).json({ statusCode: 500, message: error.message });
+      }
     });
     res.status(200).send(paymentIntent.client_secret);
   } catch (error) {
