@@ -25,16 +25,14 @@ mongoose_1.default.connect(keys_1.env.mongoURI, {
 });
 const app = express_1.default();
 app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    let event;
-    Event_1.default.findById("5f6b8928bb90b180b5c22da7", (error, res) => {
-        if (!error) {
-            event = res === null || res === void 0 ? void 0 : res.toJSON();
-            if (event.ticketAmount - 1 < 0) {
-                return;
-            }
-        }
-    });
     try {
+        const event = yield Event_1.default.findById("5f6b8928bb90b180b5c22da7");
+        Ticket_1.default.find({ eventId: event === null || event === void 0 ? void 0 : event.id }, (error, tickets) => {
+            console.log(event === null || event === void 0 ? void 0 : event.toJSON().maxTicketsAmount);
+            if ((event === null || event === void 0 ? void 0 : event.toJSON().maxTicketsAmount) - 1 < tickets.length) {
+                throw new Error("Not enough tickets");
+            }
+        });
         const paymentIntent = yield stripe.paymentIntents.create({
             amount: 400,
             currency: "pln",
@@ -44,12 +42,12 @@ app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, functi
         const ticket = new Ticket_1.default({
             firstName: "test",
             lastName: "test",
-            eventId: "test",
+            eventId: event === null || event === void 0 ? void 0 : event.id,
             purchaseDate: new Date(),
         });
         ticket.save((error) => {
             if (error) {
-                res.status(500).json({ statusCode: 500, message: error.message });
+                throw new Error(error.message);
             }
         });
         res.status(200).send(paymentIntent.client_secret);

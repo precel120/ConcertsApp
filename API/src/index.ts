@@ -14,16 +14,14 @@ mongoose.connect(env.mongoURI, {
 const app = express();
 
 app.post("/api/checkout", async (req, res) => {
-  let event;
-  Event.findById("5f6b8928bb90b180b5c22da7", (error, res) => {
-    if(!error) {
-      event = res?.toJSON();
-      if(event.ticketAmount - 1 < 0) {
-        return;
-      }
-    }
-  });
   try {
+    const event = await Event.findById("5f6b8928bb90b180b5c22da7");
+    Ticket.find({eventId: event?.id}, (error, tickets) => {
+      console.log(event?.toJSON().maxTicketsAmount);
+      if(event?.toJSON().maxTicketsAmount - 1 < tickets.length) {
+        throw new Error("Not enough tickets");
+      }
+    });
     const paymentIntent = await stripe.paymentIntents.create({
       amount: 400,
       currency: "pln",
@@ -33,12 +31,12 @@ app.post("/api/checkout", async (req, res) => {
     const ticket = new Ticket({
       firstName: "test",
       lastName: "test",
-      eventId: "test",
+      eventId: event?.id,
       purchaseDate: new Date(),
     });
     ticket.save((error) => {
       if(error) {
-        res.status(500).json({ statusCode: 500, message: error.message });
+        throw new Error(error.message);
       }
     });
     res.status(200).send(paymentIntent.client_secret);
