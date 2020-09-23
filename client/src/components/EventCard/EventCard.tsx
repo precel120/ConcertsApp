@@ -10,7 +10,7 @@ import {
 
 type EventCardProps = {
   imageUrl?: string;
-  title: string;
+  nameOfEvent: string;
   dateOfEvent: Date;
   place: string;
   description: string;
@@ -27,7 +27,7 @@ const useStyles = makeStyles({
 
 const EventCard = ({
   imageUrl,
-  title,
+  nameOfEvent,
   dateOfEvent,
   place,
   description,
@@ -47,13 +47,13 @@ const EventCard = ({
         )}
         <CardContent>
           <Typography variant="h4" component="h2">
-            {title}
+            {nameOfEvent}
           </Typography>
           <Typography variant="h6" component="h3">
             {place}
           </Typography>
           <Typography variant="h6" component="h3">
-            {dateOfEvent.toDateString()}
+            {dateOfEvent}
           </Typography>
           <Typography variant="body2" component="p">
             {description}

@@ -23,7 +23,7 @@ const PaymentForm = () => {
       return;
     }
 
-    const { data: clientSecret } = await axios.get("/api/checkout");
+    const { data: clientSecret } = await axios.post("/api/checkout");
 
     const cardElement = elements.getElement(CardElement);
 

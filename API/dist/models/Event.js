@@ -5,12 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const { Schema } = mongoose_1.default;
-const ticketSchema = new Schema({
-    firstName: String,
-    lastName: String,
-    eventId: String,
-    purchaseDate: Date,
+const eventSchema = new Schema({
+    imageUrl: String,
+    nameOfEvent: String,
+    dateOfEvent: Date,
+    place: String,
+    description: String,
 });
-const Ticket = mongoose_1.default.model("tickets", ticketSchema);
-exports.default = Ticket;
-//# sourceMappingURL=Ticket.js.map
+const Event = mongoose_1.default.model("events", eventSchema);
+exports.default = Event;
+//# sourceMappingURL=Event.js.map

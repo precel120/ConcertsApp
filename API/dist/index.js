@@ -13,21 +13,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const mongoose_1 = __importDefault(require("mongoose"));
 const stripe_1 = require("stripe");
 const keys_1 = require("./config/keys");
+const Event_1 = __importDefault(require("./models/Event"));
 const stripe = new stripe_1.Stripe(keys_1.env.stripeSecretKey, { apiVersion: "2020-08-27" });
-// mongoose.connect(env.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
-const app = express_1.default();
-app.get('/api', (req, res) => {
-    console.log("it works!");
-    res.send({ test: "it works!" });
+mongoose_1.default.connect(keys_1.env.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 });
-app.get("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const app = express_1.default();
+app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let event;
+    Event_1.default.findById("5f6b8928bb90b180b5c22da7", (error, res) => {
+        if (!error) {
+            event = res === null || res === void 0 ? void 0 : res.toJSON();
+        }
+    });
     try {
         const paymentIntent = yield stripe.paymentIntents.create({
             amount: 400,
             currency: "pln",
-            payment_method_types: ['card'],
+            payment_method_types: ["card"],
             metadata: { integration_check: "accept a payment" },
         });
         res.status(200).send(paymentIntent.client_secret);
@@ -36,6 +43,14 @@ app.get("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, functio
         res.status(500).json({ statusCode: 500, message: error.message });
     }
 }));
+app.get("/api/events", (req, res) => {
+    Event_1.default.find({}, (error, events) => {
+        if (!error) {
+            const eventsMap = events.slice();
+            res.send(eventsMap);
+        }
+    });
+});
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
 //# sourceMappingURL=index.js.map
