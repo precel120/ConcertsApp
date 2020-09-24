@@ -24,13 +24,16 @@ mongoose_1.default.connect(keys_1.env.mongoURI, {
     useUnifiedTopology: true,
 });
 const app = express_1.default();
+app.use(express_1.default.static('public'));
+// TODO Fix error handling in payment
 app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const event = yield Event_1.default.findById("5f6b8928bb90b180b5c22da7");
         Ticket_1.default.find({ eventId: event === null || event === void 0 ? void 0 : event.id }, (error, tickets) => {
-            console.log(event === null || event === void 0 ? void 0 : event.toJSON().maxTicketsAmount);
-            if ((event === null || event === void 0 ? void 0 : event.toJSON().maxTicketsAmount) - 1 < tickets.length) {
-                throw new Error("Not enough tickets");
+            if (!error) {
+                if ((event === null || event === void 0 ? void 0 : event.toJSON().maxTicketsAmount) - 1 < tickets.length) {
+                    throw new Error("Not enough tickets");
+                }
             }
         });
         const paymentIntent = yield stripe.paymentIntents.create({

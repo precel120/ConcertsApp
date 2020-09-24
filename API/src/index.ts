@@ -6,6 +6,7 @@ import Ticket from "./models/Ticket";
 import Event from "./models/Event";
 
 const stripe = new Stripe(env.stripeSecretKey, { apiVersion: "2020-08-27" });
+
 mongoose.connect(env.mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -13,13 +14,17 @@ mongoose.connect(env.mongoURI, {
 
 const app = express();
 
+app.use(express.static('public'));
+
+// TODO Fix error handling in payment
 app.post("/api/checkout", async (req, res) => {
   try {
     const event = await Event.findById("5f6b8928bb90b180b5c22da7");
     Ticket.find({eventId: event?.id}, (error, tickets) => {
-      console.log(event?.toJSON().maxTicketsAmount);
-      if(event?.toJSON().maxTicketsAmount - 1 < tickets.length) {
-        throw new Error("Not enough tickets");
+      if(!error) {
+        if(event?.toJSON().maxTicketsAmount - 1 < tickets.length) {
+          throw new Error("Not enough tickets");
+        }
       }
     });
     const paymentIntent = await stripe.paymentIntents.create({

@@ -36,15 +36,7 @@ const EventCard = ({
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        {imageUrl ? (
-          <CardMedia image={imageUrl} title="placeholder" />
-        ) : (
-          <CardMedia
-            image="https://i.ebayimg.com/images/g/5hcAAOSwSStdkBh5/s-l400.jpg"
-            title="placeholder"
-            className={classes.media}
-          />
-        )}
+        {imageUrl && <img src={`http://localhost:5000${imageUrl}`} alt=""/>}
         <CardContent>
           <Typography variant="h4" component="h2">
             {nameOfEvent}
@@ -65,3 +57,5 @@ const EventCard = ({
 };
 
 export default EventCard;
+
+// <CardMedia src={`http://localhost:5000${imageUrl}`} title="placeholder" />
