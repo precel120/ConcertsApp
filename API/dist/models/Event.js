@@ -11,6 +11,8 @@ const eventSchema = new Schema({
     dateOfEvent: Date,
     place: String,
     description: String,
+    maxTicketsAmount: Number,
+    ticketPrice: Number,
 });
 const Event = mongoose_1.default.model("events", eventSchema);
 exports.default = Event;

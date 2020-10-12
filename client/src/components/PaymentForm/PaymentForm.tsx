@@ -4,7 +4,11 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 
-const PaymentForm = () => {
+type PaymentFormProps = {
+  id: string;
+};
+
+const PaymentForm = ({ id }: PaymentFormProps) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -22,8 +26,8 @@ const PaymentForm = () => {
     if (!stripe || !elements) {
       return;
     }
-
-    const { data: clientSecret } = await axios.post("/api/checkout");
+    // TODO add error handling
+    const { data: clientSecret } = await axios.post(`/api/checkout/${id}`);
 
     const cardElement = elements.getElement(CardElement);
 

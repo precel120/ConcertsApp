@@ -8,6 +8,8 @@ const eventSchema = new Schema({
   dateOfEvent: Date,
   place: String,
   description: String,
+  maxTicketsAmount: Number,
+  ticketPrice: Number,
 });
 
 const Event = mongoose.model("events", eventSchema);

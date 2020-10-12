@@ -14,21 +14,26 @@ mongoose.connect(env.mongoURI, {
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 // TODO Fix error handling in payment
 app.post("/api/checkout", async (req, res) => {
   try {
-    const event = await Event.findById("5f6b8928bb90b180b5c22da7");
-    Ticket.find({eventId: event?.id}, (error, tickets) => {
-      if(!error) {
-        if(event?.toJSON().maxTicketsAmount - 1 < tickets.length) {
+    const { id } = req.body;
+    console.log(id);
+    let eventFound: any;
+    const event = await Event.findById(id, (err, result) => {
+      eventFound = result?.toObject;
+    });
+    Ticket.find({ eventId: event?.id }, (error, tickets) => {
+      if (!error) {
+        if (event?.toJSON().maxTicketsAmount - 1 < tickets.length) {
           throw new Error("Not enough tickets");
         }
       }
     });
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: 400,
+      amount: eventFound.ticketPrice,
       currency: "pln",
       payment_method_types: ["card"],
       metadata: { integration_check: "accept a payment" },
@@ -40,7 +45,7 @@ app.post("/api/checkout", async (req, res) => {
       purchaseDate: new Date(),
     });
     ticket.save((error) => {
-      if(error) {
+      if (error) {
         throw new Error(error.message);
       }
     });

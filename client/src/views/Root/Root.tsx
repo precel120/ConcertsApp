@@ -20,6 +20,7 @@ const Root = () => {
         ({ _id, imageUrl, nameOfEvent, place, dateOfEvent, description }) => (
           <EventCard
             key={_id}
+            id={_id}
             imageUrl={imageUrl}
             nameOfEvent={nameOfEvent}
             place={place}

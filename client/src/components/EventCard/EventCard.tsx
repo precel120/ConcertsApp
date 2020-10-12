@@ -1,14 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Card,
   CardContent,
   CardActionArea,
-  CardMedia,
   Typography,
   makeStyles,
 } from "@material-ui/core";
+import { Redirect } from "react-router-dom";
 
 type EventCardProps = {
+  id: string;
   imageUrl?: string;
   nameOfEvent: string;
   dateOfEvent: Date;
@@ -26,17 +27,22 @@ const useStyles = makeStyles({
 });
 
 const EventCard = ({
+  id,
   imageUrl,
   nameOfEvent,
   dateOfEvent,
   place,
   description,
 }: EventCardProps) => {
+  const [isClicked, setIsClicked] = useState(false);
   const classes = useStyles();
+  const redirectToForm = () => {
+    setIsClicked(true);
+  };
   return (
     <Card className={classes.root}>
-      <CardActionArea>
-        {imageUrl && <img src={`http://localhost:5000${imageUrl}`} alt=""/>}
+      <CardActionArea onClick={redirectToForm}>
+        {imageUrl && <img src={`http://localhost:5000${imageUrl}`} alt="" />}
         <CardContent>
           <Typography variant="h4" component="h2">
             {nameOfEvent}
@@ -52,6 +58,7 @@ const EventCard = ({
           </Typography>
         </CardContent>
       </CardActionArea>
+      {isClicked && <Redirect to={`/form/${id}`} />}
     </Card>
   );
 };
