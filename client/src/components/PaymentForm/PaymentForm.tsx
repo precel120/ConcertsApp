@@ -26,8 +26,15 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
     if (!stripe || !elements) {
       return;
     }
+    const userInfo = {
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      phoneNumber: phoneNumber
+    };
     // TODO add error handling
-    const { data: clientSecret } = await axios.post(`/api/checkout/${id}`);
+    const { data: clientSecret } = await axios.post(`/api/checkout?id=${id}`, userInfo);
+    console.log(clientSecret);
 
     const cardElement = elements.getElement(CardElement);
 

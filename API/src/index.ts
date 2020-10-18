@@ -15,15 +15,18 @@ mongoose.connect(env.mongoURI, {
 const app = express();
 
 app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
 // TODO Fix error handling in payment
 app.post("/api/checkout", async (req, res) => {
   try {
-    const { id } = req.body;
-    console.log(id);
+    const { email, firstName, lastName, phoneNumber } = req.body;
+    const id = req.query.id;
     let eventFound: any;
-    const event = await Event.findById(id, (err, result) => {
-      eventFound = result?.toObject;
+    const event = await Event.findById(id, (error, result) => {
+      if(!error)  eventFound = result;
+      else throw new Error(error.message);
     });
     Ticket.find({ eventId: event?.id }, (error, tickets) => {
       if (!error) {
@@ -36,12 +39,16 @@ app.post("/api/checkout", async (req, res) => {
       amount: eventFound.ticketPrice,
       currency: "pln",
       payment_method_types: ["card"],
+      receipt_email: email,
       metadata: { integration_check: "accept a payment" },
     });
+    console.log(paymentIntent);
     const ticket = new Ticket({
-      firstName: "test",
-      lastName: "test",
-      eventId: event?.id,
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      phoneNumber: phoneNumber,
+      eventId: eventFound.id,
       purchaseDate: new Date(),
     });
     ticket.save((error) => {
@@ -49,6 +56,7 @@ app.post("/api/checkout", async (req, res) => {
         throw new Error(error.message);
       }
     });
+    console.log(paymentIntent.client_secret);
     res.status(200).send(paymentIntent.client_secret);
   } catch (error) {
     res.status(500).json({ statusCode: 500, message: error.message });

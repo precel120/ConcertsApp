@@ -25,14 +25,19 @@ mongoose_1.default.connect(keys_1.env.mongoURI, {
 });
 const app = express_1.default();
 app.use(express_1.default.static("public"));
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: true }));
 // TODO Fix error handling in payment
 app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { id } = req.body;
-        console.log(id);
+        const { email, firstName, lastName, phoneNumber } = req.body;
+        const id = req.query.id;
         let eventFound;
-        const event = yield Event_1.default.findById(id, (err, result) => {
-            eventFound = result === null || result === void 0 ? void 0 : result.toObject;
+        const event = yield Event_1.default.findById(id, (error, result) => {
+            if (!error)
+                eventFound = result;
+            else
+                throw new Error(error.message);
         });
         Ticket_1.default.find({ eventId: event === null || event === void 0 ? void 0 : event.id }, (error, tickets) => {
             if (!error) {
@@ -45,12 +50,16 @@ app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, functi
             amount: eventFound.ticketPrice,
             currency: "pln",
             payment_method_types: ["card"],
+            receipt_email: email,
             metadata: { integration_check: "accept a payment" },
         });
+        console.log(paymentIntent);
         const ticket = new Ticket_1.default({
-            firstName: "test",
-            lastName: "test",
-            eventId: event === null || event === void 0 ? void 0 : event.id,
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
+            phoneNumber: phoneNumber,
+            eventId: eventFound.id,
             purchaseDate: new Date(),
         });
         ticket.save((error) => {
@@ -58,6 +67,7 @@ app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, functi
                 throw new Error(error.message);
             }
         });
+        console.log(paymentIntent.client_secret);
         res.status(200).send(paymentIntent.client_secret);
     }
     catch (error) {
