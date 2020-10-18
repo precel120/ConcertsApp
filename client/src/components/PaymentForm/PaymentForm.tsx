@@ -34,7 +34,6 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
     };
     // TODO add error handling
     const { data: clientSecret } = await axios.post(`/api/checkout?id=${id}`, userInfo);
-    console.log(clientSecret);
 
     const cardElement = elements.getElement(CardElement);
 

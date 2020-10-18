@@ -27,7 +27,7 @@ const app = express_1.default();
 app.use(express_1.default.static("public"));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-// TODO Fix error handling in payment
+// TODO Fix error handling in payment, crashes the server
 app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { email, firstName, lastName, phoneNumber } = req.body;
@@ -67,7 +67,6 @@ app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, functi
                 throw new Error(error.message);
             }
         });
-        console.log(paymentIntent.client_secret);
         res.status(200).send(paymentIntent.client_secret);
     }
     catch (error) {

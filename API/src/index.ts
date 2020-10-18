@@ -18,7 +18,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-// TODO Fix error handling in payment
+// TODO Fix error handling in payment, crashes the server
 app.post("/api/checkout", async (req, res) => {
   try {
     const { email, firstName, lastName, phoneNumber } = req.body;
@@ -36,7 +36,7 @@ app.post("/api/checkout", async (req, res) => {
       }
     });
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: eventFound.ticketPrice,
+      amount: eventFound.ticketPrice, // NEEDS TO BE ABOVE SOME VALUE!!!!!!!
       currency: "pln",
       payment_method_types: ["card"],
       receipt_email: email,
@@ -56,7 +56,6 @@ app.post("/api/checkout", async (req, res) => {
         throw new Error(error.message);
       }
     });
-    console.log(paymentIntent.client_secret);
     res.status(200).send(paymentIntent.client_secret);
   } catch (error) {
     res.status(500).json({ statusCode: 500, message: error.message });
@@ -67,7 +66,7 @@ app.get("/api/events", (req, res) => {
   Event.find({}, (error, events) => {
     if (!error) {
       const eventsMap = events.slice();
-      res.send(eventsMap);
+      res.status(200).send(eventsMap);
     }
   });
 });
