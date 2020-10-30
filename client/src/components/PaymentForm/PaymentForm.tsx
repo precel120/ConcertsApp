@@ -30,35 +30,32 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
       email: email,
       firstName: firstName,
       lastName: lastName,
-      phoneNumber: phoneNumber
+      phoneNumber: phoneNumber,
     };
-    // TODO add error handling
-    const { data: clientSecret } = await axios.post(`/api/checkout?id=${id}`, userInfo);
 
-    const cardElement = elements.getElement(CardElement);
+    try {
+      const { data: clientSecret } = await axios.post(
+        `/api/checkout?id=${id}`,
+        userInfo
+      );
+      const cardElement = elements.getElement(CardElement);
 
-    setIsProcessing(true);
+      setIsProcessing(true);
 
-    const fullName = firstName + " " + lastName;
-    const paymentMethodReq = await stripe.createPaymentMethod({
-      type: "card",
-      card: cardElement!,
-      billing_details: { email: email, name: fullName, phone: phoneNumber },
-    });
-    if (paymentMethodReq.error) {
+      const fullName = firstName + " " + lastName;
+      const paymentMethodReq = await stripe.createPaymentMethod({
+        type: "card",
+        card: cardElement!,
+        billing_details: { email: email, name: fullName, phone: phoneNumber },
+      });
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: paymentMethodReq.paymentMethod?.id,
+      });
+      setPaymentWasSuccessful(true);
+    } catch (error) {
       setIsProcessing(false);
       setErrorOcurred(true);
-      return;
     }
-    const { error } = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: paymentMethodReq.paymentMethod?.id,
-    });
-    if (error) {
-      setIsProcessing(false);
-      setErrorOcurred(true);
-      return;
-    }
-    setPaymentWasSuccessful(true);
   };
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>): void => {

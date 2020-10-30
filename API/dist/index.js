@@ -27,57 +27,58 @@ const app = express_1.default();
 app.use(express_1.default.static("public"));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-// TODO Fix error handling in payment, crashes the server
+// TODO Make proper status codes
 app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const { email, firstName, lastName, phoneNumber } = req.body;
-        const id = req.query.id;
-        let eventFound;
-        const event = yield Event_1.default.findById(id, (error, result) => {
-            if (!error)
-                eventFound = result;
-            else
-                throw new Error(error.message);
-        });
-        Ticket_1.default.find({ eventId: event === null || event === void 0 ? void 0 : event.id }, (error, tickets) => {
-            if (!error) {
-                if ((event === null || event === void 0 ? void 0 : event.toJSON().maxTicketsAmount) - 1 < tickets.length) {
-                    throw new Error("Not enough tickets");
-                }
+    const { email, firstName, lastName, phoneNumber } = req.body;
+    let isOk = true;
+    const id = req.query.id;
+    let eventFound;
+    const event = yield Event_1.default.findById(id, (error, result) => {
+        if (!error)
+            eventFound = result;
+        else {
+            isOk = false;
+            res.status(404).send("No event found");
+        }
+    });
+    Ticket_1.default.find({ eventId: event === null || event === void 0 ? void 0 : event.id }, (error, tickets) => {
+        if (!error) {
+            if ((event === null || event === void 0 ? void 0 : event.toJSON().maxTicketsAmount) - 1 < tickets.length) {
+                isOk = false;
+                res.status(404).send("No tickets left");
             }
-        });
-        const paymentIntent = yield stripe.paymentIntents.create({
-            amount: eventFound.ticketPrice,
-            currency: "pln",
-            payment_method_types: ["card"],
-            receipt_email: email,
-            metadata: { integration_check: "accept a payment" },
-        });
-        console.log(paymentIntent);
-        const ticket = new Ticket_1.default({
-            email: email,
-            firstName: firstName,
-            lastName: lastName,
-            phoneNumber: phoneNumber,
-            eventId: eventFound.id,
-            purchaseDate: new Date(),
-        });
-        ticket.save((error) => {
-            if (error) {
-                throw new Error(error.message);
-            }
-        });
+        }
+    });
+    const paymentIntent = yield stripe.paymentIntents.create({
+        amount: eventFound.ticketPrice,
+        currency: "pln",
+        payment_method_types: ["card"],
+        receipt_email: email,
+        metadata: { integration_check: "accept a payment" },
+    });
+    const ticket = new Ticket_1.default({
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber,
+        eventId: eventFound.id,
+        purchaseDate: new Date(),
+    });
+    ticket.save((error) => {
+        if (error) {
+            isOk = false;
+            res.status(404).send("Ticket cannot be added to database");
+        }
+    });
+    if (isOk) {
         res.status(200).send(paymentIntent.client_secret);
-    }
-    catch (error) {
-        res.status(500).json({ statusCode: 500, message: error.message });
     }
 }));
 app.get("/api/events", (req, res) => {
     Event_1.default.find({}, (error, events) => {
         if (!error) {
             const eventsMap = events.slice();
-            res.send(eventsMap);
+            res.status(200).send(eventsMap);
         }
     });
 });

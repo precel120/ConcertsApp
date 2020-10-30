@@ -16,49 +16,52 @@ const app = express();
 
 app.use(express.static("public"));
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 
-// TODO Fix error handling in payment, crashes the server
+// TODO Make proper status codes
 app.post("/api/checkout", async (req, res) => {
-  try {
-    const { email, firstName, lastName, phoneNumber } = req.body;
-    const id = req.query.id;
-    let eventFound: any;
-    const event = await Event.findById(id, (error, result) => {
-      if(!error)  eventFound = result;
-      else throw new Error(error.message);
-    });
-    Ticket.find({ eventId: event?.id }, (error, tickets) => {
-      if (!error) {
-        if (event?.toJSON().maxTicketsAmount - 1 < tickets.length) {
-          throw new Error("Not enough tickets");
-        }
+  const { email, firstName, lastName, phoneNumber } = req.body;
+  let isOk = true;
+  const id = req.query.id;
+  let eventFound: any;
+  const event = await Event.findById(id, (error, result) => {
+    if (!error) eventFound = result;
+    else {
+      isOk = false;
+      res.status(404).send("No event found");
+    }
+  });
+  Ticket.find({ eventId: event?.id }, (error, tickets) => {
+    if (!error) {
+      if (event?.toJSON().maxTicketsAmount - 1 < tickets.length) {
+        isOk = false;
+        res.status(404).send("No tickets left");
       }
-    });
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: eventFound.ticketPrice, // NEEDS TO BE ABOVE SOME VALUE!!!!!!!
-      currency: "pln",
-      payment_method_types: ["card"],
-      receipt_email: email,
-      metadata: { integration_check: "accept a payment" },
-    });
-    console.log(paymentIntent);
-    const ticket = new Ticket({
-      email: email,
-      firstName: firstName,
-      lastName: lastName,
-      phoneNumber: phoneNumber,
-      eventId: eventFound.id,
-      purchaseDate: new Date(),
-    });
-    ticket.save((error) => {
-      if (error) {
-        throw new Error(error.message);
-      }
-    });
+    }
+  });
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: eventFound.ticketPrice, // NEEDS TO BE ABOVE SOME VALUE!!!!!!!
+    currency: "pln",
+    payment_method_types: ["card"],
+    receipt_email: email,
+    metadata: { integration_check: "accept a payment" },
+  });
+  const ticket = new Ticket({
+    email: email,
+    firstName: firstName,
+    lastName: lastName,
+    phoneNumber: phoneNumber,
+    eventId: eventFound.id,
+    purchaseDate: new Date(),
+  });
+  ticket.save((error) => {
+    if (error) {
+      isOk = false;
+      res.status(404).send("Ticket cannot be added to database");
+    }
+  });
+  if (isOk) {
     res.status(200).send(paymentIntent.client_secret);
-  } catch (error) {
-    res.status(500).json({ statusCode: 500, message: error.message });
   }
 });
 
