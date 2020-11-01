@@ -29,6 +29,7 @@
   "dependencies": {
     "@types/stripe": "^7.13.24",
     "express": "^4.17.1",
+    "express-validator": "^6.6.1",
     "stripe": "^8.96.0"
   }
 }

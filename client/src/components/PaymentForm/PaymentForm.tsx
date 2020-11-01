@@ -32,7 +32,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
       lastName: lastName,
       phoneNumber: phoneNumber,
     };
-
+    //TODO Change error handling to proper with current form validation
     try {
       const { data: clientSecret } = await axios.post(
         `/api/checkout?id=${id}`,
@@ -53,6 +53,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
       });
       setPaymentWasSuccessful(true);
     } catch (error) {
+      console.log(error);
       setIsProcessing(false);
       setErrorOcurred(true);
     }

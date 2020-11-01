@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const stripe_1 = require("stripe");
+const express_validator_1 = require("express-validator");
 const keys_1 = require("./config/keys");
 const Ticket_1 = __importDefault(require("./models/Ticket"));
 const Event_1 = __importDefault(require("./models/Event"));
@@ -27,25 +28,35 @@ const app = express_1.default();
 app.use(express_1.default.static("public"));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-// TODO Make proper status codes
-app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+// TODO Change to proper status codes
+app.post("/api/checkout", [
+    express_validator_1.body("email").trim().isEmail().isLength({ min: 8 }).normalizeEmail(),
+    express_validator_1.body("firstName").trim().isString().isLength({ min: 2 }),
+    express_validator_1.body("lastName").trim().isString().isLength({ min: 2 }),
+    express_validator_1.body("phoneNumber").trim().isInt().isLength({ min: 3, max: 9 }),
+], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const errors = express_validator_1.validationResult(req);
+    if (!errors.isEmpty()) {
+        console.log(errors.array());
+        res.status(400).json({ errors: errors.array() });
+        return;
+    }
     const { email, firstName, lastName, phoneNumber } = req.body;
-    let isOk = true;
-    const id = req.query.id;
+    const { id } = req.query;
     let eventFound;
     const event = yield Event_1.default.findById(id, (error, result) => {
         if (!error)
             eventFound = result;
         else {
-            isOk = false;
             res.status(404).send("No event found");
+            return;
         }
     });
     Ticket_1.default.find({ eventId: event === null || event === void 0 ? void 0 : event.id }, (error, tickets) => {
         if (!error) {
             if ((event === null || event === void 0 ? void 0 : event.toJSON().maxTicketsAmount) - 1 < tickets.length) {
-                isOk = false;
                 res.status(404).send("No tickets left");
+                return;
             }
         }
     });
@@ -57,22 +68,21 @@ app.post("/api/checkout", (req, res) => __awaiter(void 0, void 0, void 0, functi
         metadata: { integration_check: "accept a payment" },
     });
     const ticket = new Ticket_1.default({
-        email: email,
-        firstName: firstName,
-        lastName: lastName,
-        phoneNumber: phoneNumber,
+        email: email.trim(),
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        phoneNumber: phoneNumber.trim(),
         eventId: eventFound.id,
         purchaseDate: new Date(),
     });
     ticket.save((error) => {
         if (error) {
-            isOk = false;
             res.status(404).send("Ticket cannot be added to database");
+            return;
         }
     });
-    if (isOk) {
-        res.status(200).send(paymentIntent.client_secret);
-    }
+    res.status(200).send(paymentIntent.client_secret);
+    return;
 }));
 app.get("/api/events", (req, res) => {
     Event_1.default.find({}, (error, events) => {
