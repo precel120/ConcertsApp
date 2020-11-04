@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -15,6 +15,8 @@ type EventCardProps = {
   dateOfEvent: Date;
   place: string;
   description: string;
+  type: string;
+  ticketPrice: number;
 };
 
 const useStyles = makeStyles({
@@ -33,12 +35,15 @@ const EventCard = ({
   dateOfEvent,
   place,
   description,
+  type,
+  ticketPrice,
 }: EventCardProps) => {
   const [isClicked, setIsClicked] = useState(false);
   const classes = useStyles();
   const redirectToForm = () => {
     setIsClicked(true);
   };
+  // TODO change img to proper material-ui stuff
   return (
     <Card className={classes.root}>
       <CardActionArea onClick={redirectToForm}>
@@ -55,6 +60,9 @@ const EventCard = ({
           </Typography>
           <Typography variant="body2" component="p">
             {description}
+          </Typography>
+          <Typography variant="body2" component="p">
+            {ticketPrice/100} zł
           </Typography>
         </CardContent>
       </CardActionArea>
