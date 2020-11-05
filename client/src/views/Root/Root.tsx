@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import EventCard from "../../components/EventCard/EventCard";
 import NavBar from "../../components/NavBar/NavBar";
@@ -15,22 +15,10 @@ const Root = () => {
     };
     fetchData();
   }, [setEvents]);
-  // TODO put searchPhrase and eventType in global context
-  const temp = (searchPhrase: string, eventType: string) => {
-    events.filter((event: any) => {
-      if (searchPhrase.trim() === "" && eventType !== "All") {
-        return event.type.toLowerCase().includes(eventType.toLowerCase());
-      } else if (searchPhrase.trim() !== "" && eventType === "All") {
-        return event.nameOfEvent.toLowerCase().includes(searchPhrase.trim().toLowerCase());
-      } else {
-        return event.nameOfEvent.toLowerCase().inludes(searchPhrase.trim().toLowerCase())
-      }
-    });
-  };
 
   return (
     <>
-      <NavBar temp={temp} />
+      <NavBar />
       <h1>Home Page</h1>
       {events.map(
         ({

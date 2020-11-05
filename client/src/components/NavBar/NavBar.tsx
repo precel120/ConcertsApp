@@ -1,8 +1,8 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {
   AppBar,
-  Typography,
   Toolbar,
   InputBase,
   Select,
@@ -10,32 +10,37 @@ import {
   FormControl,
   FormHelperText,
 } from "@material-ui/core";
+import { search, setEventType } from "../../actions";
 
-type NavBarProps = {
-    temp: Function;
-}
+type Filter = {
+  searchField: string,
+  eventType: string
+};
 
-const NavBar = ({temp}: NavBarProps) => {
-  const [eventType, setEventType] = useState("All");
-  const [searchPhrase, setSearchPhrase] = useState("");
+interface RootState {
+  navbar: Filter
+};
+
+const NavBar = () => {
+  const helperFunc = (state: RootState) => {
+    return state.navbar;
+  };
+  const { searchField, eventType } = useSelector(helperFunc);
+  const dispatch = useDispatch();
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setEventType(event.target.value as string);
+    dispatch(setEventType(event.target.value as string));
   };
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchPhrase(event.target.value as string);
+    dispatch(search(event.target.value as string));
   };
-  const temp2 = useCallback(() => temp(searchPhrase, eventType), [searchPhrase, eventType]);
+
   return (
     <AppBar position="static">
       <Toolbar>
         <Link to="/">ConcertsApp</Link>
-        <InputBase
-          placeholder="Search..."
-          value={searchPhrase}
-          onChange={handleSearch}
-        />
+        <InputBase placeholder="Search..." value={searchField} onChange={handleSearch}  />
         <FormControl>
-          <Select value={eventType} onChange={handleChange}>
+          <Select value={eventType} defaultValue={"All"} onChange={handleChange}>
             <MenuItem value={"All"}>All</MenuItem>
             <MenuItem value={"Concert"}>Concert</MenuItem>
             <MenuItem value={"Festival"}>Festival</MenuItem>

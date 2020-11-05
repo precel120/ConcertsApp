@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import tempReducer from './tempReducer';
+import navbarReducer from './navbarReducer';
 
 export default combineReducers({
-  temp: tempReducer
+  navbar: navbarReducer,
 });
