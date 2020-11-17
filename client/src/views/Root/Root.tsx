@@ -4,10 +4,6 @@ import axios from "axios";
 import EventCard from "../../components/EventCard/EventCard";
 import NavBar from "../../components/NavBar/NavBar";
 
-type Filter = {
-  searchField: string;
-  eventType: string;
-};
 
 type Event = {
   _id: string;
@@ -21,6 +17,11 @@ type Event = {
   ticketPrice: number;
 };
 
+type Filter = {
+  searchField: string;
+  eventType: string;
+};
+
 interface RootState {
   navbar: Filter;
 }
@@ -28,10 +29,7 @@ interface RootState {
 const Root = () => {
   const [events, setEvents] = useState([]);
 
-  const helperFunc = (state: RootState) => {
-    return state.navbar;
-  };
-  const { searchField, eventType } = useSelector(helperFunc);
+  const { searchField, eventType } = useSelector((state: RootState) => state.navbar);
   // TODO use redux for events
   useEffect(() => {
     const fetchData = async () => {
@@ -53,7 +51,7 @@ const Root = () => {
         }
         if (searchField === undefined || eventType === undefined) {
           return event;
-        } else if (searchField.trim() !== "") {
+        } else if (searchField !== "") {
           return event.nameOfEvent
             .toLowerCase()
             .includes(searchField.toLowerCase());
@@ -65,7 +63,7 @@ const Root = () => {
   return (
     <>
       <NavBar />
-      <h1>Home Page</h1>
+  <h1>Home Page</h1>
       {eventsToDisplay.map(
         ({
           _id,
