@@ -66,7 +66,7 @@ const EventCard = ({
           </Typography>
         </CardContent>
       </CardActionArea>
-      {isClicked && <Redirect to={`/form/${id}`} />}
+      {isClicked && <Redirect to={`/event/${id}`} />}
     </Card>
   );
 };

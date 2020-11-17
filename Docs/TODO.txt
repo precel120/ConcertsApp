@@ -1,9 +1,9 @@
-[] podanie błednych danych nie przenosi do error page tylko wyrzuca odpowiedni komunikat
-[] Event Page - view dla konkretnego eventu
 [X] NavBar
+[X] filtry typów eventów
+[started] wyszukiwarka eventów po nazwie i miastach
+[started] Event Page - view dla konkretnego eventu
 [] wysyłanie maili
 [] generowanie kodów QR/PDF
-[] filtry typów eventów
-[] wyszukiwarka eventów po nazwie i miastach
+[] podanie błednych danych nie przenosi do error page tylko wyrzuca odpowiedni komunikat
 [] Projekt wizualny strony i logo
 [] wdrożenie wizualnego projektu

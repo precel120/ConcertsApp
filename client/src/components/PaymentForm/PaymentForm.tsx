@@ -53,7 +53,6 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
       });
       setPaymentWasSuccessful(true);
     } catch (error) {
-      console.log(error);
       setIsProcessing(false);
       setErrorOcurred(true);
     }

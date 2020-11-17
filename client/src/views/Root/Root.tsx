@@ -27,11 +27,12 @@ interface RootState {
 
 const Root = () => {
   const [events, setEvents] = useState([]);
+
   const helperFunc = (state: RootState) => {
     return state.navbar;
   };
   const { searchField, eventType } = useSelector(helperFunc);
-
+  // TODO use redux for events
   useEffect(() => {
     const fetchData = async () => {
       const { status, data } = await axios.get("/api/events");
