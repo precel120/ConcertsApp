@@ -11,6 +11,7 @@ const eventSchema = new Schema({
     dateOfEvent: Date,
     place: String,
     description: String,
+    type: String,
     maxTicketsAmount: Number,
     ticketPrice: Number,
 });
