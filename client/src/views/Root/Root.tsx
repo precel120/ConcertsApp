@@ -4,7 +4,6 @@ import axios from "axios";
 import EventCard from "../../components/EventCard/EventCard";
 import NavBar from "../../components/NavBar/NavBar";
 
-
 type Event = {
   _id: string;
   imageUrl: string;
@@ -19,7 +18,7 @@ type Event = {
 };
 
 type Filter = {
-  searchField: string;
+  searchPhrase: string;
   eventType: string;
 };
 
@@ -29,8 +28,11 @@ interface RootState {
 
 const Root = () => {
   const [events, setEvents] = useState([]);
+  const [eventsToDisplay, setEventsToDisplay] = useState([]);
 
-  const { searchField, eventType } = useSelector((state: RootState) => state.navbar);
+  const { searchPhrase, eventType } = useSelector(
+    (state: RootState) => state.navbar
+  );
   // TODO use redux for events
   useEffect(() => {
     const fetchData = async () => {
@@ -42,29 +44,49 @@ const Root = () => {
     fetchData();
   }, [setEvents]);
 
-  const eventsToDisplay = useMemo(
-    () =>
+  useEffect(() => {
+    setEventsToDisplay(
       events.filter((event: Event) => {
+        if (searchPhrase === undefined) {
+          return event;
+        } else if (searchPhrase !== "") {
+          return event.nameOfEvent
+            .toLowerCase()
+            .includes(searchPhrase.toLowerCase());
+        }
         if (eventType === "All") {
           return event;
         } else {
           return event.type.toLowerCase().includes(eventType.toLowerCase());
         }
-        if (searchField === undefined || eventType === undefined) {
-          return event;
-        } else if (searchField !== "") {
-          return event.nameOfEvent
-            .toLowerCase()
-            .includes(searchField.toLowerCase());
-        }
-      }),
-    [events, searchField, eventType]
-  );
+      })
+    );
+  }, [events, searchPhrase, eventType, setEventsToDisplay]);
+
+  // const eventsToDisplay = useMemo(
+  //   () =>
+  //     events.filter((event: Event) => {
+  //       if (eventType === "All") {
+  //         return event;
+  //       } else {
+  //         return event.type.toLowerCase().includes(eventType.toLowerCase());
+  //       }
+  //       if (searchField === undefined || eventType === undefined) {
+  //         return event;
+  //       } else if (searchField !== "") {
+  //         return event.nameOfEvent
+  //           .toLowerCase()
+  //           .includes(searchField.toLowerCase());
+  //       }
+  //     }),
+  //   [events, searchField, eventType]
+  // );
 
   return (
     <>
       <NavBar showFull={true} />
-  <h1>Home Page</h1>
+      {console.log(eventsToDisplay)}
+      <h1>Home Page</h1>
       {eventsToDisplay.map(
         ({
           _id,
