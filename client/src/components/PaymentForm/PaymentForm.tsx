@@ -3,16 +3,20 @@ import { Input, InputLabel, Button } from "@material-ui/core";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 type PaymentFormProps = {
   id: string;
 };
-
+// TODO add REACT_HOOK_FORM
 const PaymentForm = ({ id }: PaymentFormProps) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+
+  // React-Hook-Form stuff
+  const { register, handleSubmit } = useForm();
 
   // stripe stuff
   const [errorOcurred, setErrorOcurred] = useState(false);
@@ -21,7 +25,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
   const elements = useElements();
   const stripe = useStripe();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!stripe || !elements) {
       return;
@@ -32,7 +36,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
       lastName: lastName,
       phoneNumber: phoneNumber,
     };
-    //TODO Change error handling to proper with current form validation
+    
     try {
       const { data: clientSecret } = await axios.post(
         `/api/checkout?id=${id}`,
@@ -85,7 +89,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} autoComplete="off">
+      <form onSubmit={onSubmit} autoComplete="off">
         <InputLabel htmlFor="input__email">Email:</InputLabel>
         <Input
           type="text"

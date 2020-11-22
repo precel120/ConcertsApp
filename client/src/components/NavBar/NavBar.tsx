@@ -21,11 +21,14 @@ interface RootState {
   navbar: Filter;
 }
 
-const NavBar = () => {
-  const helperFunc = (state: RootState) => {
-    return state.navbar;
-  };
-  const { searchField, eventType } = useSelector(helperFunc);
+type NavBarProps = {
+  showFull: boolean;
+};
+
+const NavBar = ({ showFull }: NavBarProps) => {
+  const { searchField, eventType } = useSelector(
+    (state: RootState) => state.navbar
+  );
   const dispatch = useDispatch();
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     dispatch(setEventType(event.target.value as string));
@@ -39,24 +42,28 @@ const NavBar = () => {
     <AppBar position="static">
       <Toolbar>
         <Link to="/">ConcertsApp</Link>
-        <InputBase
-          placeholder="Search..."
-          value={searchField}
-          onChange={handleSearch}
-        />
-        <FormControl>
-          <Select
-            value={eventType}
-            defaultValue={"All"}
-            onChange={handleChange}
-          >
-            <MenuItem value={"All"}>All</MenuItem>
-            <MenuItem value={"Concert"}>Concert</MenuItem>
-            <MenuItem value={"Festival"}>Festival</MenuItem>
-            <MenuItem value={"Museum"}>Museum</MenuItem>
-          </Select>
-          <FormHelperText>Set event type</FormHelperText>
-        </FormControl>
+        {showFull && (
+          <InputBase
+            placeholder="Search..."
+            value={searchField}
+            onChange={handleSearch}
+          />
+        )}
+        {showFull && (
+          <FormControl>
+            <Select
+              value={eventType}
+              defaultValue={"All"}
+              onChange={handleChange}
+            >
+              <MenuItem value={"All"}>All</MenuItem>
+              <MenuItem value={"Concert"}>Concert</MenuItem>
+              <MenuItem value={"Festival"}>Festival</MenuItem>
+              <MenuItem value={"Museum"}>Museum</MenuItem>
+            </Select>
+            <FormHelperText>Set event type</FormHelperText>
+          </FormControl>
+        )}
       </Toolbar>
     </AppBar>
   );

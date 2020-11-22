@@ -15,6 +15,7 @@ type EventCardProps = {
   dateOfEvent: Date;
   place: string;
   description: string;
+  longDescription: string;
   type: string;
   ticketPrice: number;
 };
@@ -35,6 +36,7 @@ const EventCard = ({
   dateOfEvent,
   place,
   description,
+  longDescription,
   type,
   ticketPrice,
 }: EventCardProps) => {
@@ -62,11 +64,26 @@ const EventCard = ({
             {description}
           </Typography>
           <Typography variant="body2" component="p">
-            {ticketPrice/100} zł
+            {ticketPrice / 100} zł
           </Typography>
         </CardContent>
       </CardActionArea>
-      {isClicked && <Redirect to={`/event/${id}`} />}
+      {isClicked && (
+        <Redirect
+          to={{
+            pathname: `/event/${id}`,
+            state: {
+              imageURL: imageUrl,
+              nameOfEvent: nameOfEvent,
+              place: place,
+              dateOfEvent: dateOfEvent,
+              type: type,
+              longDescription: longDescription,
+              ticketPrice: ticketPrice,
+            },
+          }}
+        />
+      )}
     </Card>
   );
 };

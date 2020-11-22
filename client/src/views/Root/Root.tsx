@@ -12,6 +12,7 @@ type Event = {
   dateOfEvent: Date;
   place: string;
   description: string;
+  longDescription: string;
   type: string;
   maxTicketsAmount: number;
   ticketPrice: number;
@@ -62,7 +63,7 @@ const Root = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar showFull={true} />
   <h1>Home Page</h1>
       {eventsToDisplay.map(
         ({
@@ -72,6 +73,7 @@ const Root = () => {
           place,
           dateOfEvent,
           description,
+          longDescription,
           type,
           ticketPrice,
         }: Event) => (
@@ -83,6 +85,7 @@ const Root = () => {
             place={place}
             dateOfEvent={dateOfEvent}
             description={description}
+            longDescription={longDescription}
             type={type}
             ticketPrice={ticketPrice}
           />
