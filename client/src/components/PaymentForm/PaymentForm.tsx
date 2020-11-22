@@ -25,8 +25,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
   const elements = useElements();
   const stripe = useStripe();
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const onSubmit = async () => {
     if (!stripe || !elements) {
       return;
     }
@@ -89,7 +88,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
 
   return (
     <>
-      <form onSubmit={onSubmit} autoComplete="off">
+      <form onSubmit={ handleSubmit(onSubmit)} autoComplete="off">
         <InputLabel htmlFor="input__email">Email:</InputLabel>
         <Input
           type="text"
@@ -105,6 +104,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
           autoComplete="off"
           value={firstName}
           onChange={handleFirstName}
+          ref={register}
         />
         <InputLabel htmlFor="input__lastName">Last Name:</InputLabel>
         <Input
@@ -113,6 +113,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
           autoComplete="off"
           value={lastName}
           onChange={handleLastName}
+          ref={register}
         />
         <InputLabel htmlFor="input__phoneNumber">Phone Number:</InputLabel>
         <Input
@@ -121,6 +122,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
           autoComplete="off"
           value={phoneNumber}
           onChange={handlePhoneNumber}
+          ref={register}
         />
         <CardElement options={cardElementOptions} />
         <Button type="submit" disabled={isProcessing || !stripe}>

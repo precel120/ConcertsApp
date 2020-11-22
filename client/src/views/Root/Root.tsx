@@ -28,7 +28,6 @@ interface RootState {
 
 const Root = () => {
   const [events, setEvents] = useState([]);
-  const [eventsToDisplay, setEventsToDisplay] = useState([]);
 
   const { searchPhrase, eventType } = useSelector(
     (state: RootState) => state.navbar
@@ -44,8 +43,8 @@ const Root = () => {
     fetchData();
   }, [setEvents]);
 
-  useEffect(() => {
-    setEventsToDisplay(
+  const eventsToDisplay = useMemo(
+    () =>
       events.filter((event: Event) => {
         if (searchPhrase === undefined) {
           return event;
@@ -59,33 +58,13 @@ const Root = () => {
         } else {
           return event.type.toLowerCase().includes(eventType.toLowerCase());
         }
-      })
-    );
-  }, [events, searchPhrase, eventType, setEventsToDisplay]);
-
-  // const eventsToDisplay = useMemo(
-  //   () =>
-  //     events.filter((event: Event) => {
-  //       if (eventType === "All") {
-  //         return event;
-  //       } else {
-  //         return event.type.toLowerCase().includes(eventType.toLowerCase());
-  //       }
-  //       if (searchField === undefined || eventType === undefined) {
-  //         return event;
-  //       } else if (searchField !== "") {
-  //         return event.nameOfEvent
-  //           .toLowerCase()
-  //           .includes(searchField.toLowerCase());
-  //       }
-  //     }),
-  //   [events, searchField, eventType]
-  // );
+      }),
+    [events, searchPhrase, eventType]
+  );
 
   return (
     <>
       <NavBar showFull={true} />
-      {console.log(eventsToDisplay)}
       <h1>Home Page</h1>
       {eventsToDisplay.map(
         ({
