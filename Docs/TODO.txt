@@ -2,7 +2,7 @@
 [X] filtry typów eventów
 [X] wyszukiwarka eventów po nazwie
 [X] Event Page - view dla konkretnego eventu
-[] walidacja po stronie klienta
+[X] walidacja po stronie klienta
 [] wysyłanie maili
 [] generowanie kodów QR/PDF
 [] Projekt wizualny strony i logo

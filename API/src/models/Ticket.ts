@@ -6,7 +6,7 @@ const ticketSchema = new Schema({
   email: String,
   firstName: String,
   lastName: String,
-  phoneNumber: Number,
+  phoneNumber: String,
   eventId: String,
   purchaseDate: Date,
 });

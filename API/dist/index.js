@@ -33,11 +33,10 @@ app.post("/api/checkout", [
     express_validator_1.body("email").trim().isEmail().isLength({ min: 8 }).normalizeEmail(),
     express_validator_1.body("firstName").trim().isString().isLength({ min: 2 }),
     express_validator_1.body("lastName").trim().isString().isLength({ min: 2 }),
-    express_validator_1.body("phoneNumber").trim().isInt().isLength({ min: 3, max: 9 }),
+    express_validator_1.body("phoneNumber").trim().isString().isLength({ min: 3, max: 12 }),
 ], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const errors = express_validator_1.validationResult(req);
     if (!errors.isEmpty()) {
-        console.log(errors.array());
         res.status(400).json({ errors: errors.array() });
         return;
     }
@@ -59,6 +58,8 @@ app.post("/api/checkout", [
                 return;
             }
         }
+        else
+            res.status(404).send("No tickets found");
     });
     const paymentIntent = yield stripe.paymentIntents.create({
         amount: eventFound.ticketPrice,

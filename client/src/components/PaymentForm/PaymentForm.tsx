@@ -8,15 +8,18 @@ import { useForm } from "react-hook-form";
 type PaymentFormProps = {
   id: string;
 };
+
+type FormValues = {
+  email: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+};
+
 // TODO add REACT_HOOK_FORM
 const PaymentForm = ({ id }: PaymentFormProps) => {
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-
   // React-Hook-Form stuff
-  const { register, handleSubmit } = useForm();
+  const { formState, errors, register, handleSubmit } = useForm<FormValues>({mode: 'onChange'});
 
   // stripe stuff
   const [errorOcurred, setErrorOcurred] = useState(false);
@@ -25,17 +28,20 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
   const elements = useElements();
   const stripe = useStripe();
 
-  const onSubmit = async () => {
+  const onSubmit = async (data: FormValues) => {
     if (!stripe || !elements) {
       return;
     }
+
+    const { email, firstName, lastName, phoneNumber } = data;
+
     const userInfo = {
       email: email,
       firstName: firstName,
       lastName: lastName,
       phoneNumber: phoneNumber,
     };
-    
+
     try {
       const { data: clientSecret } = await axios.post(
         `/api/checkout?id=${id}`,
@@ -61,16 +67,6 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
     }
   };
 
-  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setEmail(e.target.value);
-  };
-  const handleFirstName = (e: React.ChangeEvent<HTMLInputElement>): void =>
-    setFirstName(e.target.value);
-  const handleLastName = (e: React.ChangeEvent<HTMLInputElement>): void =>
-    setLastName(e.target.value);
-  const handlePhoneNumber = (e: React.ChangeEvent<HTMLInputElement>): void =>
-    setPhoneNumber(e.target.value);
-
   const cardElementOptions = {
     style: {
       base: {
@@ -88,44 +84,76 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
 
   return (
     <>
-      <form onSubmit={ handleSubmit(onSubmit)} autoComplete="off">
-        <InputLabel htmlFor="input__email">Email:</InputLabel>
+      <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
+        <InputLabel htmlFor="input__email">
+          Email: {errors.email && <span>{errors.email.message}</span>}
+        </InputLabel>
         <Input
+          name="email"
           type="text"
           id="input__email"
           autoComplete="off"
-          value={email}
-          onChange={handleEmail}
+          inputRef={register({
+            required: "Please specify email.",
+            pattern: {
+              value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+              message: "Invalid email.",
+            },
+          })}
+          required
         />
-        <InputLabel htmlFor="input__firstName">First Name:</InputLabel>
+        <InputLabel htmlFor="input__firstName">
+          First Name:{" "}
+          {errors.firstName && <span>{errors.firstName.message}</span>}
+        </InputLabel>
         <Input
+          name="firstName"
           type="text"
           id="input__firstName"
           autoComplete="off"
-          value={firstName}
-          onChange={handleFirstName}
-          ref={register}
+          inputRef={register({
+            required: "Please specify first name.",
+            minLength: 2,
+          })}
+          required
         />
-        <InputLabel htmlFor="input__lastName">Last Name:</InputLabel>
+        <InputLabel htmlFor="input__lastName">
+          Last Name: {errors.lastName && <span>{errors.lastName.message}</span>}
+        </InputLabel>
         <Input
+          name="lastName"
           type="text"
           id="input__lastName"
           autoComplete="off"
-          value={lastName}
-          onChange={handleLastName}
-          ref={register}
+          inputRef={register({
+            required: "Please specify last name.",
+            minLength: 2,
+          })}
+          required
         />
-        <InputLabel htmlFor="input__phoneNumber">Phone Number:</InputLabel>
+        <InputLabel htmlFor="input__phoneNumber">
+          Phone Number:{" "}
+          {errors.phoneNumber && <span>{errors.phoneNumber.message}</span>}
+        </InputLabel>
         <Input
+          name="phoneNumber"
           type="text"
           id="input__phoneNumber"
           autoComplete="off"
-          value={phoneNumber}
-          onChange={handlePhoneNumber}
-          ref={register}
+          inputRef={register({
+            required: "Please specify phone number.",
+            pattern:{
+              value: /^((?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w))$/,
+              message: "Please specify phone number."
+            },
+          })}
+          required
         />
         <CardElement options={cardElementOptions} />
-        <Button type="submit" disabled={isProcessing || !stripe}>
+        <Button
+          type="submit"
+          disabled={isProcessing || !stripe || !formState.isValid}
+        >
           Pay
         </Button>
       </form>

@@ -26,12 +26,11 @@ app.post(
     body("email").trim().isEmail().isLength({ min: 8 }).normalizeEmail(),
     body("firstName").trim().isString().isLength({ min: 2 }),
     body("lastName").trim().isString().isLength({ min: 2 }),
-    body("phoneNumber").trim().isInt().isLength({ min: 3, max: 9 }),
+    body("phoneNumber").trim().isString().isLength({ min: 3, max: 12 }),
   ],
   async (req: any, res: any) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      console.log(errors.array());
       res.status(400).json({ errors: errors.array() });
       return;
     }
@@ -51,7 +50,7 @@ app.post(
           res.status(404).send("No tickets left");
           return;
         }
-      }
+      } else res.status(404).send("No tickets found") 
     });
     const paymentIntent = await stripe.paymentIntents.create({
       amount: eventFound.ticketPrice, // NEEDS TO BE ABOVE SOME VALUE!!!!!!!
