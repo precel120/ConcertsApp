@@ -21,12 +21,12 @@ app.use(express.urlencoded({ extended: true }));
 
 // TODO Change to proper status codes
 app.post(
-  "/api/checkout",
+  "/api/tickets",
   [
     body("email").trim().isEmail().isLength({ min: 8 }).normalizeEmail(),
-    body("firstName").trim().isString().isLength({ min: 2 }),
-    body("lastName").trim().isString().isLength({ min: 2 }),
-    body("phoneNumber").trim().isString().isLength({ min: 3, max: 12 }),
+    body("firstName").trim().isString().isLength({ min: 2 }).matches(/^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/),
+    body("lastName").trim().isString().isLength({ min: 2 }).matches(/^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/),
+    body("phoneNumber").trim().isString().matches(/^((?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w))$/),
   ],
   async (req: any, res: any) => {
     const errors = validationResult(req);
@@ -34,8 +34,7 @@ app.post(
       res.status(400).json({ errors: errors.array() });
       return;
     }
-    const { email, firstName, lastName, phoneNumber } = req.body;
-    const { id } = req.query;
+    const { id, email, firstName, lastName, phoneNumber } = req.body;
     let eventFound: any;
     const event = await Event.findById(id, (error, result) => {
       if (!error) eventFound = result;

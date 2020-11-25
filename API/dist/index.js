@@ -29,19 +29,18 @@ app.use(express_1.default.static("public"));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 // TODO Change to proper status codes
-app.post("/api/checkout", [
+app.post("/api/tickets", [
     express_validator_1.body("email").trim().isEmail().isLength({ min: 8 }).normalizeEmail(),
-    express_validator_1.body("firstName").trim().isString().isLength({ min: 2 }),
-    express_validator_1.body("lastName").trim().isString().isLength({ min: 2 }),
-    express_validator_1.body("phoneNumber").trim().isString().isLength({ min: 3, max: 12 }),
+    express_validator_1.body("firstName").trim().isString().isLength({ min: 2 }).matches(/^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/),
+    express_validator_1.body("lastName").trim().isString().isLength({ min: 2 }).matches(/^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/),
+    express_validator_1.body("phoneNumber").trim().isString().matches(/^((?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w))$/),
 ], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const errors = express_validator_1.validationResult(req);
     if (!errors.isEmpty()) {
         res.status(400).json({ errors: errors.array() });
         return;
     }
-    const { email, firstName, lastName, phoneNumber } = req.body;
-    const { id } = req.query;
+    const { id, email, firstName, lastName, phoneNumber } = req.body;
     let eventFound;
     const event = yield Event_1.default.findById(id, (error, result) => {
         if (!error)

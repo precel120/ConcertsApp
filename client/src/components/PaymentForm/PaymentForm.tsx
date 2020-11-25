@@ -16,12 +16,15 @@ type FormValues = {
   phoneNumber: string;
 };
 
-// TODO add REACT_HOOK_FORM
 const PaymentForm = ({ id }: PaymentFormProps) => {
   // React-Hook-Form stuff
-  const { formState, errors, register, handleSubmit } = useForm<FormValues>({mode: 'onChange'});
+  const { formState, errors, register, handleSubmit } = useForm<FormValues>({
+    mode: "onChange",
+  });
 
-  // stripe stuff
+  const [isEnabled, setIsEnabled] = useState(false);
+
+  // Stripe stuff
   const [errorOcurred, setErrorOcurred] = useState(false);
   const [paymentWasSuccessful, setPaymentWasSuccessful] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -36,6 +39,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
     const { email, firstName, lastName, phoneNumber } = data;
 
     const userInfo = {
+      id: id,
       email: email,
       firstName: firstName,
       lastName: lastName,
@@ -43,10 +47,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
     };
 
     try {
-      const { data: clientSecret } = await axios.post(
-        `/api/checkout?id=${id}`,
-        userInfo
-      );
+      const { data: clientSecret } = await axios.post(`/api/tickets`, userInfo);
       const cardElement = elements.getElement(CardElement);
 
       setIsProcessing(true);
@@ -65,6 +66,10 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
       setIsProcessing(false);
       setErrorOcurred(true);
     }
+  };
+
+  const handleCardElChange = (el: any) => {
+    if (el.complete) setIsEnabled(true);
   };
 
   const cardElementOptions = {
@@ -96,7 +101,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
           inputRef={register({
             required: "Please specify email.",
             pattern: {
-              value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+              value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
               message: "Invalid email.",
             },
           })}
@@ -113,6 +118,10 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
           autoComplete="off"
           inputRef={register({
             required: "Please specify first name.",
+            pattern: {
+              value: /^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/,
+              message: "Invalid first name",
+            },
             minLength: 2,
           })}
           required
@@ -127,6 +136,10 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
           autoComplete="off"
           inputRef={register({
             required: "Please specify last name.",
+            pattern: {
+              value: /^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/,
+              message: "Invalid first name",
+            },
             minLength: 2,
           })}
           required
@@ -142,17 +155,20 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
           autoComplete="off"
           inputRef={register({
             required: "Please specify phone number.",
-            pattern:{
+            pattern: {
               value: /^((?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w))$/,
-              message: "Please specify phone number."
+              message: "Please specify phone number.",
             },
           })}
           required
         />
-        <CardElement options={cardElementOptions} />
+        <CardElement
+          options={cardElementOptions}
+          onChange={handleCardElChange}
+        />
         <Button
           type="submit"
-          disabled={isProcessing || !stripe || !formState.isValid}
+          disabled={isProcessing || !stripe || !formState.isValid || !isEnabled}
         >
           Pay
         </Button>
