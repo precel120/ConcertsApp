@@ -30,10 +30,11 @@ const NavBar = ({ showFull }: NavBarProps) => {
     (state: RootState) => state.navbar
   );
   const dispatch = useDispatch();
+  
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     dispatch(setEventType(event.target.value as string));
   };
-  // TODO last letter is cut AGAIN
+
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(search(event.target.value as string));
   };

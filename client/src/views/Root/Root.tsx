@@ -32,7 +32,7 @@ const Root = () => {
   const { searchPhrase, eventType } = useSelector(
     (state: RootState) => state.navbar
   );
-  // TODO use redux for events
+  
   useEffect(() => {
     const fetchData = async () => {
       const { status, data } = await axios.get("/api/events");

@@ -27,9 +27,13 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
+    "@types/mailgen": "^2.0.3",
+    "@types/nodemailer": "^6.4.0",
     "@types/stripe": "^7.13.24",
     "express": "^4.17.1",
     "express-validator": "^6.6.1",
+    "mailgen": "^2.0.14",
+    "nodemailer": "^6.4.16",
     "stripe": "^8.96.0"
   }
 }
