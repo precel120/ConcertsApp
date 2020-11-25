@@ -46,7 +46,7 @@ app.post(
     Ticket.find({ eventId: event?.id }, (error, tickets) => {
       if (!error) {
         if (event?.toJSON().maxTicketsAmount - 1 < tickets.length) {
-          res.status(404).send("No tickets left");
+          res.status(403).send("No tickets left");
           return;
         }
       } else res.status(404).send("No tickets found") 
@@ -68,7 +68,7 @@ app.post(
     });
     ticket.save((error) => {
       if (error) {
-        res.status(404).send("Ticket cannot be added to database");
+        res.status(500).send("Ticket cannot be added to database");
         return;
       }
     });
@@ -82,7 +82,7 @@ app.get("/api/events", (req, res) => {
     if (!error) {
       const eventsMap = events.slice();
       res.status(200).send(eventsMap);
-    }
+    } else res.status(404).send("Couldn't find events");
   });
 });
 
