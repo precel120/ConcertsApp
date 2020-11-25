@@ -11,8 +11,8 @@ import Event from "./models/Event";
 const stripe = new Stripe(env.stripeSecretKey, { apiVersion: "2020-08-27" });
 
 let transporter = createTransport({
-  service: "GMail",
-  secure: true,
+  host: "smtp.mailtrap.io",
+  port: 2525,
   auth: {
     user: env.email,
     pass: env.emailPassword,
@@ -110,9 +110,30 @@ app.post(
         return;
       }
     });
-    
+
+    let response = {
+      body: {
+        firstName,
+        lastName,
+        intro: "Welcome!",
+      },
+    };
+
+    let mail = MailGenerator.generate(response);
+    let message = {
+      from: env.email,
+      to: email,
+      subject: "test",
+      html: mail,
+    };
+    transporter.sendMail(message, (error, info) => {
+      if (error) {
+        res.status(500).send("Error while trying to send mail");
+        return;
+      } else console.log("Mail sent:", info.response);
+    });
+
     res.status(200).send(paymentIntent.client_secret);
-    return;
   }
 );
 
