@@ -17,7 +17,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const stripe_1 = require("stripe");
 const express_validator_1 = require("express-validator");
 const nodemailer_1 = require("nodemailer");
-const mailgen_1 = __importDefault(require("mailgen"));
+const qrcode_1 = require("qrcode");
 const keys_1 = require("./config/keys");
 const Ticket_1 = __importDefault(require("./models/Ticket"));
 const Event_1 = __importDefault(require("./models/Event"));
@@ -30,13 +30,6 @@ let transporter = nodemailer_1.createTransport({
         pass: keys_1.env.emailPassword,
     },
 });
-let MailGenerator = new mailgen_1.default({
-    theme: "default",
-    product: {
-        name: "Nodemailer",
-        link: keys_1.env.mainURL,
-    },
-});
 mongoose_1.default.connect(keys_1.env.mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -44,7 +37,6 @@ mongoose_1.default.connect(keys_1.env.mongoURI, {
 const app = express_1.default();
 app.use(express_1.default.static("public"));
 app.use(express_1.default.json());
-app.use(express_1.default.urlencoded({ extended: true }));
 // TODO Check if proper Status Codes
 app.post("/api/tickets", [
     express_validator_1.body("email").trim().isEmail().isLength({ min: 8 }).normalizeEmail(),
@@ -110,19 +102,17 @@ app.post("/api/tickets", [
             return;
         }
     });
-    let response = {
-        body: {
-            firstName,
-            lastName,
-            intro: "Welcome!",
-        },
-    };
-    let mail = MailGenerator.generate(response);
+    const qr = yield qrcode_1.toDataURL(ticket.id);
+    const mailTemplate = `
+    <h1>Hello ${firstName} ${lastName}</h1>
+    <p>Thanks for buying ticket for ${eventFound.nameOfEvent}, in ${eventFound.place}, taking place on ${eventFound.dateOfEvent}</p>
+    <img src="${qr}">
+    `;
     let message = {
         from: keys_1.env.email,
         to: email,
-        subject: "test",
-        html: mail,
+        subject: `Ticket for ${eventFound.nameOfEvent}`,
+        html: mailTemplate,
     };
     transporter.sendMail(message, (error, info) => {
         if (error) {

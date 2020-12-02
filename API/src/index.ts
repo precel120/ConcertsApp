@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import { Stripe } from "stripe";
 import { body, validationResult } from "express-validator";
 import { createTransport } from "nodemailer";
-import Mailgen from "mailgen";
+import { toDataURL } from "qrcode";
 import { env } from "./config/keys";
 import Ticket from "./models/Ticket";
 import Event from "./models/Event";
@@ -19,14 +19,6 @@ let transporter = createTransport({
   },
 });
 
-let MailGenerator = new Mailgen({
-  theme: "default",
-  product: {
-    name: "Nodemailer",
-    link: env.mainURL,
-  },
-});
-
 mongoose.connect(env.mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -36,7 +28,6 @@ const app = express();
 
 app.use(express.static("public"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // TODO Check if proper Status Codes
 app.post(
@@ -111,20 +102,19 @@ app.post(
       }
     });
 
-    let response = {
-      body: {
-        firstName,
-        lastName,
-        intro: "Welcome!",
-      },
-    };
+    const qr = await toDataURL(ticket.id);
 
-    let mail = MailGenerator.generate(response);
+    const mailTemplate = `
+    <h1>Hello ${firstName} ${lastName}</h1>
+    <p>Thanks for buying ticket for ${eventFound.nameOfEvent}, in ${eventFound.place}, taking place on ${eventFound.dateOfEvent}</p>
+    <img src="${qr}">
+    `;
+
     let message = {
       from: env.email,
       to: email,
-      subject: "test",
-      html: mail,
+      subject: `Ticket for ${eventFound.nameOfEvent}`,
+      html: mailTemplate,
     };
     transporter.sendMail(message, (error, info) => {
       if (error) {

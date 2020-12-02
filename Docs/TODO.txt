@@ -4,7 +4,7 @@
 [X] Event Page - view dla konkretnego eventu
 [X] walidacja po stronie klienta
 [X] wysyłanie maili
-[] generowanie kodów QR/PDF
+[X] generowanie kodów QR
 [] Projekt struktury maila i jego implementacja
 [] Projekt wizualny strony i logo
 [] wdrożenie wizualnego projektu

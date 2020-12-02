@@ -70,6 +70,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
 
   const handleCardElChange = (el: any) => {
     if (el.complete) setIsEnabled(true);
+    else setIsEnabled(false);
   };
 
   const cardElementOptions = {
