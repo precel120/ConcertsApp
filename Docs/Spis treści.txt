@@ -20,7 +20,6 @@
  3.4 JavaScript
  3.5 Wykorzystane najistotniejsze biblioteki
  3.6 MongoDB
- 3.7 Postman
  
 4. Proces tworzenia aplikacji // tutaj: Wymagania funkcjonalne Wymagania niefunkcjonalne Diagramy klas.
 5. Podsumowanie
