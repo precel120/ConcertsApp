@@ -1,0 +1,25 @@
+\contentsline {section}{\numberline {1}Wprowadzenie}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Problematyka}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Cel i założenia pracy}{3}{}%
+\contentsline {subsection}{\numberline {1.3}Struktura pracy inżynierskiej}{3}{}%
+\contentsline {section}{\numberline {2}Część teoretyczna}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Analiza istniejących portali do promowania i dystrybucji biletów na wydarzenia kulturowe}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Płatności internetowe i ich bezpieczeństwo}{5}{}%
+\contentsline {subsection}{\numberline {2.3}Analiza najpopularniejszych internetowych metod płatności}{5}{}%
+\contentsline {subsection}{\numberline {2.4}Bazy danych jako środek przechowywania danych}{5}{}%
+\contentsline {subsection}{\numberline {2.5}Nierelacyjne bazy danych}{5}{}%
+\contentsline {subsection}{\numberline {2.6}Techniki tworzenia aplikacji}{5}{}%
+\contentsline {subsection}{\numberline {2.7}REST API}{5}{}%
+\contentsline {subsection}{\numberline {2.8}Projektowanie systemu informatycznego}{5}{}%
+\contentsline {section}{\numberline {3}Narzędzia i technologie wybrane do realizacji projektu}{5}{}%
+\contentsline {subsection}{\numberline {3.1}Node.js}{5}{}%
+\contentsline {subsection}{\numberline {3.2}React.js}{5}{}%
+\contentsline {subsection}{\numberline {3.3}TypeScript}{5}{}%
+\contentsline {subsection}{\numberline {3.4}JavaScript}{5}{}%
+\contentsline {subsection}{\numberline {3.5}Wykorzystane najistotniejsze bibliotekih}{5}{}%
+\contentsline {subsection}{\numberline {3.6}MongoDB}{5}{}%
+\contentsline {section}{\numberline {4}Proces tworzenia aplikacji}{5}{}%
+\contentsline {section}{\numberline {5}Podsumowanie}{5}{}%
+\contentsline {section}{\numberline {6}Możliwości dalszego rozwoju aplikacji}{5}{}%
+\contentsline {section}{\numberline {7}Bibliografia}{5}{}%
+\contentsline {section}{\numberline {8}Spis rysunków}{5}{}%

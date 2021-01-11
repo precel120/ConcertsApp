@@ -1,0 +1,314 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  11 JAN 2021 18:08
+entering extended mode
+**"c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/Praca inżynierska.tex"
+("c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/Praca inżynierska.tex"
+LaTeX2e <2020-10-01> patch level 3
+L3 programming layer <2020-12-07> xparse <2020-03-03> ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size12.clo"
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count177
+\c@section=\count178
+\c@subsection=\count179
+\c@subsubsection=\count180
+\c@paragraph=\count181
+\c@subparagraph=\count182
+\c@figure=\count183
+\c@table=\count184
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty"
+Package: inputenc 2020/08/01 v1.3d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.sty"
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\polski.sty"
+Package: polski 2017/05/04 v1.3.4 Polish language package
+
+   Inputenc package detected. Catcodes not changed.
+   Switching to Polish text encoding and Polish maths fonts.
+("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ot4enc.def"
+File: ot4enc.def 2020/08/10 v2.0s Standard LaTeX file
+Now handling font encoding OT4 ...
+... no UTF-8 mapping file for font encoding OT4
+)
+LaTeX Font Info:    Trying to load font information for OT4+cmr on input line 360.
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmr.fd"
+File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 360.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT4/cmss/m/n on input line 360.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT4/cmr/m/it on input line 360.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT4/cmtt/m/n on input line 360.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT4/cmss/bx/n on input line 360.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT4/cmr/bx/it on input line 360.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `normal' on input line 360.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT4/cmr/m/n on input line 360.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/plm/m/it on input line 360.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/plsy/m/n on input line 360.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/plex/m/n on input line 360.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `bold' on input line 360.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 360.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/plm/b/it on input line 360.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 360.
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpages\pdfpages.sty"
+Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/latex-tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count185
+\calc@Bcount=\count186
+\calc@Adimen=\dimen141
+\calc@Bdimen=\dimen142
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count187
+\calc@Cskip=\skip51
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/eso-pic\eso-pic.sty"
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen143
+\ESO@tempdimb=\dimen144
+)
+\AM@pagewidth=\dimen145
+\AM@pageheight=\dimen146
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpages\pppdftex.def"
+File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box47
+\AM@global@opts=\toks18
+\AM@pagecnt=\count188
+\AM@toc@title=\toks19
+\c@AM@survey=\count189
+\AM@templatesizebox=\box48
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/latex-tools\indentfirst.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.sty"
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count190
+\Gm@cntv=\count191
+\c@Gm@tempcnt=\count192
+\Gm@bindingoffset=\dimen147
+\Gm@wd@mp=\dimen148
+\Gm@odd@mp=\dimen149
+\Gm@even@mp=\dimen150
+\Gm@layoutwidth=\dimen151
+\Gm@layoutheight=\dimen152
+\Gm@layouthoffset=\dimen153
+\Gm@layoutvoffset=\dimen154
+\Gm@dimlist=\toks20
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.cfg")) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backend-pdftex.def"
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count193
+\l__pdf_internal_box=\box49
+) ("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.aux")
+\openout1 = `"Praca inżynierska.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count194
+\scratchdimen=\dimen155
+\scratchbox=\box50
+\nofMPsegments=\count195
+\nofMParguments=\count196
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count197
+\MPscratchDim=\dimen156
+\MPnumerator=\count198
+\makeMPintoPDFobject=\count199
+\everyMPtoPDFconversion=\toks22
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdflscape\pdflscape.sty"
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\lscape.sty"
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 483.69687pt, 28.45274pt)
+* v-part:(T,H,B)=(71.13188pt, 717.00946pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=717.00946pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+
+pdfTeX warning: pdflatex (file c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/strona_tytulowa.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<strona_tytulowa.pdf, id=1, 597.55246pt x 845.07718pt>
+File: strona_tytulowa.pdf Graphic file (type pdf)
+<use strona_tytulowa.pdf>
+Package pdftex.def Info: strona_tytulowa.pdf  used on input line 23.
+(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex (file c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/strona_tytulowa.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: strona_tytulowa.pdf Graphic file (type pdf)
+<use strona_tytulowa.pdf>
+Package pdftex.def Info: strona_tytulowa.pdf  used on input line 23.
+(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex (file c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/strona_tytulowa.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/strona_tytulowa.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<strona_tytulowa.pdf, id=4, page=1, 597.55246pt x 845.07718pt>
+File: strona_tytulowa.pdf Graphic file (type pdf)
+<use strona_tytulowa.pdf, page 1>
+Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+File: strona_tytulowa.pdf Graphic file (type pdf)
+<use strona_tytulowa.pdf, page 1>
+Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
+File: strona_tytulowa.pdf Graphic file (type pdf)
+<use strona_tytulowa.pdf, page 1>
+Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
+File: strona_tytulowa.pdf Graphic file (type pdf)
+<use strona_tytulowa.pdf, page 1>
+Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
+File: strona_tytulowa.pdf Graphic file (type pdf)
+<use strona_tytulowa.pdf, page 1>
+Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
+[1
+
+ <c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/strona_tytulowa.pdf>] ("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.toc"
+LaTeX Font Info:    Trying to load font information for OML+plm on input line 2.
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\omlplm.fd"
+File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Trying to load font information for OMS+plsy on input line 2.
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\omsplsy.fd"
+File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Trying to load font information for OMX+plex on input line 2.
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\omxplex.fd"
+File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <12> on input line 2.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <6> on input line 2.
+)
+\tf@toc=\write3
+\openout3 = `"Praca inżynierska.toc"'.
+
+ [2{C:/Users/Maciej Pracucik/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [3] [4]
+Overfull \vbox (77.42397pt too high) has occurred while \output is active []
+
+ [5] ("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.aux") ) 
+Here is how much of TeX's memory you used:
+ 2880 strings out of 479624
+ 47002 string characters out of 2858460
+ 328377 words of memory out of 3000000
+ 20002 multiletter control sequences out of 15000+200000
+ 411893 words of font info for 47 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 66i,17n,77p,293b,444s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc} <C:\Users\Maciej Pracucik\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk>{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}<C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plsl12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plsl8.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb>
+Output written on "c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.pdf" (5 pages, 233820 bytes).
+PDF statistics:
+ 102 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+
