@@ -7,6 +7,7 @@
 \usepackage{indentfirst}
 \usepackage{geometry}
 \usepackage{setspace}
+\usepackage[hyphens]{url}
 
 \setstretch{1.5}
 
@@ -43,7 +44,7 @@
   płatności online, jedynie podając dane karty kredytowej lub debetowej.\par
   Zakres pracy obejmuję zaprojektowanie i implementację aplikacji klienckiej i serwerowej, przy
   wykorzystaniu, najnowszych i bardzo popularnych na rynku pracy, technologii. Do strony klienckiej
-  został wykorzystany \textit{React}, z koleji do stworzenia serwera użyto \textit{Node.JS}.
+  został wykorzystany React, z koleji do stworzenia serwera użyto Node.JS.
 }
 \subsection{Struktura pracy inżynierskiej}
 {
@@ -82,13 +83,49 @@
   Z Eventim czerpie różnorodność wydarzeń, z koleji z GoingApp przejrzystość interfejsu i bilety w formie, bardzo popularnego kodu QR.
   Metody płatności zostają ograniczone do kart płatniczych: debetowej i kredytowej. Podawane są numer karty, data ważności oraz kod CVV.
 }
-\subsection{Płatności internetowe i ich bezpieczeństwo}
+\subsection{Zakupy internetowe}
 {
-
+  Sklepy internetowe z roku na rok rosną w siłę, przybywa ich liczba w zatrważającym tempie. 
+  Aż 73\% ankietowanych w raporcie przygotowanym przez Gemius Polska\cite{gemius-report} deklaruje kupowanie online i ta forma zakupów cieszy się niezmiennie dobrym 
+  wizerunkiem wśród kupujących. Brak sklepu internetowego stanowi ogromną niekorzyść dla obecnych przedsiębiorców. 
+  Zakupy online charakteryzują się dużo większym wyborem produktów, łatowścią w porównywaniu ofert czy też łatowścią w znalezieniu interesujących produktów. 
+  Lecz, to nie z wyżej wymienionych powodów, sklepy w sieci cieszą sie taką popularnością.
+  Wśród najczęściej wymienianych powodów są: dostępność przez całą dobę (aż 82\% wybrało ten powód), brak konieczności wyjazdu do sklepu - 78\%, 
+  nieograniczony czas wyboru - 72\% oraz atrakcyjniejsze ceny niż w sklepach tradycyjnych - 71\%.\\
+  Niestety taka forma zakupów ma też swoje słabe strony, najpopularniejszymi
+  wymienianymi, napotkanymi problemami są: wysokie koszta dostawy, długi czas oczekiwania na dostawę, irytujące reklamy produktów, wcześniej poszukiwanych.
+  Również bardzo często wymienianą przeciwnością jest uszkodzona przesyłka w transporcie, wynikać to może ze źle zapakowanej i zabezpieczonej paczkim lub z winy 
+  firmy kurierskiej i jej pracowników.\\
+  Co jednak sprawia, że klienci decydują się na wybór danego portalu na zakupy?\\
+  Najczęściej wybór sklepu pada dzięki kodom rabatowym, dopiero w dalszej kolejności padają hasła takie jak dokładne informacje o warunkach zamówienia,
+  dostępne na stronie dane firmy czy przejrzysta i funkcjonalna strona internetowa. Wydawać by się mogło, że to na te kolejne cechy portali, powinno się w pierwszej kolejności
+  zwracać uwagę, bo to dzięki nim w pierwszej chwili można stwierdzić czy strona jest fałszywa, czy też nie.
 }
-\subsection{Analiza najpopularniejszych internetowych metod płatności}
+\subsection{Analiza najpopularniejszych internetowych metod płatności online} % strona 119 raportu, strona 80 wstep, strona 89 czynniki motywujace do robienia zakupow online
 {
-
+  Najpopularniejszymi metodami płatności w internecie, według raportu "E-commerce w Polsce 2020"\cite{gemius-report} są kolejno:
+  \begin{itemize}
+    \item szybki przelew przez serwis płatności np. payU, przelewy24
+    \item przelew tradycyjny
+    \item płatność kartą płatniczą przy składaniu zamówienia
+    \item płatności mobilne np. BLIK
+  \end{itemize}
+  Nie zostały wymienione płatności pokroju wysyłki za pobraniem, płatności w sklepie przy odbiorze, ponieważ nie są to płatności realizowane online, 
+  a tych dotyczy analiza przedstawiona w niniejszym rozdziale.\\
+  Zdecydowanie nie powinna dziwić obecność szybkich przelewów na pierwszym miejscu tego rankingu. Aż 70\% ankietowanych odpowiedziało, 
+  że choć raz korzystało z tej metody, przy robieniu zakupów przez internet. Cechują się błyskawiczynym czasem realizacji, w przeciwieństwie do tradycyjnych
+  przelewów. Zaledwie 46\% ankietowanych zdecydowało się choć raz na przelew tradycyjny. Różnica jest znaczna, jednakże nie powinna ona dziwić, ponieważ 
+  to oszczędność czasu, poniekąd sprawia, że klienci decydują się na zakupy online w pierwszej kolejności. Przelewy tradycyjne dodatkowo wydłużają czas realizacji 
+  zamówienia, ponieważ ich przetwarzanie odbywa się jedynie w dni robocze, o wyznaczonych godzinach, różnych, w zależności od banku.\\
+  Na płatność kartą decyduje się 40\% zapytanych, jest to dość zaskakujące, zważywszy na fakt, że jest to zdecydowanie jedna z najszybszych metod płatności. 
+  Do jej realizacji niezbędne jest jedynie numer karty, data wygaśnięcia oraz kod CVV. Powodem na dość niską popularność tej metody, mogą być dwie rzeczy, 
+  strach przed podawaniem danych karty, żeby nie zostały skradzione. Inną alternatywą czemu, tak mało klientów sklepów internetowych decyduję się na inne metody, 
+  jest brak karty podczas składania zamówienia. Pierwsza z nich wydaję się być bardziej prawdopodobna, mało kto kupując 
+  produkty przez internet ma akurat przy sobie kartę płatniczą, by odczytać z niej niezbędne liczby. 
+  Zdecydowanie łatwiej jest zalogować się do banku i wykonać przelew czy to tradycyjny czy szybki.\\
+  Dziwić może obecność płatności mobilnych na ostatnim miejscu z zaledwie 35\% wykorzystania. Jest to sposób bardzo wygodny, zważywszy na fakt iż mało kto 
+  nie posiada przy sobie telefonu. Potrzebna jest jeszcze tylko aplikacja banku i można dokonywać dowolnych płatności. W przypadku BLIK-u generowany jest sześcio 
+  cyfrowy ciąg liczb, który wystarczy wpisać w odpowienie pole, zatwierdzić płatność w aplikacji i gotowe.
 }
 \subsection{Bazy danych jako środek przechowywania danych}
 {
@@ -169,6 +206,8 @@
   \bibitem{l2short} T. Oetiker, H. Partl, I. Hyna, E. Schlegl.
     \textsl{Nie za krótkie wprowadzenie do systemu \LaTeX2e}, 2007, dostępny
     online.
+  \bibitem{gemius-report} Raport dla Gemius Polska "E-commerce w Polsce 2020"
+  \url{https://www.gemius.pl/wszystkie-artykuly-aktualnosci/e-commerce-w-polsce-2020.html}
 \end{thebibliography}
 
 \end{sloppypar}
