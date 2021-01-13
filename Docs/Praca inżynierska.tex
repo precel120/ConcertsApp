@@ -129,7 +129,35 @@
 }
 \subsection{Bazy danych jako środek przechowywania danych}
 {
-
+  "Baza danych to zorganizowany zbiór ustrukturyzowanych informacji, czyli danych, zwykle przechowywany w systemie komputerowym w formie elektronicznej. 
+  Bazą danych steruje zwykle system zarządzania bazami danych (DBMS). 
+  Dane i system DBMS oraz powiązane z nimi aplikacje razem tworzą system bazodanowy, często nazywany w skrócie bazą danych.". \cite{oracle-db}
+  Innymi słowy jest to kontener na dane, w dowolnej postaci, mogą to być liczby, ciągi znaków, a nawet zdjęcia czy filmy. Dane te nie są, najczęściej, przetrzymywane
+  lokalnie na komputerach, tylko na serwerach czy w chmurze. \\
+  Dlaczego więc korzysta się z baz danych a nie np. z arkuszy kalkulacyjnych?\\
+  Odpowiedź jest bardzo prosta, arkusze kalkulacyjne nie zostały stworzone do pracy z ogromną ilością danych, przy jednoczesnym dostępie, nawet kilkuset lub więcej użytkowników.
+  Są wręcz idealne do pracy z mniejszą ilościa danych dla jednego lub małej grupy użytkowników, którzy nie potrzebują wielu skomplikowanych funkcji do manipulacji danymi.
+  Bazy danych z koleji, przeznaczone są do pracy z ogromnymi ilościami informacji, umożliwiając dodatkowo jednoczesny dostęp do nich, wielu użytkownikom na raz. 
+  Co więcej praca z bazami danych, charakteryzuje się wysokim bezpieczeństwem i szybkością wykonywanych operacji. Operacje na danych, tworzenie zapytań odbywa się 
+  za pomocą logiki i języka o wysokim stopniu złożoności. Jako przykład może posłużyć, zdecydowanie najpopularniejszy z nich, czyli język zapytań SQL.\\
+  Bazy danych dzielimy, między innymi na:
+  \begin{itemize}
+    \item relacyjne
+    \item hurtownie danych
+    \item NoSQL
+    \item chmurowe
+  \end{itemize}
+  Relacyjne bazy danych zyskały ogromną popularność w latach 80\cite{oracle-db}. Dane zorganizowane są w tabelach, składające się z wierszy i kolumn. Po dziś dzień stanowią 
+  jedne z najpopularniejszych baz danych, jak nie najpopularniejsze, dostępne na rynku. Przykładami relacyjnych baz danych są: MySQL i Microsoft SQL Server.\\
+  Hurtownie danych, inaczej centralne repozytorium danych, to typ bazy danych wykorzystywany do wykonywania zapytań i analizy. 
+  Ma on umożliwić i wspierać działania z zakresu analizy biznesowej, w szczególności analityki. Często operuje na danych historycznych, pochadzących z wielu źródeł. 
+  Jej umiejętności analityczne pozwalają przedsiębiorstwom cenne dane biznesowe, które ułatwiają podejmowanie decyzji.\cite{oracle-warehouse}\\
+  Baza danych NoSQL, inaczej nierelacyjna, cechuje się przechowywaniem danych w nieuporządkowany i częściowo uporządkowanych oraz manipulowanie nimi. Od relacyjnych baz
+  różni je przede wszystkim to, że w relacyjnych mają jasną strukturę organizacji danych. W nierelacyjnych dane, pochodzące z tej samej kolekcji, mogą posiadać 
+  kompletnie różne atrybuty. Szerzej na temat baz NoSQL szerzej zostanie omówione w następnym rodziale.\\
+  Ostatnim typem bardzo popularnym na rynku baz danych są bazy chmurowe. Bazy te charakteryzują się przede wszystkim tym, że dane przetrzymywane są na prywatnej,
+  publicznej lub hybrydowej platformie przetwarzania danych w chmurze. 
+  Najpopularniejszymi bazami w chmurze są Microsoft Azure SQL Database, Oracle Database, Google Cloud SQL oraz Amazon Relational Database Service.
 }
 \subsection{Nierelacyjne bazy danych}
 {
@@ -207,7 +235,11 @@
     \textsl{Nie za krótkie wprowadzenie do systemu \LaTeX2e}, 2007, dostępny
     online.
   \bibitem{gemius-report} Raport dla Gemius Polska "E-commerce w Polsce 2020"
-  \url{https://www.gemius.pl/wszystkie-artykuly-aktualnosci/e-commerce-w-polsce-2020.html}
+    \url{https://www.gemius.pl/wszystkie-artykuly-aktualnosci/e-commerce-w-polsce-2020.html}
+  \bibitem{oracle-db} Co to jest baza danych? Oracle Polska
+    \url{https://www.oracle.com/pl/database/what-is-database/}
+  \bibitem{oracle-warehouse}
+   \url{https://www.oracle.com/pl/database/what-is-a-data-warehouse/}
 \end{thebibliography}
 
 \end{sloppypar}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  12 JAN 2021 20:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  13 JAN 2021 19:38
 entering extended mode
 **"c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/Praca inżynierska.tex"
 ("c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/Praca inżynierska.tex"
@@ -317,31 +317,28 @@ LaTeX Font Info:    External font `plex10' loaded for size
 \tf@toc=\write3
 \openout3 = `"Praca inżynierska.toc"'.
 
- [2{C:/Users/Maciej Pracucik/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [3] [4] [5] [6]
-Overfull \vbox (7.92397pt too high) has occurred while \output is active []
-
- [7]
-LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 210.
+ [2{C:/Users/Maciej Pracucik/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [3] [4] [5] [6] [7] [8]
+LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 238.
  ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmtt.fd"
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-Underfull \hbox (badness 1231) in paragraph at lines 209--211
+Underfull \hbox (badness 1231) in paragraph at lines 237--239
 []\OT4/cmr/m/n/12 Raport dla Ge-mius Pol-ska "E-commerce w Pol-sce 2020" $\OT4/cmtt/m/n/12 https : / / www . gemius . pl /
  []
 
-[8] ("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.aux") ) 
+[9] [10] ("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.aux") ) 
 Here is how much of TeX's memory you used:
- 3419 strings out of 479624
- 56887 string characters out of 2858460
- 340816 words of memory out of 3000000
- 20506 multiletter control sequences out of 15000+200000
+ 3421 strings out of 479624
+ 56916 string characters out of 2858460
+ 340824 words of memory out of 3000000
+ 20508 multiletter control sequences out of 15000+200000
  411652 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,17n,77p,301b,444s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.enc}{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc} <C:\Users\Maciej Pracucik\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plsl12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plsl8.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt12.pfb>
-Output written on "c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.pdf" (8 pages, 245910 bytes).
+Output written on "c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.pdf" (10 pages, 250284 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
+ 120 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
