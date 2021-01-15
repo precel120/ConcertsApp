@@ -35,7 +35,7 @@
   informacji o wydarzeniach z interesującej konsumenta dziedziny, lub odbywającę się w pobliżu.
 \subsection{Problematyka}
 {
-  
+  ?????????????????????????????????????????????????????????????????
 }
 \subsection{Cel i założenia pracy}
 {
@@ -154,14 +154,38 @@
   Jej umiejętności analityczne pozwalają przedsiębiorstwom cenne dane biznesowe, które ułatwiają podejmowanie decyzji.\cite{oracle-warehouse}\\
   Baza danych NoSQL, inaczej nierelacyjna, cechuje się przechowywaniem danych w nieuporządkowany i częściowo uporządkowanych oraz manipulowanie nimi. Od relacyjnych baz
   różni je przede wszystkim to, że w relacyjnych mają jasną strukturę organizacji danych. W nierelacyjnych dane, pochodzące z tej samej kolekcji, mogą posiadać 
-  kompletnie różne atrybuty. Szerzej na temat baz NoSQL szerzej zostanie omówione w następnym rodziale.\\
+  kompletnie różne atrybuty. Szerzej na temat baz NoSQL zostanie omówione w następnym podrodziale.\\
   Ostatnim typem bardzo popularnym na rynku baz danych są bazy chmurowe. Bazy te charakteryzują się przede wszystkim tym, że dane przetrzymywane są na prywatnej,
   publicznej lub hybrydowej platformie przetwarzania danych w chmurze. 
   Najpopularniejszymi bazami w chmurze są Microsoft Azure SQL Database, Oracle Database, Google Cloud SQL oraz Amazon Relational Database Service.
 }
 \subsection{Nierelacyjne bazy danych}
 {
-
+  "Bazy danych NoSQL są zamiennie nazywane „nierelacyjnymi” lub „nie SQL”, aby podkreślić fakt, że potrafią obsłużyć ogromne ilości szybko zmieniających się, 
+  nieustrukturyzowanych danych innymi sposobami niż relacyjna (SQL) baza danych z wierszami i tabelami." \cite{mc-nosql}\\
+  Co jednak wyróżnia bazy typu NoSQL na tle relacyjnych baz danych?\\
+  Ich głównym wyróżnikiem zupełnie inny schemat przechowywania danych. W bazach nierelacyjnych dane nie są przechowywane w tabelach, mogą być dowolnie skalowane, 
+  każdy wiersz może zawierać różne kolumny (atrybuty opisujące dany obiekt), nie jest wymuszana relacja między obiektami.\\
+  Bazy typu SQL są znacząco lepsze jeśli skalowalność zachodzi wertykalnie, a horyzontalnie atrybuty są jasno określone. Nie jest wskazane aby każdy obiekt, z jednej 
+  tabeli, opisany był innymi atrybutami.\\
+  W przypadku prostych obiektów, opisanych małą ilością atrubutów, lepszym wyborem będą bazy typu NoSQL. Z koleji dla bardziej skomplikowanych encji, lepiej wykorzystać 
+  bazy relacyjne, ze względu na ich schludność i uporządkowanie, zdecydowanie łatwiej uniknąć niechcianego bałaganu i błędów.\\
+  Bazy NoSQL dzielimy, ze względu na typ na\cite{agh-nosql}:
+  \begin{itemize}
+    \item Klucz - wartość
+    \item Dokumentowe
+    \item Grafowe
+    \item Kolumnowe
+  \end{itemize}
+  Pierwsze z nich opierają się na kolekcji słowników, w których z kluczem powiązane są wartości różnych atrybutów encji. Dodatkowo wykorzystuje się funckje haszujące 
+  do przyspieszenia odczytu. Jako przykłady mogą posłużyć: Windows Azure Table Storage oraz Amazon SimpleDB.\\
+  Bazy dokumentowe stosuje się do przechowywania dokumentów posiadających różne atrybuty oraz mają możliwość zagnieżdżania jednych dokumentów w drugie. Przykładem 
+  wymienionego typu baz jest wykorzystane przy implementacji projektu baza MongoDB.\\
+  Bazy grafowe oparte są na grafach i algorytmach grafowych. Każdy obiekt jest innym węzłem w grafie, a relacje między nimi to krawędzie. Przykłady to: Titan, Giraph.
+  Ostatnim typem baz nierelacyjnych są bazy kolumnowe. Oparte są na architekturze hybrydowej, wykorzystują techniki i podejści relacyjnej bazy oraz bazy klucz-wartość 
+  do przechowywania schematów danych. Przykładem takiej bazy jest Cassandra.\\
+  Podsumowując bazy nierelacyjne lepiej sprawdzają się przy małej ilości atrybutów, łatwiej uniknąć bałaganu, dlatego też to właśnie nierelacyjna baza danych została wybrana 
+  do realizacji projektu, a dokładniej MongoDB. O tym dlaczego akurat MongoDB, zostanie przedstawione w następnym rodziale 3.5.
 }
 \subsection{Techniki tworzenia aplikacji}
 {
@@ -203,6 +227,10 @@
 {
 
 }
+\subsection{Mailtrap}
+{
+
+}
 }
 
 \section{Proces tworzenia aplikacji}
@@ -222,25 +250,28 @@
 
 \section{Bibliografia}
 {
+  \begin{thebibliography}{0}
+    \bibitem{l2short} T. Oetiker, H. Partl, I. Hyna, E. Schlegl.
+      \textsl{Nie za krótkie wprowadzenie do systemu \LaTeX2e}, 2007, dostępny
+      online.
+    \bibitem{gemius-report} Raport dla Gemius Polska "E-commerce w Polsce 2020"
+      \url{https://www.gemius.pl/wszystkie-artykuly-aktualnosci/e-commerce-w-polsce-2020.html}
+    \bibitem{oracle-db} Co to jest baza danych? Oracle Polska
+      \url{https://www.oracle.com/pl/database/what-is-database/}
+    \bibitem{oracle-warehouse} Co to jest hurtownia danych? Oracle Polska
+     \url{https://www.oracle.com/pl/database/what-is-a-data-warehouse/}
+    \bibitem{mc-nosql} Baza danych NoSQL — co to jest NoSQL?
+      \url{https://azure.microsoft.com/pl-pl/overview/nosql-database/}
+    \bibitem{agh-nosql} Adrian Horzyk
+      \textsl{NIERELACYJNE BAZY DANYCH – NoSQL I ASOCJACYJNE STRUKTURY DANYCH}, dostępny online
 
+  \end{thebibliography}
 }
 
 \section{Spis rysunków}
 {
 
 }
-
-\begin{thebibliography}{0}
-  \bibitem{l2short} T. Oetiker, H. Partl, I. Hyna, E. Schlegl.
-    \textsl{Nie za krótkie wprowadzenie do systemu \LaTeX2e}, 2007, dostępny
-    online.
-  \bibitem{gemius-report} Raport dla Gemius Polska "E-commerce w Polsce 2020"
-    \url{https://www.gemius.pl/wszystkie-artykuly-aktualnosci/e-commerce-w-polsce-2020.html}
-  \bibitem{oracle-db} Co to jest baza danych? Oracle Polska
-    \url{https://www.oracle.com/pl/database/what-is-database/}
-  \bibitem{oracle-warehouse}
-   \url{https://www.oracle.com/pl/database/what-is-a-data-warehouse/}
-\end{thebibliography}
 
 \end{sloppypar}
 \end{document}
