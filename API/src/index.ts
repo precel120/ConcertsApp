@@ -7,6 +7,7 @@ import { toDataURL } from "qrcode";
 import { env } from "./config/keys";
 import Ticket from "./models/Ticket";
 import Event from "./models/Event";
+import StatusError from "./StatusError";
 
 const stripe = new Stripe(env.stripeSecretKey, { apiVersion: "2020-08-27" });
 
@@ -29,7 +30,18 @@ const app = express();
 app.use(express.static("public"));
 app.use(express.json());
 
-// TODO Check if proper Status Codes
+const findEvent = async (id: string, next: express.NextFunction) => {
+  let eventFound: any;
+  await Event.findById(id, (error: any, result: any) => {
+    if (!error) eventFound = result;
+    else {
+      let err = new StatusError("No event found", 404);
+      return next(err);
+    }
+  });
+  return eventFound;
+};
+
 app.post(
   "/api/tickets",
   [
@@ -52,88 +64,106 @@ app.post(
         /^((?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w))$/
       ),
   ],
-  async (req: any, res: any) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      res.status(400).json({ errors: errors.array() });
-      return;
-    }
-
-    const { id, email, firstName, lastName, phoneNumber } = req.body;
-
-    let eventFound: any;
-    const event = await Event.findById(id, (error, result) => {
-      if (!error) eventFound = result;
-      else {
-        res.status(404).send("No event found");
-        return;
+  async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        let err = new StatusError("Error while validating body", 400);
+        return next(err);
       }
-    });
 
-    Ticket.find({ eventId: event?.id }, (error, tickets) => {
-      if (!error) {
-        if (event?.toJSON().maxTicketsAmount - 1 < tickets.length) {
-          res.status(403).send("No tickets left");
-          return;
+      const { id, email, firstName, lastName, phoneNumber } = req.body;
+
+      const event = await findEvent(id, next);
+
+      Ticket.find({ eventId: event.id }, async (error, tickets) => {
+        if (!error) {
+          if (event?.toJSON().maxTicketsAmount - 1 < tickets.length) {
+            let err = new StatusError("No tickets left", 403);
+            return next(err);
+          }
+        } else {
+          let err = new StatusError("No tickets found", 404);
+          return next(err);
         }
-      } else res.status(404).send("No tickets found");
-    });
+        const paymentIntent = await stripe.paymentIntents.create({
+          amount: event.ticketPrice, // NEEDS TO BE ABOVE SOME VALUE!!!!!!!
+          currency: "pln",
+          payment_method_types: ["card"],
+          receipt_email: email,
+          metadata: { integration_check: "accept a payment" },
+        });
+        if (!paymentIntent) {
+          let err = new StatusError("Creating payment intent failed", 400);
+          return next(err);
+        }
 
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: eventFound.ticketPrice, // NEEDS TO BE ABOVE SOME VALUE!!!!!!!
-      currency: "pln",
-      payment_method_types: ["card"],
-      receipt_email: email,
-      metadata: { integration_check: "accept a payment" },
-    });
+        const ticket = new Ticket({
+          email: email.trim(),
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          phoneNumber: phoneNumber.trim(),
+          eventId: event.id,
+          purchaseDate: new Date(),
+        });
+        ticket.save((error) => {
+          if (error) {
+            let err = new StatusError("Error while saving to DB", 500);
+            return next(err);
+          }
+        });
 
-    const ticket = new Ticket({
-      email: email.trim(),
-      firstName: firstName.trim(),
-      lastName: lastName.trim(),
-      phoneNumber: phoneNumber.trim(),
-      eventId: eventFound.id,
-      purchaseDate: new Date(),
-    });
-    ticket.save((error) => {
-      if (error) {
-        res.status(500).send("Ticket cannot be added to database");
-        return;
-      }
-    });
+        const qr = await toDataURL(ticket.id);
 
-    const qr = await toDataURL(ticket.id);
+        if (!qr) {
+          let err = new StatusError("Error while creating QR Code", 400);
+          return next(err);
+        }
 
-    const mailTemplate = `
-    <h1>Hello ${firstName} ${lastName}</h1>
-    <p>Thanks for buying ticket for ${eventFound.nameOfEvent}, in ${eventFound.place}, taking place on ${eventFound.dateOfEvent}</p>
-    <img src="${qr}">
-    `;
+        const mailTemplate = `
+        <h1>Hello ${firstName} ${lastName}</h1>
+        <p>Thanks for buying ticket for ${event.nameOfEvent}, in ${event.place}, taking place on ${event.dateOfEvent}</p>
+        <img src="${qr}">
+        `;
 
-    let message = {
-      from: env.email,
-      to: email,
-      subject: `Ticket for ${eventFound.nameOfEvent}`,
-      html: mailTemplate,
-    };
-    transporter.sendMail(message, (error, info) => {
-      if (error) {
-        res.status(500).send("Error while trying to send mail");
-        return;
-      } else console.log("Mail sent:", info.response);
-    });
+        const message = {
+          from: env.email,
+          to: email,
+          subject: `Ticket for ${event.nameOfEvent}`,
+          html: mailTemplate,
+        };
+        transporter.sendMail(message, (error, info) => {
+          if (error) {
+            let err = new StatusError("Error while sending mail", 500);
+            return next(err);
+          } else console.log("Mail sent:", info.response);
+        });
 
-    res.status(200).send(paymentIntent.client_secret);
+        return res.status(200).send(paymentIntent.client_secret);
+      });
+    } catch (error) {
+      next(error);
+    }
   }
 );
 
-app.get("/api/events", (req, res) => {
+app.get("/api/events", (req: express.Request, res: express.Response) => {
   Event.find({}, (error, events) => {
     if (!error) {
       const eventsMap = events.slice();
       res.status(200).send(eventsMap);
     } else res.status(404).send("Couldn't find events");
   });
+});
+
+app.get("api/events/:id", (req: express.Request, res: express.Response) => {
+  res.status(200).send("Test");
+});
+
+app.use(function (err: any, req: express.Request, res: express.Response, next: express.NextFunction) {
+  console.error(err.message);
+  if (!err.statusCode) err.statusCode = 500;
+  res.status(err.statusCode).send(err.message);
 });
 
 const PORT = process.env.PORT || 5000;
