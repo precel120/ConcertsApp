@@ -146,8 +146,7 @@ app.post("/api/tickets", [
 app.get("/api/events", (req, res) => {
     Event_1.default.find({}, (error, events) => {
         if (!error) {
-            const eventsMap = events.slice();
-            return res.status(200).send(eventsMap);
+            return res.status(200).send(events.slice());
         }
         else
             return res.status(404).send("Couldn't find events");

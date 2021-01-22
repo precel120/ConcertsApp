@@ -7,16 +7,6 @@ import Root from "./views/Root/Root";
 import SuccessPage from "./views/SuccessPage/SuccessPage";
 import EventPage from "./views/EventPage/EventPage";
 
-type EventPageProps = {
-  imageUrl?: string;
-  nameOfEvent: string;
-  dateOfEvent: Date;
-  place: string;
-  longDescription: string;
-  type: string;
-  ticketPrice: number;
-}
-
 const App = () => {
   return (
     <div>

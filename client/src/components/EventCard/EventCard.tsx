@@ -58,7 +58,7 @@ const EventCard = ({
             {place}
           </Typography>
           <Typography variant="h6" component="h3">
-            {dateOfEvent}
+            {dateOfEvent.toLocaleDateString()}
           </Typography>
           <Typography variant="body2" component="p">
             {description}

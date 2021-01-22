@@ -32,7 +32,7 @@ const Root = () => {
   const { searchPhrase, eventType } = useSelector(
     (state: RootState) => state.navbar
   );
-  
+
   useEffect(() => {
     const fetchData = async () => {
       const { status, data } = await axios.get("/api/events");
@@ -84,7 +84,7 @@ const Root = () => {
             imageUrl={imageUrl}
             nameOfEvent={nameOfEvent}
             place={place}
-            dateOfEvent={dateOfEvent}
+            dateOfEvent={new Date(dateOfEvent)}
             description={description}
             longDescription={longDescription}
             type={type}

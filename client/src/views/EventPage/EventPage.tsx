@@ -40,7 +40,7 @@ const EventPage = (props: any) => {
     } catch (err) {
       setErrorOccurred(true);
     }
-  }, [id, setTicketsLeftClient]);
+  }, [dateOfEvent, id, setTicketsLeftClient]);
 
   return (
     <>
@@ -54,7 +54,7 @@ const EventPage = (props: any) => {
         {place}
       </Typography>
       <Typography variant="h6" component="h3">
-        {dateOfEvent}
+        {dateOfEvent.toLocaleDateString()}
       </Typography>
       <Typography variant="body2" component="p">
         {longDescription}
