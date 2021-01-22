@@ -32,13 +32,16 @@ app.use(express.json());
 
 const findEvent = async (id: string, next: express.NextFunction) => {
   let eventFound: any;
-  await Event.findById(id, (error: any, result: any) => {
-    if (!error) eventFound = result;
-    else {
-      let err = new StatusError("No event found", 404);
-      return next(err);
+  await Event.findById(
+    id,
+    (error: mongoose.CallbackError, result: mongoose.Document<any | null>) => {
+      if (!error) eventFound = result;
+      else {
+        let err = new StatusError("No event found", 404);
+        return next(err);
+      }
     }
-  });
+  );
   return eventFound;
 };
 
@@ -64,7 +67,11 @@ app.post(
         /^((?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w))$/
       ),
   ],
-  async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+  async (
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+  ) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -151,16 +158,38 @@ app.get("/api/events", (req: express.Request, res: express.Response) => {
   Event.find({}, (error, events) => {
     if (!error) {
       const eventsMap = events.slice();
-      res.status(200).send(eventsMap);
-    } else res.status(404).send("Couldn't find events");
+      return res.status(200).send(eventsMap);
+    } else return res.status(404).send("Couldn't find events");
   });
 });
 
-app.get("api/events/:id", (req: express.Request, res: express.Response) => {
-  res.status(200).send("Test");
-});
+//Get for how many tickets are left,NOT get for event by id
+app.get(
+  "/api/events/:id",
+  async (
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+  ) => {
+    const id = req.params.id;
+    const event = await findEvent(id, next);
+    Ticket.find({ eventId: id }, async (error, tickets) => {
+      if (error) {
+        let err = new StatusError("No tickets found", 404);
+        return next(err);
+      }
+      const ticketsLeft = event?.toJSON().maxTicketsAmount - tickets.length;
+      res.status(200).send({event, ticketsLeft});
+    });
+  }
+);
 
-app.use(function (err: any, req: express.Request, res: express.Response, next: express.NextFunction) {
+app.use(function (
+  err: any,
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction
+) {
   console.error(err.message);
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);

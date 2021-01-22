@@ -147,15 +147,25 @@ app.get("/api/events", (req, res) => {
     Event_1.default.find({}, (error, events) => {
         if (!error) {
             const eventsMap = events.slice();
-            res.status(200).send(eventsMap);
+            return res.status(200).send(eventsMap);
         }
         else
-            res.status(404).send("Couldn't find events");
+            return res.status(404).send("Couldn't find events");
     });
 });
-app.get("api/events/:id", (req, res) => {
-    res.status(200).send("Test");
-});
+//Get for how many tickets are left,NOT get for event by id
+app.get("/api/events/:id", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const id = req.params.id;
+    const event = yield findEvent(id, next);
+    Ticket_1.default.find({ eventId: id }, (error, tickets) => __awaiter(void 0, void 0, void 0, function* () {
+        if (error) {
+            let err = new StatusError_1.default("No tickets found", 404);
+            return next(err);
+        }
+        const ticketsLeft = (event === null || event === void 0 ? void 0 : event.toJSON().maxTicketsAmount) - tickets.length;
+        res.status(200).send({ event, ticketsLeft });
+    }));
+}));
 app.use(function (err, req, res, next) {
     console.error(err.message);
     if (!err.statusCode)
