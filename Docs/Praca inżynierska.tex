@@ -8,6 +8,9 @@
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage[hyphens]{url}
+\usepackage{biblatex}
+
+\addbibresource{bibliography.bib}
 
 \setstretch{1.5}
 
@@ -250,22 +253,7 @@
 
 \section{Bibliografia}
 {
-  \begin{thebibliography}{0}
-    \bibitem{l2short} T. Oetiker, H. Partl, I. Hyna, E. Schlegl.
-      \textsl{Nie za krótkie wprowadzenie do systemu \LaTeX2e}, 2007, dostępny
-      online.
-    \bibitem{gemius-report} Raport dla Gemius Polska "E-commerce w Polsce 2020"
-      \url{https://www.gemius.pl/wszystkie-artykuly-aktualnosci/e-commerce-w-polsce-2020.html}
-    \bibitem{oracle-db} Co to jest baza danych? Oracle Polska
-      \url{https://www.oracle.com/pl/database/what-is-database/}
-    \bibitem{oracle-warehouse} Co to jest hurtownia danych? Oracle Polska
-     \url{https://www.oracle.com/pl/database/what-is-a-data-warehouse/}
-    \bibitem{mc-nosql} Baza danych NoSQL — co to jest NoSQL?
-      \url{https://azure.microsoft.com/pl-pl/overview/nosql-database/}
-    \bibitem{agh-nosql} Adrian Horzyk
-      \textsl{NIERELACYJNE BAZY DANYCH – NoSQL I ASOCJACYJNE STRUKTURY DANYCH}, dostępny online
-
-  \end{thebibliography}
+  \printbibliography
 }
 
 \section{Spis rysunków}
