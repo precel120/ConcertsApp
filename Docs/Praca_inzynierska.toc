@@ -22,32 +22,32 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.6}Techniki tworzenia aplikacji}{9}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.7}REST API}{11}{}%
+\contentsline {subsection}{\numberline {2.7}REST API}{10}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.8}Projektowanie systemu informatycznego}{11}{}%
+\contentsline {subsection}{\numberline {2.8}Projektowanie systemu informatycznego}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Narzędzia i technologie wybrane do realizacji projektu}{11}{}%
+\contentsline {section}{\numberline {3}Narzędzia i technologie wybrane do realizacji projektu}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Node.js}{11}{}%
+\contentsline {subsection}{\numberline {3.1}Node.js}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}React.js}{11}{}%
+\contentsline {subsection}{\numberline {3.2}React.js}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}TypeScript}{11}{}%
+\contentsline {subsection}{\numberline {3.3}TypeScript}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}JavaScript}{11}{}%
+\contentsline {subsection}{\numberline {3.4}JavaScript}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5}Wykorzystane najistotniejsze biblioteki}{11}{}%
+\contentsline {subsection}{\numberline {3.5}Wykorzystane najistotniejsze biblioteki}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6}MongoDB}{11}{}%
+\contentsline {subsection}{\numberline {3.6}MongoDB}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.7}Mailtrap}{11}{}%
+\contentsline {subsection}{\numberline {3.7}Mailtrap}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Proces tworzenia aplikacji}{11}{}%
+\contentsline {section}{\numberline {4}Proces tworzenia aplikacji}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Podsumowanie}{11}{}%
+\contentsline {section}{\numberline {5}Podsumowanie}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Możliwości dalszego rozwoju aplikacji}{11}{}%
+\contentsline {section}{\numberline {6}Możliwości dalszego rozwoju aplikacji}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Bibliografia}{11}{}%
+\contentsline {section}{\numberline {7}Bibliografia}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Spis rysunków}{12}{}%
+\contentsline {section}{\numberline {8}Spis rysunków}{13}{}%

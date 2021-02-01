@@ -2353,6 +2353,8 @@
     <bcf:citekey order="7">agh-nosql</bcf:citekey>
     <bcf:citekey order="8">spa-conference</bcf:citekey>
     <bcf:citekey order="9">mc-spa</bcf:citekey>
+    <bcf:citekey order="10">mc-rest</bcf:citekey>
+    <bcf:citekey order="11">mc-rest</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

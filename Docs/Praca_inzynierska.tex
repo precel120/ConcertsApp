@@ -225,7 +225,32 @@
 }
 \subsection{REST API}
 {
-
+  REST oznacza w skrócie Representational State Transfer, jest to architektura zaproponowana przez Roya Fieldinga, jako nowe podejście do projektowania 
+  usług internetowych. Architektura ta jest niezależna od wszelkich podstawowych protokołów, w tym HTTP. Jednak w najbardziej typowych implementacjach REST 
+  protokół HTTP pełni funkcję protokołu aplikacji.\cite{mc-rest}
+  Architektura REST oparta jest na kilku głównych zasadach, oto 6 z najważniejszych\cite{mc-rest}:
+  \begin{itemize}
+    \item Interfejsy API są oparte na zasobach - dowolnym obiekcie, danych lub usłudze, które są dostępne dla klienta
+    \item Zasób ma identyfikator URI służący do unikatowej identyfikacji tego zasobu
+    \item Interakcja z usługą odbywa się poprzez wymianę reprezentacji zasobów. Najpopularniejszym formatem wymiany danych jest JSON.
+    \item Do wykonywania operacji na zasobach używa się standardowych zapytań HTTP, najczęściej używane operacje to GET, POST, PUT, PATCH i DELETE.
+    \item Interfejsy API REST korzystają z bezstanowego modelu żądań. Każde zapytanie do serwera musi posiadać niezbędne informacje do zrozumienia zapytania. Stan sesji jest przetrzymywany tylko i wyłącznie po stronie klienta.
+    \item Interfejsy API REST są sterowane za pomocą hipermedialnych linków, zawartych w reprezentacji.
+  \end{itemize}
+  Najpopularniejszymi metodami do operacji na zasobach, jak zostało wyżej wymienione są:
+  \begin{itemize}
+    \item GET - pobiera reprezentację danego zasobu np. strona potrzebuje listę wszystkich produktów dostępnych do zakupu na stronie
+    \item POST - tworzy nowy zasób, np. użytkownik rejestruje się na danej stronie internetowej i przy kliknięciu "ZAREJESTRUJ" wysyłane jest zapytanie POST, o dodaniu nowego użytkownika do bazy danych.
+    \item PUT - tworzy zasób lub aktualizuje istniejący
+    \item PATCH - wykonuje częściową aktualizację zasobu, np. użytkownik zmienia adres zamieszkania, podany wcześniej
+    \item DELETE - usuwa zasób
+  \end{itemize}
+  W zależności od podanego URI, może zostać zwrócony zasób w formie kolekcji lub pojedynczego elementu. 
+  Przykładowo podając URI \url{https://adventure-works.com/orders}, dla metody GET uzyskamy listę wszystkich zamówień. 
+  Z koleji podając URI \url{https://adventure-works.com/orders/1} uzyskamy pojedyncze zamówienie, w zależności od implementacji API, np. o id 1.
+  Każda metoda będzie zachowywać się podobnie dla podanych wyżej URI, z tą różnicą, że przykładowo metoda POST zamiast pobrać listę wszystkich zamówień, utworzy nowe zamówienie, 
+  metoda PUT zaktualizuje wszystkie zamówienia, w zadany sposób. \\
+  Architektura REST API cieszy się ogromną popularnością, między innymi z tego powodu została wybrana do stworzenia aplikacji.
 }
 \subsection{Projektowanie systemu informatycznego}
 {

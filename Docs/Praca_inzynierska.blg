@@ -1,15 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'Praca_inzynierska.blg'
-[164] biber-MSWIN64:340> INFO - === 
-[210] Biber.pm:415> INFO - Reading 'Praca_inzynierska.bcf'
-[379] Biber.pm:952> INFO - Found 7 citekeys in bib section 0
-[404] Biber.pm:4340> INFO - Processing section 0
-[421] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[495] bibtex.pm:1689> INFO - LaTeX decoding ...
-[520] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
-[620] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[620] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[620] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[620] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[635] bbl.pm:654> INFO - Writing 'Praca_inzynierska.bbl' with encoding 'UTF-8'
-[640] bbl.pm:757> INFO - Output to Praca_inzynierska.bbl
+[181] biber-MSWIN64:340> INFO - === 
+[229] Biber.pm:415> INFO - Reading 'Praca_inzynierska.bcf'
+[398] Biber.pm:952> INFO - Found 8 citekeys in bib section 0
+[423] Biber.pm:4340> INFO - Processing section 0
+[441] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[500] bibtex.pm:1689> INFO - LaTeX decoding ...
+[512] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
+[611] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[611] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[611] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[611] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[628] bbl.pm:654> INFO - Writing 'Praca_inzynierska.bbl' with encoding 'UTF-8'
+[633] bbl.pm:757> INFO - Output to Praca_inzynierska.bbl

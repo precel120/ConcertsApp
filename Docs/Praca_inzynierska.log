@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  1 FEB 2021 16:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  1 FEB 2021 17:36
 entering extended mode
 **"c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/Praca_inzynierska.tex"
 ("c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/Praca_inzynierska.tex"
@@ -563,40 +563,41 @@ LaTeX Font Info:    External font `plex10' loaded for size
 \openout4 = `Praca_inzynierska.toc'.
 
  [2{C:/Users/Maciej Pracucik/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [3] [4] [5] [6] [7] [8] [9] [10]
+LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 249.
+ ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmtt.fd"
+File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+) [11]
 
 Package biblatex Warning: No driver for entry type 'file'.
-(biblatex)                Using fallback driver on input line 285.
+(biblatex)                Using fallback driver on input line 310.
 
-LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 285.
-("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmtt.fd"
-File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
-)
-Underfull \hbox (badness 1590) in paragraph at lines 286--286
+
+Underfull \hbox (badness 1590) in paragraph at lines 311--311
 []\OT4/cmr/m/n/12 Adrian Ho-rzyk. \OT4/cmr/m/it/12 NIE-RE-LA-CYJ-NE BA-ZY DA-NYCH { No-SQL I ASO-CJA-CYJ-NE
  []
 
-[11]
+[12]
 
 Package biblatex Warning: No driver for entry type 'file'.
-(biblatex)                Using fallback driver on input line 285.
+(biblatex)                Using fallback driver on input line 310.
 
-[12] ("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.aux")
+[13] ("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.aux")
 Package logreq Info: Writing requests to 'Praca_inzynierska.run.xml'.
 \openout1 = `Praca_inzynierska.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10590 strings out of 479624
- 199347 string characters out of 2858460
- 899542 words of memory out of 3000000
- 27626 multiletter control sequences out of 15000+200000
+ 10593 strings out of 479624
+ 199444 string characters out of 2858460
+ 899585 words of memory out of 3000000
+ 27629 multiletter control sequences out of 15000+200000
  411603 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,17n,77p,814b,1405s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.enc}{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plsc.enc}{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc} <C:\Users\Maciej Pracucik\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk>{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}<C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plcsc10.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt12.pfb>
-Output written on "c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.pdf" (12 pages, 264295 bytes).
+{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plsc.enc}{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.enc} <C:\Users\Maciej Pracucik\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk>{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}<C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plcsc10.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt12.pfb>
+Output written on "c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.pdf" (13 pages, 267666 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
+ 132 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

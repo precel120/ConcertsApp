@@ -5,7 +5,6 @@
 [X] walidacja po stronie klienta
 [X] wysyłanie maili
 [X] generowanie kodów QR
-[] Bilety w bazie danych tworza sie pomimo błędu
-[] Projekt struktury maila i jego implementacja
+[X] Bilety w bazie danych tworza sie pomimo błędu
 [] Projekt wizualny strony i logo
 [] wdrożenie wizualnego projektu

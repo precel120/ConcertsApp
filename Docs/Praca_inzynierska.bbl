@@ -126,6 +126,31 @@
       \verb https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/choose-between-traditional-web-and-single-page-apps
       \endverb
     \endentry
+    \entry{mc-rest}{article}{}
+      \name{author}{1}{}{%
+        {{hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{3}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Projekt internetowego interfejsu API}
+      \verb{urlraw}
+      \verb https://docs.microsoft.com/pl-pl/azure/architecture/best-practices/api-design
+      \endverb
+      \verb{url}
+      \verb https://docs.microsoft.com/pl-pl/azure/architecture/best-practices/api-design
+      \endverb
+    \endentry
     \entry{gemius-report}{file}{}
       \name{author}{1}{}{%
         {{hash=6152fdd832edf7edcc8317182ef5b1f6}{%
