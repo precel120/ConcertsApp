@@ -8,19 +8,20 @@
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage[hyphens]{url}
-\usepackage{biblatex}
+\usepackage[style=numeric]{biblatex}
+\usepackage{array}
 
 \addbibresource{bibliography.bib}
 
 \setstretch{1.5}
 
- \geometry{
- a4paper,
- left=30mm,
- top=25mm,
- right=10mm,
- bottom=20mm
- }
+\geometry{
+  a4paper,
+  left=30mm,
+  top=25mm,
+  right=10mm,
+  bottom=20mm
+}
 
 \begin{document}
 \begin{sloppypar}
@@ -192,7 +193,35 @@
 }
 \subsection{Techniki tworzenia aplikacji}
 {
-
+  Przy tworzeniu aplikacji webowych istnieją dwa podejścia, mówiące o tym jak należy tworzyć aplikację. 
+  Są to Single-Page Application (SPA) oraz Multiple-Page Application (MPA). \\
+  SPA jest aplikacją webową lub stroną internetową, która nie przeładowuje swoich stron za pomocą serwera oraz interakcja z użytkownikiem zachodzi, 
+  za pomocą dynamicznego zmieniania aktualnie wyświetlanej strony. Kod źródłowy strony jest zapisywany tylko przy pierwszym załadowaniu, oraz 
+  dodatkowe zasoby są ładowane, tylko wtedy kiedy jest to wymagane, w zależności od zachowania użytkownika. 
+  SPA są interaktywne oraz przyjazne użytkownikowi, są bardziej responsywne niż tradycyjne strony, czyli MPA, ponieważ ładują się tylko raz i ich komunikacja z serwerem,
+  jest ograniczona do minimum. \cite{spa-conference} \\
+  MPA jest klasycznym podejściem do tworzenia stron internetowych. 
+  Praktycznie każde kliknięcie, w dowolną rzecz na stronie, wysyła zapytanie do serwera o wyrenderowanie nowej strony w przeglądarce.
+  Każda strona jest innym plikiem, nie ma możliwości jak w SPA, że renderowany jest tylko wymagany komponent. Cała strona musi być ponownie rerenderowana. \\
+  Kiedy należy używać jakiego podejścia? \\
+  Microsoft w poradniku do tworzenia aplikacji w .NET, proponują taką tabelkę decyzyjną\cite{mc-spa}:
+  \begin{center}
+    \begin{tabular}{ | m{5cm} | m{5cm}| m{5cm} | } 
+      \hline
+      Factor & Traditional Web App & Single-Page Application \\
+      \hline
+      Required Team Familiarity with JavaScript/TypeScript & Minimal & Required \\
+      \hline
+      Support Browsers without Scripting & Supported & Not Supported \\
+      \hline
+      Minimal Client-Side Application Behavior & Well-Suited & Overkill \\
+      \hline
+      Rich, Complex User Interface Requirements & Limited & Well-Suited \\
+      \hline
+    \end{tabular}
+  \end{center}
+  Do stworzenia aplikacji na potrzeby pracy inżynierskiej zostało wybrane podejście SPA, gwarantuje ono szybsze, przyjemniejsze oraz bardziej responsywne 
+  zachowanie aplikacji dla użytkownika.
 }
 \subsection{REST API}
 {

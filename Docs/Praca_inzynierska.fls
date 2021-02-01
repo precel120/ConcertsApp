@@ -1,7 +1,7 @@
 PWD c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs
 INPUT C:\Users\Maciej Pracucik\AppData\Local\MiKTeX\2.9\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.tex
-OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.log
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.tex
+OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.log
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls
@@ -236,103 +236,17 @@ INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\u
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
-INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.aux
-INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.aux
-INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.aux
-OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.aux
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\grfext\grfext.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\grfext\grfext.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\grfext\grfext.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\grfext\grfext.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\grfext\grfext.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\grfext\grfext.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\grfext\grfext.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\grfext\grfext.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\grfext\grfext.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\grfext\grfext.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\grfext\grfext.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvdefinekeys\kvdefinekeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvdefinekeys\kvdefinekeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvdefinekeys\kvdefinekeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvdefinekeys\kvdefinekeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvdefinekeys\kvdefinekeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvdefinekeys\kvdefinekeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvdefinekeys\kvdefinekeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvdefinekeys\kvdefinekeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvdefinekeys\kvdefinekeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvdefinekeys\kvdefinekeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvdefinekeys\kvdefinekeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pdftexcmds\pdftexcmds.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pdftexcmds\pdftexcmds.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pdftexcmds\pdftexcmds.sty
@@ -344,9 +258,145 @@ INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pdf
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pdftexcmds\pdftexcmds.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pdftexcmds\pdftexcmds.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pdftexcmds\pdftexcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\infwarerr\infwarerr.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\iftex\iftex.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\generic\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-dm.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-dm.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-dm.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-compat.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-compat.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-compat.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\numeric.bbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\numeric.bbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\numeric.bbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\standard.bbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\standard.bbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\standard.bbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\cbx\numeric.cbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\cbx\numeric.cbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\cbx\numeric.cbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.cfg
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.cfg
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.cfg
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.aux
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.aux
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.aux
+OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.aux
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdflscape\pdflscape.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdflscape\pdflscape.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdflscape\pdflscape.sty
@@ -371,13 +421,59 @@ INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graph
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\lscape.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\lscape.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\english.lbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\english.lbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\english.lbx
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse-generic.tex
+OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.bcf
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.bbl
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.bbl
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.bbl
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.bbl
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.bbl
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.bbl
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\strona_tytulowa.pdf
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\strona_tytulowa.pdf
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\strona_tytulowa.pdf
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\strona_tytulowa.pdf
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\strona_tytulowa.pdf
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\strona_tytulowa.pdf
-OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.pdf
+OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.pdf
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\strona_tytulowa.pdf
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\strona_tytulowa.pdf
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\strona_tytulowa.pdf
@@ -412,9 +508,9 @@ INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\strona_tytul
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\strona_tytulowa.pdf
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plr17.tfm
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plbx12.tfm
-INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.toc
-INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.toc
-INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.toc
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.toc
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.toc
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.toc
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plbx12.tfm
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plr8.tfm
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plr6.tfm
@@ -437,30 +533,34 @@ INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polsk
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\omxplex.fd
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\omxplex.fd
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plex10.tfm
-OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.toc
+OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.toc
 INPUT C:\Users\Maciej Pracucik\AppData\Local\MiKTeX\2.9\pdftex\config\pdftex.map
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plr12.tfm
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plbx12.tfm
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\jknappen\ec\tcrm1200.tfm
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plsl12.tfm
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plsl8.tfm
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plti12.tfm
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plcsc10.tfm
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\ot4cmtt.fd
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\ot4cmtt.fd
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\ot4cmtt.fd
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\ot4cmtt.fd
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\pltt12.tfm
-INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca inżynierska.aux
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.aux
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.run.xml
+OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.run.xml
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\enc\dvips\pl\pltt.enc
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\enc\dvips\pl\plsc.enc
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\enc\dvips\pl\plit.enc
+INPUT C:\Users\Maciej Pracucik\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
+INPUT C:\Users\Maciej Pracucik\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\enc\dvips\pl\plrm.enc
-INPUT C:\Users\Maciej Pracucik\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
-INPUT C:\Users\Maciej Pracucik\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plbx12.pfb
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plbx12.pfb
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plcsc10.pfb
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plcsc10.pfb
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plr12.pfb
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plr12.pfb
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plsl12.pfb
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plsl12.pfb
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plsl8.pfb
-INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plsl8.pfb
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plti12.pfb
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\plti12.pfb
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\pltt12.pfb
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\pl\pltt12.pfb
