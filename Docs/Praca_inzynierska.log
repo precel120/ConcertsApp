@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  1 FEB 2021 17:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  3 FEB 2021 13:24
 entering extended mode
 **"c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/Praca_inzynierska.tex"
 ("c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/Praca_inzynierska.tex"
@@ -384,45 +384,52 @@ Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \extratabsurround=\skip74
 \backup@length=\skip75
 \ar@cellbox=\box50
+) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count385
+\float@exts=\toks22
+\float@box=\box51
+\@float@everytoks=\toks23
+\@floatcapt=\box52
 )
-\@quotelevel=\count385
-\@quotereset=\count386
+\@quotelevel=\count386
+\@quotereset=\count387
  ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backend-pdftex.def"
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count387
-\l__pdf_internal_box=\box51
+\l__kernel_color_stack_int=\count388
+\l__pdf_internal_box=\box53
 ) ("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.aux")
 \openout1 = `Praca_inzynierska.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
  ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count388
+\scratchcounter=\count389
 \scratchdimen=\dimen157
-\scratchbox=\box52
-\nofMPsegments=\count389
-\nofMParguments=\count390
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count391
+\scratchbox=\box54
+\nofMPsegments=\count390
+\nofMParguments=\count391
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count392
 \MPscratchDim=\dimen158
-\MPnumerator=\count392
-\makeMPintoPDFobject=\count393
-\everyMPtoPDFconversion=\toks23
+\MPnumerator=\count393
+\makeMPintoPDFobject=\count394
+\everyMPtoPDFconversion=\toks25
 ) ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -493,22 +500,22 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Praca_inzynierska.bbl' found.
  ("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.bbl")
-Package biblatex Info: Reference section=0 on input line 26.
-Package biblatex Info: Reference segment=0 on input line 26.
+Package biblatex Info: Reference section=0 on input line 28.
+Package biblatex Info: Reference segment=0 on input line 28.
 
 
 pdfTeX warning: pdflatex (file c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/strona_tytulowa.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <strona_tytulowa.pdf, id=1, 597.55246pt x 845.07718pt>
 File: strona_tytulowa.pdf Graphic file (type pdf)
 <use strona_tytulowa.pdf>
-Package pdftex.def Info: strona_tytulowa.pdf  used on input line 28.
+Package pdftex.def Info: strona_tytulowa.pdf  used on input line 30.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
 pdfTeX warning: pdflatex (file c:/Users/Maciej Pracucik/Desktop/Repozytoria/ConcertsApp/Docs/strona_tytulowa.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: strona_tytulowa.pdf Graphic file (type pdf)
 <use strona_tytulowa.pdf>
-Package pdftex.def Info: strona_tytulowa.pdf  used on input line 28.
+Package pdftex.def Info: strona_tytulowa.pdf  used on input line 30.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
@@ -519,23 +526,23 @@ pdfTeX warning: pdflatex (file c:/Users/Maciej Pracucik/Desktop/Repozytoria/Conc
 <strona_tytulowa.pdf, id=4, page=1, 597.55246pt x 845.07718pt>
 File: strona_tytulowa.pdf Graphic file (type pdf)
 <use strona_tytulowa.pdf, page 1>
-Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 28.
+Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 30.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 File: strona_tytulowa.pdf Graphic file (type pdf)
 <use strona_tytulowa.pdf, page 1>
-Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 28.
+Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 30.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
 File: strona_tytulowa.pdf Graphic file (type pdf)
 <use strona_tytulowa.pdf, page 1>
-Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 28.
+Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 30.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
 File: strona_tytulowa.pdf Graphic file (type pdf)
 <use strona_tytulowa.pdf, page 1>
-Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 28.
+Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 30.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
 File: strona_tytulowa.pdf Graphic file (type pdf)
 <use strona_tytulowa.pdf, page 1>
-Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 28.
+Package pdftex.def Info: strona_tytulowa.pdf , page1 used on input line 30.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
 [1
 
@@ -563,41 +570,51 @@ LaTeX Font Info:    External font `plex10' loaded for size
 \openout4 = `Praca_inzynierska.toc'.
 
  [2{C:/Users/Maciej Pracucik/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [3] [4] [5] [6] [7] [8] [9] [10]
-LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 249.
+LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 251.
  ("C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmtt.fd"
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
-) [11]
+)
+<./images//model_kaskadowy.png, id=93, 590.95781pt x 198.7425pt>
+File: ./images//model_kaskadowy.png Graphic file (type png)
+<use ./images//model_kaskadowy.png>
+Package pdftex.def Info: ./images//model_kaskadowy.png  used on input line 265.
+(pdftex.def)             Requested size: 435.32422pt x 146.40604pt.
+ [11] [12 <./images//model_kaskadowy.png>] [13]
 
 Package biblatex Warning: No driver for entry type 'file'.
-(biblatex)                Using fallback driver on input line 310.
+(biblatex)                Using fallback driver on input line 342.
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 311--311
+Underfull \hbox (badness 1590) in paragraph at lines 343--343
 []\OT4/cmr/m/n/12 Adrian Ho-rzyk. \OT4/cmr/m/it/12 NIE-RE-LA-CYJ-NE BA-ZY DA-NYCH { No-SQL I ASO-CJA-CYJ-NE
  []
 
-[12]
+[14]
 
 Package biblatex Warning: No driver for entry type 'file'.
-(biblatex)                Using fallback driver on input line 310.
+(biblatex)                Using fallback driver on input line 342.
 
-[13] ("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.aux")
+("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.lof")
+\tf@lof=\write5
+\openout5 = `Praca_inzynierska.lof'.
+
+ [15] ("c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.aux")
 Package logreq Info: Writing requests to 'Praca_inzynierska.run.xml'.
 \openout1 = `Praca_inzynierska.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10593 strings out of 479624
- 199444 string characters out of 2858460
- 899585 words of memory out of 3000000
- 27629 multiletter control sequences out of 15000+200000
+ 10670 strings out of 479624
+ 200778 string characters out of 2858460
+ 900974 words of memory out of 3000000
+ 27696 multiletter control sequences out of 15000+200000
  411603 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,17n,77p,814b,1405s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plsc.enc}{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.enc} <C:\Users\Maciej Pracucik\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk>{C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}<C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plcsc10.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Maciej Pracucik/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt12.pfb>
-Output written on "c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.pdf" (13 pages, 267666 bytes).
+Output written on "c:/Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.pdf" (15 pages, 282559 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
+ 141 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

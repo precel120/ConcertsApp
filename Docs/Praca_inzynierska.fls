@@ -367,6 +367,17 @@ INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\latex-tools\array.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdftex.def
@@ -543,8 +554,18 @@ INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polsk
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\ot4cmtt.fd
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\ot4cmtt.fd
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\pltt12.tfm
+INPUT .\images\\model_kaskadowy.png
+INPUT images\\model_kaskadowy.png
+INPUT .\images\\model_kaskadowy.png
+INPUT .\images\\model_kaskadowy.png
+INPUT .\images\\model_kaskadowy.png
+INPUT .\images\\model_kaskadowy.png
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plti12.tfm
 INPUT C:\Users\Maciej Pracucik\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\pl\plcsc10.tfm
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.lof
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.lof
+INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.lof
+OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.lof
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.aux
 INPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.run.xml
 OUTPUT c:\Users\Maciej Pracucik\Desktop\Repozytoria\ConcertsApp\Docs\Praca_inzynierska.run.xml

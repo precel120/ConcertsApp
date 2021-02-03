@@ -8,7 +8,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3}Struktura pracy inżynierskiej}{3}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Część teoretyczna}{4}{}%
+\contentsline {section}{\numberline {2}Teoria niezbędna do realizacji projektu}{4}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Analiza istniejących portali do promowania i dystrybucji biletów na wydarzenia kulturowe}{4}{}%
 \defcounter {refsection}{0}\relax 
@@ -24,30 +24,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.7}REST API}{10}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.8}Projektowanie systemu informatycznego}{12}{}%
+\contentsline {subsection}{\numberline {2.8}Projektowanie i tworzenie systemu informatycznego}{11}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Narzędzia i technologie wybrane do realizacji projektu}{12}{}%
+\contentsline {section}{\numberline {3}Narzędzia i technologie wybrane do realizacji projektu}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Node.js}{12}{}%
+\contentsline {subsection}{\numberline {3.1}Node.js}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}React.js}{12}{}%
+\contentsline {subsection}{\numberline {3.2}React.js}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}TypeScript}{12}{}%
+\contentsline {subsection}{\numberline {3.3}TypeScript}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}JavaScript}{12}{}%
+\contentsline {subsection}{\numberline {3.4}JavaScript}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5}Wykorzystane najistotniejsze biblioteki}{12}{}%
+\contentsline {subsection}{\numberline {3.5}Wykorzystane najistotniejsze biblioteki}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6}MongoDB}{12}{}%
+\contentsline {subsection}{\numberline {3.6}MongoDB}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.7}Mailtrap}{12}{}%
+\contentsline {subsection}{\numberline {3.7}Mailtrap}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Proces tworzenia aplikacji}{12}{}%
+\contentsline {section}{\numberline {4}Proces tworzenia aplikacji}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Podsumowanie}{12}{}%
+\contentsline {section}{\numberline {5}Podsumowanie}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Możliwości dalszego rozwoju aplikacji}{12}{}%
+\contentsline {section}{\numberline {6}Możliwości dalszego rozwoju aplikacji}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Bibliografia}{12}{}%
+\contentsline {section}{\numberline {7}Bibliografia}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Spis rysunków}{13}{}%
+\contentsline {section}{\numberline {8}Spis rysunków}{15}{}%
