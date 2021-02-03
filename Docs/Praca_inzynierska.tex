@@ -208,19 +208,22 @@
   Kiedy należy używać jakiego podejścia? \\
   Microsoft w poradniku do tworzenia aplikacji w .NET, proponuje poniższą tabelkę decyzyjną\cite{mc-spa}:
   \begin{center}
-    \begin{tabular}{ | m{5cm} | m{5cm}| m{5cm} | } 
-      \hline
-      Factor & Traditional Web App & Single-Page Application \\
-      \hline
-      Required Team Familiarity with JavaScript/TypeScript & Minimal & Required \\
-      \hline
-      Support Browsers without Scripting & Supported & Not Supported \\
-      \hline
-      Minimal Client-Side Application Behavior & Well-Suited & Overkill \\
-      \hline
-      Rich, Complex User Interface Requirements & Limited & Well-Suited \\
-      \hline
-    \end{tabular}
+    \begin{table}
+      \begin{tabular}{ | m{5cm} | m{5cm}| m{5cm} | } 
+        \hline
+        Factor & Traditional Web App & Single-Page Application \\
+        \hline
+        Required Team Familiarity with JavaScript/TypeScript & Minimal & Required \\
+        \hline
+        Support Browsers without Scripting & Supported & Not Supported \\
+        \hline
+        Minimal Client-Side Application Behavior & Well-Suited & Overkill \\
+        \hline
+        Rich, Complex User Interface Requirements & Limited & Well-Suited \\
+        \hline
+      \end{tabular}
+      \caption{\label{tab:decision-table}Tabela decyzyjna wyboru pomiędzy SPA, a MPA.}
+    \end{table}
   \end{center}
   Do stworzenia aplikacji na potrzeby pracy inżynierskiej zostało wybrane podejście SPA, gwarantuje ono szybsze, przyjemniejsze oraz bardziej responsywne 
   zachowanie aplikacji dla użytkownika.
@@ -345,6 +348,11 @@
 \section{Spis rysunków}
 {
   \listoffigures
+}
+
+\section{Spis tabel}
+{
+  \listoftables
 }
 
 \end{sloppypar}
