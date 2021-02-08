@@ -297,11 +297,56 @@
 {
 \subsection{Node.js}
 {
-
+  "Node.JS jest jest wieloplatformowym oprogramowaniem o otwartym kodzie, 
+  które pozwala deweloperom na tworzenie wszelkiego rodzaju oprogramowania w języku JavaScript pracującym po stronie serwera. 
+  Jest to środowisko uruchomieniowe, które działa poza przeglądarką, współpracujące bezpośrednio z systemem operacyjnym. 
+  W ten sposób środowisko Node udostępnia swoim aplikacjom API systemu operacyjnego, w tym dostęp do systemu plików, bibliotek systemowych czy uruchomionych procesów, 
+  w tym serwerów HTTP."\cite{mozilla-node} Wartym wspomnienia jest fakt, że jest oparty na silniku JavaScript Chrome V8.\\ 
+  Zalety jakie niesie ze sobą Node:
+  \begin{itemize}
+    \item wysoka wydajność, został zaprojektowany tak aby optymalizować wydajność i skalowalność aplikacji webowych
+    \item pracując nad kodem po stronie klienta jak i po stronie serwera, poruszamy się w tym samym języku programowania
+    \item dostęp do manadżera pakietów np. Yarn czy NPM, dzięki niemu uzyskuje się dostęp do setek tysięcy przeróżnych pakietów.
+    \item jest przenośny. Można korzystać z niego zarówno na systemie macOS, Linux, jak również Windows.
+    \item Dostęp do ogromnego community, gotowego służyć pomocą.
+  \end{itemize}
+  Node.JS jest bardzo uniwersalnym narzędziem, nie służy jedynie do tworzenia serwerów back endowych dla stron internetowych. Można za jego pomocą tworzyć 
+  zwykłe aplikacje, aplikacje z dziedziny IoT(Internet of Things), posiada nawet pakiety do uczenia maszynowego. Za pomocą Node jesteśmy w stanie wykonać przeróżne rzeczy 
+  ogranicza jedynie znajomość JavaScript oraz własna wyobraźnia. \\
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{most_popular_frameworks.PNG}
+    \caption{Najpopularniejsze frameworki i biblioteki według ankiety Stack Overflow\cite{stack-survey}}
+    \label{fig:backend}
+  \end{figure}
+  Jak zostało zaprezentowane na obrazku \ref{fig:backend}, Node.JS cieszy się ogromną popularnością. Uzyskał 51.9\% na 33 913 ankietowanych, tę grupę stanowili jedynie profesjonalni developerzy.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{most_popular_web_frameworks.PNG}
+    \caption{Najpopularniejsze webowe frameworki według ankiety Stack Overflow\cite{stack-survey}}
+    \label{fig:web-frameworks}
+  \end{figure}
+  Dodatkowo Express, czyli framework do Node.JS, za pomocą, którego został stworzony cały back end projektu, znajduje się na drugim miejscu w rankingu popularności 
+  wśród frameworków back endowych, osiągnął popularność na poziomie 20.9\%. Wyprzedza takie frameworki jak: Java Spring, Flask, Django, Laravel czy Ruby on Rails, jedynie ASP.NET plasuje się wyżej w rankingu. 
 }
 \subsection{React.js}
 {
-
+  "React A JavaScript library for building user interfaces."\cite{react} Tłumacząc na polski, React jest biblioteką do tworzenia interfejsów użytkownika. 
+  React jest oparty na komponentach, każdy komponent może posiadać własny stan i nim zarządzać, korzystając z komponentów można tworzyć bardzo złożone UI. 
+  Sporym plusem Reacta jest fakt, że raz poznany umożliwia również tworzenie aplikacji mobilnych przy wykorzystaniu React Native. Co dodatkowo wyróżnia React 
+  jest własna składnia, zbliżona do XML-a, czyli JSX. Jest to wymieszanie HTML-a i JavaScriptu, możemy dzięki niemu bez najmniejszych przeszkód umieszczać 
+  tagi znane z HTML-a, w kodzie JavaScriptowym, przy renderowaniu komponentów. Dodatkowo własne komponenty, również podczas tworzenia struktury dokumenty, mają 
+  składnię taką jak HTML. \\
+  Kolejnym wyjątkowym aspektem Reacta jest Virtual DOM. Jest to koncept programistyczny gdzie wirtualna reprezentacja UI jest przetrzymywana w pamięci i synchronizowana 
+  z prawdziwym DOM-em. Umożliwia to podawanie UI w jakim stanie ma się znajdować i jakie komponenty mają być wyrenderowane, również upewnia się, że faktyczny DOM odowiada temu stanowi. 
+  Ściagą to z programisty konieczność stworzenia samemu takich elementów jak: obsługę wydarzeń np. kliknięcie przycisku, manualne aktualizowanie DOM-u oraz manipulację atrybutami.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{how_react_works.PNG}
+    \caption{Skrótowa prezentacja działania Reacta}
+    \label{fig:how-react-works}
+  \end{figure}
+  
 }
 \subsection{TypeScript}
 {
@@ -316,10 +361,6 @@
 
 }
 \subsection{MongoDB}
-{
-
-}
-\subsection{Mailtrap}
 {
 
 }
