@@ -311,15 +311,16 @@
     \item Dostęp do ogromnego community, gotowego służyć pomocą.
   \end{itemize}
   Node.JS jest bardzo uniwersalnym narzędziem, nie służy jedynie do tworzenia serwerów back endowych dla stron internetowych. Można za jego pomocą tworzyć 
-  zwykłe aplikacje, aplikacje z dziedziny IoT(Internet of Things), posiada nawet pakiety do uczenia maszynowego. Za pomocą Node jesteśmy w stanie wykonać przeróżne rzeczy 
-  ogranicza jedynie znajomość JavaScript oraz własna wyobraźnia. \\
+  zwykłe aplikacje, aplikacje z dziedziny IoT(Internet of Things), posiada nawet pakiety do uczenia maszynowego. Za pomocą Node jesteśmy w stanie 
+  wykonać przeróżne rzeczy ogranicza jedynie znajomość JavaScript oraz własna wyobraźnia. \\
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{most_popular_frameworks.PNG}
     \caption{Najpopularniejsze frameworki i biblioteki według ankiety Stack Overflow\cite{stack-survey}}
     \label{fig:backend}
   \end{figure}
-  Jak zostało zaprezentowane na obrazku \ref{fig:backend}, Node.JS cieszy się ogromną popularnością. Uzyskał 51.9\% na 33 913 ankietowanych, tę grupę stanowili jedynie profesjonalni developerzy.
+  Jak zostało zaprezentowane na obrazku \ref{fig:backend}, Node.JS cieszy się ogromną popularnością. Uzyskał 51.9\% na 33 913 ankietowanych, 
+  tę grupę stanowili jedynie profesjonalni developerzy.
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{most_popular_web_frameworks.PNG}
@@ -327,7 +328,8 @@
     \label{fig:web-frameworks}
   \end{figure}
   Dodatkowo Express, czyli framework do Node.JS, za pomocą, którego został stworzony cały back end projektu, znajduje się na drugim miejscu w rankingu popularności 
-  wśród frameworków back endowych, osiągnął popularność na poziomie 20.9\%. Wyprzedza takie frameworki jak: Java Spring, Flask, Django, Laravel czy Ruby on Rails, jedynie ASP.NET plasuje się wyżej w rankingu. 
+  wśród frameworków back endowych, osiągnął popularność na poziomie 20.9\%. Wyprzedza takie frameworki jak: Java Spring, Flask, Django, Laravel czy Ruby on Rails, 
+  jedynie ASP.NET plasuje się wyżej w rankingu. 
 }
 \subsection{React.js}
 {
@@ -335,10 +337,11 @@
   React jest oparty na komponentach, każdy komponent może posiadać własny stan i nim zarządzać, korzystając z komponentów można tworzyć bardzo złożone UI. 
   Sporym plusem Reacta jest fakt, że raz poznany umożliwia również tworzenie aplikacji mobilnych przy wykorzystaniu React Native. Co dodatkowo wyróżnia React 
   jest własna składnia, zbliżona do XML-a, czyli JSX. Jest to wymieszanie HTML-a i JavaScriptu, możemy dzięki niemu bez najmniejszych przeszkód umieszczać 
-  tagi znane z HTML-a, w kodzie JavaScriptowym, przy renderowaniu komponentów. Dodatkowo własne komponenty, również podczas tworzenia struktury dokumenty, mają 
+  tagi znane z HTML-a, w kodzie JavaScriptowym, przy tworzeniu komponentów. Dodatkowo własne komponenty, również podczas tworzenia struktury dokumenty, mają 
   składnię taką jak HTML. \\
-  Kolejnym wyjątkowym aspektem Reacta jest Virtual DOM. Jest to koncept programistyczny gdzie wirtualna reprezentacja UI jest przetrzymywana w pamięci i synchronizowana 
-  z prawdziwym DOM-em. Umożliwia to podawanie UI w jakim stanie ma się znajdować i jakie komponenty mają być wyrenderowane, również upewnia się, że faktyczny DOM odowiada temu stanowi. 
+  Kolejnym wyjątkowym aspektem Reacta jest Virtual DOM. Jest to koncept programistyczny gdzie wirtualna reprezentacja UI jest 
+  przetrzymywana w pamięci i synchronizowana z prawdziwym DOM-em. 
+  Umożliwia to podawanie UI w jakim stanie ma się znajdować i jakie komponenty mają być wyrenderowane, również upewnia się, że faktyczny DOM odowiada temu stanowi. 
   Ściagą to z programisty konieczność stworzenia samemu takich elementów jak: obsługę wydarzeń np. kliknięcie przycisku, manualne aktualizowanie DOM-u oraz manipulację atrybutami.
   \begin{figure}[H]
     \centering
@@ -358,13 +361,28 @@
 }
 \subsection{TypeScript}
 {
-
+  Czym jest TypeScript? W skrócie jest to JavaScript rozszerzający go o statyczne definicje typów, takie jak np. string, number czy boolean. 
+  Został stworzony przez firmę Microsoft, przy wsparciu Google.
+  Pisząc w TypeScripcie nie trzeba używać typów, inteferfejsów, typów generycznych czy też innych elementów udostępnianych. 
+  Można pisać zwykły JavaScript i pomimo, że zostaną wyświetlone błędy informujące o nieokreślonym typie, cały kod wykona się mimo wszystko.
+  Każdy kod napisany w JavaScripcie będzie w pełni funkcjonalnym kodem TypeScriptowym.
+  Jednakże pisząc w TypeScripcie przeglądarka nie rozumie tego języka, zna tylko i wyłącznie JavaScript, dlatego kod musi być kompilowany przy pomocy 
+  TypeScriptowego kompilatora lub Babela. 
+  Dodatkowo sprawia to, że napisany kod będzie działał na dowolnym urządzeniu i przeglądarce, o ile te wspierają JavaScript.\\
+  Dlaczego programiści decydują się na TypeScript?\\
+  Wynika to przede wszystkim z obecności typów, pisząc w JavaScripcie należałoby pisać dodatkowe linijki kodu tylko i wyłącznie sprawdzające np. czy 
+  dane otrzymane przez serwer są odpowiednich typów, TypeScript robi wszystko za programiste. 
+  Błędy związane z typami należą do najczęściej popełnianych wśród programistów JavaScript, szczególnie w projektach o większej skali bardzo łatwo o takie błędy.
+  Typować można nie tylko zmienne, ale też funkcje, zarówne argumenty jakie przyjmuje oraz typ zwracany.\\
+  TypeScript to nie tylko typy, posiada liczne dodatkowe funkcje, których JavaScript nie posiada. Są to chociażby wcześniej wspomnieniane interfejsy, 
+  można deklarować własne typy, typy generyczne oraz typy wyliczeniowe - enumy. Inną niedostępna funkcją jest chociażby przeciążanie funkcji. 
+  Wyglądem nie przypomina to kodu znanego z języków programowania typu Java czy C++, lecz spełnia dokładnie takie samo zadanie jak w tamtych językach.
 }
 \subsection{JavaScript}
 {
 
 }
-\subsection{Wykorzystane najistotniejsze biblioteki}
+\subsection{Najistotniejsze wykorzystane biblioteki}
 {
 
 }
