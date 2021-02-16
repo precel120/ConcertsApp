@@ -8,7 +8,7 @@
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage[hyphens]{url}
-\usepackage[style=numeric]{biblatex}
+\usepackage[style=numeric, backend=biber]{biblatex}
 \usepackage{array}
 \usepackage{float}
 
@@ -367,7 +367,7 @@
   Można pisać zwykły JavaScript i pomimo, że zostaną wyświetlone błędy informujące o nieokreślonym typie, cały kod wykona się mimo wszystko.
   Każdy kod napisany w JavaScripcie będzie w pełni funkcjonalnym kodem TypeScriptowym.
   Jednakże pisząc w TypeScripcie przeglądarka nie rozumie tego języka, zna tylko i wyłącznie JavaScript, dlatego kod musi być kompilowany przy pomocy 
-  TypeScriptowego kompilatora lub Babela. 
+  TypeScriptowego kompilatora lub Babela.\cite{typescript-docs} 
   Dodatkowo sprawia to, że napisany kod będzie działał na dowolnym urządzeniu i przeglądarce, o ile te wspierają JavaScript.\\
   Dlaczego programiści decydują się na TypeScript?\\
   Wynika to przede wszystkim z obecności typów, pisząc w JavaScripcie należałoby pisać dodatkowe linijki kodu tylko i wyłącznie sprawdzające np. czy 
@@ -378,13 +378,19 @@
   można deklarować własne typy, typy generyczne oraz typy wyliczeniowe - enumy. Inną niedostępna funkcją jest chociażby przeciążanie funkcji. 
   Wyglądem nie przypomina to kodu znanego z języków programowania typu Java czy C++, lecz spełnia dokładnie takie samo zadanie jak w tamtych językach.
 }
-\subsection{JavaScript}
-{
-
-}
 \subsection{Najistotniejsze wykorzystane biblioteki}
 {
-
+  W tej sekcji mogłoby znaleźć się ogromna ilość przeróżnych bibliotek, które są używane w projekcie. Sam Create-React-App(służy do generowania projektów Reactowych), 
+  sam w sobie pobiera kilkadziesiąt bibliotek. Tutaj jednak znajdą się tylko biblioteki, który zostały dodane na potrzeby projektu, a są to:
+  \begin{itemize}
+    \item Express
+    \item Mongoose
+    \item Stripe
+    \item Nodemailer
+    \item QRCode
+    \item Material UI
+    \item Redux
+  \end{itemize}
 }
 \subsection{MongoDB}
 {
