@@ -67,7 +67,7 @@ authRouter.post(
       });
 
       const userSaved = await user.save();
-      res.status(200).send(userSaved);
+      res.status(201).send(userSaved);
     } catch (err) {
       next(err);
     }
@@ -101,10 +101,19 @@ authRouter.post(
       return next(err);
     }
     //Create JWT
-    const token = sign({_id: user._id}, env.TOKEN_SECRET);
+    const maxAge = 3 * 24 * 60 * 60;
+    const token = sign({ _id: user._id }, env.TOKEN_SECRET, {
+      expiresIn: maxAge,
+    });
+    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
 
-    res.header('auth-token', token).send(token);
+    res.status(200).json({ user: user._id });
   }
 );
+
+authRouter.get("/logout", (req: Request, res: Response, next: NextFunction) => {
+  res.cookie('jwt', '', {maxAge: 1});
+  res.status(200);
+});
 
 export default authRouter;

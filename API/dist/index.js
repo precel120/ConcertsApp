@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
+const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const keys_1 = require("./config/keys");
 const auth_1 = __importDefault(require("./routes/auth"));
 const events_1 = __importDefault(require("./routes/events"));
@@ -17,6 +18,7 @@ const app = express_1.default();
 //Middlewares
 app.use(express_1.default.static("public"));
 app.use(express_1.default.json());
+app.use(cookie_parser_1.default());
 //Routing
 app.use(auth_1.default);
 app.use(tickets_1.default);

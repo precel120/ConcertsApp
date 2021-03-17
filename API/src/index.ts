@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
+import cookieParser from 'cookie-parser';
 import { env } from "./config/keys";
 import authRouter from "./routes/auth";
 import eventsRouter from "./routes/events";
@@ -15,6 +16,7 @@ const app = express();
 //Middlewares
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cookieParser());
 //Routing
 app.use(authRouter);
 app.use(ticketsRouter);

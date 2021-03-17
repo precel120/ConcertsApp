@@ -11,8 +11,8 @@ const LoginSignView = (props: any) => {
       <TextField
         variant="outlined"
         required
-        id="login"
-        label="Login"
+        id="email"
+        label="Email"
         autoComplete="off"
       />
       <TextField
@@ -24,13 +24,6 @@ const LoginSignView = (props: any) => {
       />
       {isSignUp ? (
         <Box component="span">
-          <TextField
-            variant="outlined"
-            required
-            id="email"
-            label="Email"
-            autoComplete="off"
-          />
           <TextField
             variant="outlined"
             required

@@ -69,7 +69,7 @@ authRouter.post("/register", [
             orders: [],
         });
         const userSaved = yield user.save();
-        res.status(200).send(userSaved);
+        res.status(201).send(userSaved);
     }
     catch (err) {
         next(err);
@@ -99,8 +99,16 @@ authRouter.post("/login", [
         return next(err);
     }
     //Create JWT
-    const token = jsonwebtoken_1.sign({ _id: user._id }, keys_1.env.TOKEN_SECRET);
-    res.header('auth-token', token).send(token);
+    const maxAge = 3 * 24 * 60 * 60;
+    const token = jsonwebtoken_1.sign({ _id: user._id }, keys_1.env.TOKEN_SECRET, {
+        expiresIn: maxAge,
+    });
+    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.status(200).json({ user: user._id });
 }));
+authRouter.get("/logout", (req, res, next) => {
+    res.cookie('jwt', '', { maxAge: 1 });
+    res.status(200);
+});
 exports.default = authRouter;
 //# sourceMappingURL=auth.js.map
