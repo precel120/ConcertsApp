@@ -5,6 +5,7 @@ import {
   CardActionArea,
   Typography,
   makeStyles,
+  CardMedia,
 } from "@material-ui/core";
 import { Redirect } from "react-router-dom";
 
@@ -45,11 +46,17 @@ const EventCard = ({
   const redirectToForm = () => {
     setIsClicked(true);
   };
-  // TODO change img to proper material-ui stuff
+  
   return (
     <Card className={classes.root}>
       <CardActionArea onClick={redirectToForm}>
-        {imageUrl && <img src={`http://localhost:5000${imageUrl}`} alt="" />}
+        {imageUrl && (
+          <CardMedia
+            src={`http://localhost:5000${imageUrl}`}
+            title="placeholder"
+            component="img"
+          />
+        )}
         <CardContent>
           <Typography variant="h4" component="h2">
             {nameOfEvent}
@@ -89,5 +96,3 @@ const EventCard = ({
 };
 
 export default EventCard;
-
-// <CardMedia src={`http://localhost:5000${imageUrl}`} title="placeholder" />
