@@ -27,6 +27,13 @@ const LoginSignView = (props: any) => {
           <TextField
             variant="outlined"
             required
+            id="email"
+            label="Email"
+            autoComplete="off"
+          />
+          <TextField
+            variant="outlined"
+            required
             id="first_name"
             label="First Name"
             autoComplete="off"

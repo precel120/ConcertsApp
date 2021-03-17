@@ -1,11 +1,7 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = __importDefault(require("mongoose"));
-const { Schema } = mongoose_1.default;
-const ticketSchema = new Schema({
+const mongoose_1 = require("mongoose");
+const ticketSchema = new mongoose_1.Schema({
     email: String,
     firstName: String,
     lastName: String,
@@ -13,6 +9,6 @@ const ticketSchema = new Schema({
     eventId: String,
     purchaseDate: Date,
 });
-const Ticket = mongoose_1.default.model("tickets", ticketSchema);
+const Ticket = mongoose_1.model("tickets", ticketSchema);
 exports.default = Ticket;
 //# sourceMappingURL=Ticket.js.map

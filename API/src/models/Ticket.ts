@@ -1,6 +1,4 @@
-import mongoose from "mongoose";
-
-const { Schema } = mongoose;
+import { Schema, model } from "mongoose";
 
 const ticketSchema = new Schema({
   email: String,
@@ -11,5 +9,5 @@ const ticketSchema = new Schema({
   purchaseDate: Date,
 });
 
-const Ticket = mongoose.model("tickets", ticketSchema);
+const Ticket = model("tickets", ticketSchema);
 export default Ticket;
