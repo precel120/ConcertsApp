@@ -2,11 +2,10 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import FormView from "./views/FormView/FormView";
-import ErrorView from "./views/ErrorView/ErrorView";
 import Root from "./views/Root/Root";
-import SuccessView from "./views/SuccessView/SuccessView";
+import ResultView from "./views/ResultView/ResultView";
 import EventView from "./views/EventView/EventView";
-import LoginView from "./views/LoginView/LoginView";
+import LoginSignView from "./views/LoginSignView/LoginSignView";
 
 const App = () => {
   return (
@@ -16,9 +15,10 @@ const App = () => {
           <Route exact path="/" component={Root} />
           <Route exact path="/event/:id" component={(props: any) => <EventView {...props}/>} />
           <Route exact path="/event/:id/form" component={FormView} />
-          <Route path="/success" component={SuccessView} />
-          <Route path="/error" component={ErrorView} />
-          <Route path="/login" component={(props: any) => <LoginView {...props} />} />
+          <Route path="/success" component={(props: any) => <ResultView {...props} />} />
+          <Route path="/error" component={(props: any) => <ResultView {...props} />} />
+          <Route path="/login" component={(props: any) => <LoginSignView {...props} />} />
+          <Route path="/signup" component={(props: any) => <LoginSignView {...props} />} />
         </Switch>
       </BrowserRouter>
     </div>

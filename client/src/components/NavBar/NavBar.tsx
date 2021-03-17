@@ -109,7 +109,7 @@ const NavBar = ({ showFull }: NavBarProps) => {
           </Button>
         )}
         {redirectToLogin && <Redirect to={{pathname: "/login", state: {isSignUp: false}}} />}
-        {redirectToSignUp && <Redirect to={{pathname: "/login", state: {isSignUp: true}}} />}
+        {redirectToSignUp && <Redirect to={{pathname: "/signup", state: {isSignUp: true}}} />}
       </Toolbar>
     </AppBar>
   );

@@ -2,7 +2,7 @@ import { Box, Button, TextField } from "@material-ui/core";
 import React, { useState } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 
-const LoginView = (props: any) => {
+const LoginSignView = (props: any) => {
   const [isFilled, setIsFilled] = useState(false);
   const { isSignUp } = props.location.state;
   return (
@@ -54,4 +54,4 @@ const LoginView = (props: any) => {
   );
 };
 
-export default LoginView;
+export default LoginSignView;

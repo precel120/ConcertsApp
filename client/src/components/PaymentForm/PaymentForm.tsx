@@ -174,8 +174,8 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
           Pay
         </Button>
       </form>
-      {errorOcurred && <Redirect to="/error" />}
-      {paymentWasSuccessful && <Redirect to="/success" />}
+      {errorOcurred && <Redirect to={{pathname: "/error", state: { isErrorView: true }}} />}
+      {paymentWasSuccessful && <Redirect to={{pathname: "/success", state: { isErrorView: false }}} />}
     </>
   );
 };
