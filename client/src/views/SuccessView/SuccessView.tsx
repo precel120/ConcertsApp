@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
 
-const Success = () => {
+const SuccessView = () => {
   return (
     <>
       <NavBar showFull={false} />
@@ -10,4 +10,4 @@ const Success = () => {
   );
 };
 
-export default Success;
+export default SuccessView;

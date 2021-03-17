@@ -8,7 +8,7 @@ interface IURLId {
   id: string;
 }
 
-const EventPage = (props: any) => {
+const EventView = (props: any) => {
   const { id } = useParams<IURLId>();
   const {
     imageURL,
@@ -78,4 +78,4 @@ const EventPage = (props: any) => {
   );
 };
 
-export default EventPage;
+export default EventView;
