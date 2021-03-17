@@ -21,7 +21,7 @@ app.use(express_1.default.json());
 app.use(auth_1.default);
 app.use(tickets_1.default);
 app.use(events_1.default);
-app.use(function (err, req, res, next) {
+app.use(function (err, req, res) {
     if (!err.statusCode)
         err.statusCode = 500;
     res.status(err.statusCode).send(err.message);

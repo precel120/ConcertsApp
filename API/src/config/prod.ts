@@ -5,4 +5,5 @@ export default {
   email: process.env.EMAIL!,
   emailPassword: process.env.EMAIL_PASSWORD!,
   mainURL: process.env.MAIN_URL!,
+  TOKEN_SECRET: process.env.TOKEN_SECRET!
 };

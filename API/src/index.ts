@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction } from "express";
+import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import { env } from "./config/keys";
 import authRouter from "./routes/auth";
@@ -20,7 +20,7 @@ app.use(authRouter);
 app.use(ticketsRouter);
 app.use(eventsRouter);
 
-app.use(function (err: any, req: Request, res: Response, next: NextFunction) {
+app.use(function (err: any, req: Request, res: Response) {
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
 });
