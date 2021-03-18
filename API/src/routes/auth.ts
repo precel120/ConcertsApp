@@ -9,7 +9,7 @@ import { env } from "../config/keys";
 const authRouter = Router();
 
 authRouter.post(
-  "/register",
+  "/api/register",
   [
     body("email").trim().isEmail().isLength({ min: 8 }).normalizeEmail(),
     body("password")
@@ -75,7 +75,7 @@ authRouter.post(
 );
 
 authRouter.post(
-  "/login",
+  "/api/login",
   [
     body("email").trim().isEmail().isLength({ min: 8 }).normalizeEmail(),
     body("password")
@@ -105,15 +105,18 @@ authRouter.post(
     const token = sign({ _id: user._id }, env.TOKEN_SECRET, {
       expiresIn: maxAge,
     });
-    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.cookie("jwt", token, { maxAge: maxAge * 1000 });
 
     res.status(200).json({ user: user._id });
   }
 );
 
-authRouter.get("/logout", (req: Request, res: Response, next: NextFunction) => {
-  res.cookie('jwt', '', {maxAge: 1});
-  res.status(200);
-});
+authRouter.get(
+  "/api/logout",
+  (req: Request, res: Response, next: NextFunction) => {
+    res.cookie("jwt", "", { maxAge: 1 });
+    res.status(200).send("git");
+  }
+);
 
 export default authRouter;

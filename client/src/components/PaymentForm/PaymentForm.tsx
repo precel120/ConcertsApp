@@ -96,7 +96,7 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
         </InputLabel>
         <Input
           name="email"
-          type="text"
+          type="email"
           id="input__email"
           autoComplete="off"
           inputRef={register({

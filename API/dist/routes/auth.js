@@ -20,7 +20,7 @@ const User_1 = __importDefault(require("../models/User"));
 const StatusError_1 = __importDefault(require("../StatusError"));
 const keys_1 = require("../config/keys");
 const authRouter = express_1.Router();
-authRouter.post("/register", [
+authRouter.post("/api/register", [
     express_validator_1.body("email").trim().isEmail().isLength({ min: 8 }).normalizeEmail(),
     express_validator_1.body("password")
         .trim()
@@ -75,7 +75,7 @@ authRouter.post("/register", [
         next(err);
     }
 }));
-authRouter.post("/login", [
+authRouter.post("/api/login", [
     express_validator_1.body("email").trim().isEmail().isLength({ min: 8 }).normalizeEmail(),
     express_validator_1.body("password")
         .trim()
@@ -103,12 +103,12 @@ authRouter.post("/login", [
     const token = jsonwebtoken_1.sign({ _id: user._id }, keys_1.env.TOKEN_SECRET, {
         expiresIn: maxAge,
     });
-    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.cookie("jwt", token, { maxAge: maxAge * 1000 });
     res.status(200).json({ user: user._id });
 }));
-authRouter.get("/logout", (req, res, next) => {
-    res.cookie('jwt', '', { maxAge: 1 });
-    res.status(200);
+authRouter.get("/api/logout", (req, res, next) => {
+    res.cookie("jwt", "", { maxAge: 1 });
+    res.status(200).send("git");
 });
 exports.default = authRouter;
 //# sourceMappingURL=auth.js.map

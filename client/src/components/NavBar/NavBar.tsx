@@ -12,6 +12,7 @@ import {
   Button,
   Box,
 } from "@material-ui/core";
+import axios from "axios";
 import { search, setEventType, setIsLoggedIn } from "../../actions";
 
 type Filter = {
@@ -50,22 +51,29 @@ const NavBar = ({ showFull }: NavBarProps) => {
     dispatch(search(event.target.value as string));
   };
 
-  const handleRedirect = (redirectOption: RedirectOptions) => {
+  const handleRedirect = async (redirectOption: RedirectOptions) => {
     switch (redirectOption) {
       case RedirectOptions.LOGIN:
         setRedirectToLogin(true);
+        setRedirectToSignUp(false);
         break;
       case RedirectOptions.SIGNUP:
         setRedirectToSignUp(true);
+        setRedirectToLogin(false);
         break;
       case RedirectOptions.LOGOUT:
-        handleLogout();
+        await handleLogout();
         break;
     }
   };
 
-  const handleLogout = () => {
-    dispatch(setIsLoggedIn(false));
+  const handleLogout = async () => {
+    try {
+      await axios.get("api/logout");
+      dispatch(setIsLoggedIn(false));
+    } catch (err) {
+      console.log("error has occured");
+    }
   };
 
   return (
@@ -96,20 +104,33 @@ const NavBar = ({ showFull }: NavBarProps) => {
         )}
         {!isLoggedIn ? (
           <Box>
-            <Button variant="outlined" onClick={() => handleRedirect(RedirectOptions.LOGIN)}>
+            <Button
+              variant="outlined"
+              onClick={() => handleRedirect(RedirectOptions.LOGIN)}
+            >
               Sign In
             </Button>
-            <Button variant="outlined" onClick={() => handleRedirect(RedirectOptions.SIGNUP)}>
+            <Button
+              variant="outlined"
+              onClick={() => handleRedirect(RedirectOptions.SIGNUP)}
+            >
               Sign Up
             </Button>
           </Box>
         ) : (
-          <Button variant="outlined" onClick={() => handleRedirect(RedirectOptions.LOGOUT)}>
+          <Button
+            variant="outlined"
+            onClick={() => handleRedirect(RedirectOptions.LOGOUT)}
+          >
             Logout
           </Button>
         )}
-        {redirectToLogin && <Redirect to={{pathname: "/login", state: {isSignUp: false}}} />}
-        {redirectToSignUp && <Redirect to={{pathname: "/signup", state: {isSignUp: true}}} />}
+        {redirectToLogin && (
+          <Redirect to={{ pathname: "/login", state: { isSignUp: false } }} />
+        )}
+        {redirectToSignUp && (
+          <Redirect to={{ pathname: "/signup", state: { isSignUp: true } }} />
+        )}
       </Toolbar>
     </AppBar>
   );
