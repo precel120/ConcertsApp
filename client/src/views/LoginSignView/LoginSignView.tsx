@@ -6,6 +6,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import NavBar from "../../components/NavBar/NavBar";
 import { setIsLoggedIn } from "../../actions";
+import { Redirect } from "react-router";
 
 type LoginSignFormValues = {
   email: string;
@@ -14,7 +15,7 @@ type LoginSignFormValues = {
   lastName?: string;
   phoneNumber?: string;
 };
-
+//TODO Error handling
 const LoginSignView = (props: any) => {
   //React-Hook-Form stuff
   const {
@@ -29,6 +30,7 @@ const LoginSignView = (props: any) => {
   //Component State
   const { isSignUp } = props.location.state;
   const [isProcessing, setIsProcessing] = useState(false);
+  const [redirectToHome, setRedirectToHome] = useState(false);
 
   //Redux stuff
   const dispatch = useDispatch();
@@ -38,9 +40,10 @@ const LoginSignView = (props: any) => {
     try {
       await axios.post(isSignUp ? "/api/register" : "/api/login", data);
       setIsProcessing(true);
-      const cookies = new Cookies(['jwt']);
-      if(cookies.get('jwt')){
+      const cookies = new Cookies(["jwt"]);
+      if (cookies.get("jwt")) {
         dispatch(setIsLoggedIn(true));
+        setRedirectToHome(true);
       } else {
         dispatch(setIsLoggedIn(false));
       }
@@ -156,6 +159,7 @@ const LoginSignView = (props: any) => {
           </Button>
         )}
       </form>
+      {redirectToHome && <Redirect to="/" />}
     </>
   );
 };

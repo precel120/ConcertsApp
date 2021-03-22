@@ -4,7 +4,9 @@ import { body, validationResult } from "express-validator";
 import { Stripe } from "stripe";
 import { toDataURL } from "qrcode";
 import { createTransport } from "nodemailer";
+import jwt, { decode } from 'jsonwebtoken';
 import { env } from "../config/keys";
+import checkCurrentUser from './verifyToken';
 import Ticket from "../models/Ticket";
 import StatusError from "../StatusError";
 import Event from "../models/Event";
@@ -92,12 +94,14 @@ ticketsRouter.post(
         }
 
         const ticket = new Ticket({
+          userId: "",
           email: email.trim(),
           firstName: firstName.trim(),
           lastName: lastName.trim(),
           phoneNumber: phoneNumber.trim(),
           eventId: event.id,
           purchaseDate: new Date(),
+          qr: ""
         });
         ticket.save((error) => {
           if (error) {
@@ -112,6 +116,8 @@ ticketsRouter.post(
           let err = new StatusError("Error while creating QR Code", 400);
           return next(err);
         }
+
+        await Ticket.updateOne({ email: email.trim() }, {qr: qr});
 
         const mailTemplate = `
           <h1>Hello ${firstName} ${lastName}</h1>
@@ -139,5 +145,12 @@ ticketsRouter.post(
     }
   }
 );
+
+ticketsRouter.get('/api/tickets', async (req: Request, res: Response, next: NextFunction) => {
+  const token = req.cookies.jwt;
+  const decoded = jwt.decode(token, {complete: true});
+  const tickets = await Ticket.find({userId: decoded?.payload._id});
+  res.status(200).send(tickets);
+});
 
 export default ticketsRouter;

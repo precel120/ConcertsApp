@@ -30,12 +30,12 @@ const checkCurrentUser = (req: Request, res: Response, next: NextFunction) => {
   verify(token, env.TOKEN_SECRET, async (err: any, decodedToken: any) => {
     if (err) {
       res.send(err.message);
-      next();
+      return next();
     } else {
       console.log(decodedToken);
       let user = await User.findById(decodedToken.id);
       res.locals.user = user;
-      next();
+      return next();
     }
   });
 };

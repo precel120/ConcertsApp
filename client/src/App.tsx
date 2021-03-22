@@ -6,6 +6,7 @@ import Root from "./views/Root/Root";
 import ResultView from "./views/ResultView/ResultView";
 import EventView from "./views/EventView/EventView";
 import LoginSignView from "./views/LoginSignView/LoginSignView";
+import PurchaseHistoryView from "./views/PurchaseHistoryView/PurchaseHistoryView";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route exact path="/" component={Root} />
           <Route exact path="/event/:id" component={(props: any) => <EventView {...props}/>} />
           <Route exact path="/event/:id/form" component={FormView} />
+          <Route path="/purchase_history" component={PurchaseHistoryView} />
           <Route path="/success" component={(props: any) => <ResultView {...props} />} />
           <Route path="/error" component={(props: any) => <ResultView {...props} />} />
           <Route path="/login" component={(props: any) => <LoginSignView {...props} />} />

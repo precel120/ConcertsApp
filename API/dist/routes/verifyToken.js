@@ -42,13 +42,13 @@ const checkCurrentUser = (req, res, next) => {
     jsonwebtoken_1.verify(token, keys_1.env.TOKEN_SECRET, (err, decodedToken) => __awaiter(void 0, void 0, void 0, function* () {
         if (err) {
             res.send(err.message);
-            next();
+            return next();
         }
         else {
             console.log(decodedToken);
             let user = yield User_1.default.findById(decodedToken.id);
             res.locals.user = user;
-            next();
+            return next();
         }
     }));
 };

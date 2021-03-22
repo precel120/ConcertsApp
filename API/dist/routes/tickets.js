@@ -17,6 +17,7 @@ const express_validator_1 = require("express-validator");
 const stripe_1 = require("stripe");
 const qrcode_1 = require("qrcode");
 const nodemailer_1 = require("nodemailer");
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const keys_1 = require("../config/keys");
 const Ticket_1 = __importDefault(require("../models/Ticket"));
 const StatusError_1 = __importDefault(require("../StatusError"));
@@ -92,12 +93,14 @@ ticketsRouter.post("/api/tickets", [
                 return next(err);
             }
             const ticket = new Ticket_1.default({
+                userId: "",
                 email: email.trim(),
                 firstName: firstName.trim(),
                 lastName: lastName.trim(),
                 phoneNumber: phoneNumber.trim(),
                 eventId: event.id,
                 purchaseDate: new Date(),
+                qr: ""
             });
             ticket.save((error) => {
                 if (error) {
@@ -110,6 +113,7 @@ ticketsRouter.post("/api/tickets", [
                 let err = new StatusError_1.default("Error while creating QR Code", 400);
                 return next(err);
             }
+            yield Ticket_1.default.updateOne({ email: email.trim() }, { qr: qr });
             const mailTemplate = `
           <h1>Hello ${firstName} ${lastName}</h1>
           <p>Thanks for buying ticket for ${event.nameOfEvent}, in ${event.place}, taking place on ${event.dateOfEvent}</p>
@@ -135,6 +139,12 @@ ticketsRouter.post("/api/tickets", [
     catch (error) {
         next(error);
     }
+}));
+ticketsRouter.get('/api/tickets', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const token = req.cookies.jwt;
+    const decoded = jsonwebtoken_1.default.decode(token, { complete: true });
+    const tickets = yield Ticket_1.default.find({ userId: decoded === null || decoded === void 0 ? void 0 : decoded.payload._id });
+    res.status(200).send(tickets);
 }));
 exports.default = ticketsRouter;
 //# sourceMappingURL=tickets.js.map

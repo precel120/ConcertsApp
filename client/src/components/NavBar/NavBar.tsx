@@ -33,11 +33,16 @@ enum RedirectOptions {
   LOGIN,
   SIGNUP,
   LOGOUT,
+  PURCHASE_HISTORY,
 }
 
 const NavBar = ({ showFull }: NavBarProps) => {
+  //Redirect state
   const [redirectToLogin, setRedirectToLogin] = useState(false);
   const [redirectToSignUp, setRedirectToSignUp] = useState(false);
+  const [redirectToHome, setRedirectToHome] = useState(false);
+  const [redirectToPurchaseHis, setRedirectToPurchaseHis] = useState(false);
+  //Redux selector
   const { searchField, eventType, isLoggedIn } = useSelector(
     (state: RootState) => state.navbar
   );
@@ -64,13 +69,17 @@ const NavBar = ({ showFull }: NavBarProps) => {
       case RedirectOptions.LOGOUT:
         await handleLogout();
         break;
+      case RedirectOptions.PURCHASE_HISTORY:
+        setRedirectToPurchaseHis(true);
+        break;
     }
   };
 
   const handleLogout = async () => {
     try {
-      await axios.get("api/logout");
+      await axios.get(`/api/logout`);
       dispatch(setIsLoggedIn(false));
+      setRedirectToHome(true);
     } catch (err) {
       console.log("error has occured");
     }
@@ -118,12 +127,20 @@ const NavBar = ({ showFull }: NavBarProps) => {
             </Button>
           </Box>
         ) : (
-          <Button
-            variant="outlined"
-            onClick={() => handleRedirect(RedirectOptions.LOGOUT)}
-          >
-            Logout
-          </Button>
+          <Box>
+            <Button
+              variant="outlined"
+              onClick={() => handleRedirect(RedirectOptions.PURCHASE_HISTORY)}
+            >
+              Purchase History
+            </Button>
+            <Button
+              variant="outlined"
+              onClick={() => handleRedirect(RedirectOptions.LOGOUT)}
+            >
+              Logout
+            </Button>
+          </Box>
         )}
         {redirectToLogin && (
           <Redirect to={{ pathname: "/login", state: { isSignUp: false } }} />
@@ -131,6 +148,8 @@ const NavBar = ({ showFull }: NavBarProps) => {
         {redirectToSignUp && (
           <Redirect to={{ pathname: "/signup", state: { isSignUp: true } }} />
         )}
+        {redirectToHome && <Redirect to="/" />}
+        {redirectToPurchaseHis && <Redirect to="/purchase_history" />}
       </Toolbar>
     </AppBar>
   );
