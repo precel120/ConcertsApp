@@ -11,7 +11,6 @@ const userSchema = new Schema({
     firstName: String,
     lastName: String,
     phoneNumber: String,
-    orders: Array
 });
 const User = mongoose_1.default.model("users", userSchema);
 exports.default = User;

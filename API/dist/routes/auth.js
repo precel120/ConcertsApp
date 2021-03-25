@@ -50,8 +50,8 @@ authRouter.post("/api/register", [
     }
     const { email, password, firstName, lastName, phoneNumber } = req.body;
     //Check if user already in DB
-    const emailExists = yield User_1.default.findOne({ email: req.body.email });
-    if (emailExists) {
+    const userExists = yield User_1.default.findOne({ email: email });
+    if (userExists) {
         let err = new StatusError_1.default("Email already exists", 400);
         return next(err);
     }
@@ -66,7 +66,6 @@ authRouter.post("/api/register", [
             firstName: firstName,
             lastName: lastName,
             phoneNumber: phoneNumber,
-            orders: [],
         });
         const userSaved = yield user.save();
         res.status(201).send(userSaved);

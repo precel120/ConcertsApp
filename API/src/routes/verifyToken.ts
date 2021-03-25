@@ -4,7 +4,7 @@ import StatusError from "../StatusError";
 import { env } from "../config/keys";
 import User from "../models/User";
 
-const verifyToken = (req: Request, res: Response, next: NextFunction) => {
+export const verifyToken = (req: Request, res: Response, next: NextFunction) => {
   const token = req.cookies.jwt;
   if (!token) {
     let err = new StatusError("Access Denied", 401);
@@ -19,7 +19,7 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
   });
 };
 
-const checkCurrentUser = (req: Request, res: Response, next: NextFunction) => {
+export const checkCurrentUser = (req: Request, res: Response, next: NextFunction) => {
   const token = req.cookies.jwt;
   if (!token) {
     res.locals.user = null;
@@ -36,5 +36,3 @@ const checkCurrentUser = (req: Request, res: Response, next: NextFunction) => {
     }
   });
 };
-
-export default {verifyToken, checkCurrentUser};

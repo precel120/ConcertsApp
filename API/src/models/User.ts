@@ -8,7 +8,6 @@ const userSchema = new Schema({
     firstName: String,
     lastName: String,
     phoneNumber: String,
-    orders: Array
 });
 
 const User = mongoose.model("users", userSchema);

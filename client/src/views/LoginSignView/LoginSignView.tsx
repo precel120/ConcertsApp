@@ -41,8 +41,8 @@ const LoginSignView = (props: any) => {
       await axios.post(isSignUp ? "/api/register" : "/api/login", data);
       setIsProcessing(true);
       const cookies = new Cookies(["jwt"]);
+      setRedirectToHome(true);
       if (cookies.get("jwt")) {
-        setRedirectToHome(true);
         dispatch(setIsLoggedIn(true));
       } else {
         dispatch(setIsLoggedIn(false));
@@ -148,12 +148,12 @@ const LoginSignView = (props: any) => {
               })}
               required
             />
-            <Button type="submit" disabled={!formState.isValid || isProcessing}>
+            <Button type="submit" disabled={isProcessing || !formState.isValid}>
               Sign Up
             </Button>
           </Box>
         ) : (
-          <Button type="submit" disabled={!formState.isValid || isProcessing}>
+          <Button type="submit" disabled={isProcessing || !formState.isValid}>
             Log In
           </Button>
         )}

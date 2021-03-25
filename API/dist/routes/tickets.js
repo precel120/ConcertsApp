@@ -19,9 +19,11 @@ const qrcode_1 = require("qrcode");
 const nodemailer_1 = require("nodemailer");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const keys_1 = require("../config/keys");
+const verifyToken_1 = require("./verifyToken");
 const Ticket_1 = __importDefault(require("../models/Ticket"));
 const StatusError_1 = __importDefault(require("../StatusError"));
 const Event_1 = __importDefault(require("../models/Event"));
+const User_1 = __importDefault(require("../models/User"));
 let transporter = nodemailer_1.createTransport({
     host: "smtp.mailtrap.io",
     port: 2525,
@@ -44,7 +46,7 @@ const findEvent = (id, next) => __awaiter(void 0, void 0, void 0, function* () {
     });
     return eventFound;
 });
-ticketsRouter.post("/api/tickets", [
+ticketsRouter.post("/api/tickets_guest", [
     express_validator_1.body("email").trim().isEmail().isLength({ min: 8 }).normalizeEmail(),
     express_validator_1.body("firstName")
         .trim()
@@ -70,6 +72,9 @@ ticketsRouter.post("/api/tickets", [
         }
         const { id, email, firstName, lastName, phoneNumber } = req.body;
         const event = yield findEvent(id, next);
+        if (!event) {
+            return next(new StatusError_1.default("Event not found", 400));
+        }
         Ticket_1.default.find({ eventId: event.id }, (error, tickets) => __awaiter(void 0, void 0, void 0, function* () {
             if (!error) {
                 if ((event === null || event === void 0 ? void 0 : event.toJSON().maxTicketsAmount) - 1 < tickets.length) {
@@ -100,7 +105,7 @@ ticketsRouter.post("/api/tickets", [
                 phoneNumber: phoneNumber.trim(),
                 eventId: event.id,
                 purchaseDate: new Date(),
-                qr: ""
+                qr: "",
             });
             ticket.save((error) => {
                 if (error) {
@@ -140,7 +145,94 @@ ticketsRouter.post("/api/tickets", [
         next(error);
     }
 }));
-ticketsRouter.get('/api/tickets', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+ticketsRouter.post("/api/tickets", verifyToken_1.checkCurrentUser, (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const token = req.cookies.jwt;
+        if (!token) {
+            return next(new StatusError_1.default("Token not found", 400));
+        }
+        const decoded = jsonwebtoken_1.default.decode(token, { complete: true });
+        const user = yield User_1.default.findById(decoded === null || decoded === void 0 ? void 0 : decoded.payload._id);
+        if (!user) {
+            return next(new StatusError_1.default("User not found", 400));
+        }
+        const { _id, email, firstName, lastName, phoneNumber } = user;
+        const { id } = req.body;
+        const event = yield findEvent(id, next);
+        if (!event) {
+            return next(new StatusError_1.default("Event not found", 400));
+        }
+        Ticket_1.default.find({ eventId: event.id }, (error, tickets) => __awaiter(void 0, void 0, void 0, function* () {
+            if (!error) {
+                if ((event === null || event === void 0 ? void 0 : event.toJSON().maxTicketsAmount) - 1 < tickets.length) {
+                    let err = new StatusError_1.default("No tickets left", 403);
+                    return next(err);
+                }
+            }
+            else {
+                let err = new StatusError_1.default("No tickets found", 404);
+                return next(err);
+            }
+            const paymentIntent = yield stripe.paymentIntents.create({
+                amount: event.ticketPrice,
+                currency: "pln",
+                payment_method_types: ["card"],
+                receipt_email: user.email,
+                metadata: { integration_check: "accept a payment" },
+            });
+            if (!paymentIntent) {
+                let err = new StatusError_1.default("Creating payment intent failed", 400);
+                return next(err);
+            }
+            const ticket = new Ticket_1.default({
+                userId: _id,
+                email: email.trim(),
+                firstName: firstName.trim(),
+                lastName: lastName.trim(),
+                phoneNumber: phoneNumber.trim(),
+                eventId: event.id,
+                purchaseDate: new Date(),
+                qr: "",
+            });
+            ticket.save((error) => {
+                if (error) {
+                    let err = new StatusError_1.default("Error while saving to DB", 500);
+                    return next(err);
+                }
+            });
+            const qr = yield qrcode_1.toDataURL(ticket.id);
+            if (!qr) {
+                let err = new StatusError_1.default("Error while creating QR Code", 400);
+                return next(err);
+            }
+            yield Ticket_1.default.updateOne({ email: email.trim() }, { qr: qr });
+            const mailTemplate = `
+        <h1>Hello ${firstName} ${lastName}</h1>
+        <p>Thanks for buying ticket for ${event.nameOfEvent}, in ${event.place}, taking place on ${event.dateOfEvent}</p>
+        <img src="${qr}">
+        `;
+            const message = {
+                from: keys_1.env.email,
+                to: email,
+                subject: `Ticket for ${event.nameOfEvent}`,
+                html: mailTemplate,
+            };
+            transporter.sendMail(message, (error, info) => {
+                if (error) {
+                    let err = new StatusError_1.default("Error while sending mail", 500);
+                    return next(err);
+                }
+                else
+                    console.log("Mail sent:", info.response);
+            });
+            return res.status(200).send(paymentIntent.client_secret);
+        }));
+    }
+    catch (error) {
+        next(error);
+    }
+}));
+ticketsRouter.get("/api/tickets", verifyToken_1.checkCurrentUser, (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const token = req.cookies.jwt;
     if (!token) {
         return next(new StatusError_1.default("Token not found", 400));

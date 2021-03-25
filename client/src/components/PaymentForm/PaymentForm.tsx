@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Input, InputLabel, Button } from "@material-ui/core";
+import { Input, InputLabel, Button, Box } from "@material-ui/core";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 
 type PaymentFormProps = {
   id: string;
@@ -16,7 +17,18 @@ type FormValues = {
   phoneNumber: string;
 };
 
+type Filter = {
+  searchField: string;
+  eventType: string;
+  isLoggedIn: boolean;
+};
+
+interface RootState {
+  navbar: Filter;
+}
+
 const PaymentForm = ({ id }: PaymentFormProps) => {
+  const { isLoggedIn } = useSelector((state: RootState) => state.navbar);
   // React-Hook-Form stuff
   const { formState, errors, register, handleSubmit } = useForm<FormValues>({
     mode: "onChange",
@@ -36,35 +48,59 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
       return;
     }
 
-    const { email, firstName, lastName, phoneNumber } = data;
+    if (!isLoggedIn) {
+      const { email, firstName, lastName, phoneNumber } = data;
 
-    const userInfo = {
-      id: id,
-      email: email,
-      firstName: firstName,
-      lastName: lastName,
-      phoneNumber: phoneNumber,
-    };
+      const userInfoGuest = {
+        id,
+        email,
+        firstName,
+        lastName,
+        phoneNumber,
+      };
 
-    try {
-      const { data: clientSecret } = await axios.post(`/api/tickets`, userInfo);
-      const cardElement = elements.getElement(CardElement);
+      try {
+        const { data: clientSecret } = await axios.post(
+          "/api/tickets_guest",
+          userInfoGuest
+        );
+        const cardElement = elements.getElement(CardElement);
 
-      setIsProcessing(true);
+        setIsProcessing(true);
 
-      const fullName = firstName + " " + lastName;
-      const paymentMethodReq = await stripe.createPaymentMethod({
-        type: "card",
-        card: cardElement!,
-        billing_details: { email: email, name: fullName, phone: phoneNumber },
-      });
-      await stripe.confirmCardPayment(clientSecret, {
-        payment_method: paymentMethodReq.paymentMethod?.id,
-      });
-      setPaymentWasSuccessful(true);
-    } catch (error) {
-      setIsProcessing(false);
-      setErrorOcurred(true);
+        const fullName = firstName + " " + lastName;
+        const paymentMethodReq = await stripe.createPaymentMethod({
+          type: "card",
+          card: cardElement!,
+          billing_details: { email: email, name: fullName, phone: phoneNumber },
+        });
+        await stripe.confirmCardPayment(clientSecret, {
+          payment_method: paymentMethodReq.paymentMethod?.id,
+        });
+        setPaymentWasSuccessful(true);
+      } catch (error) {
+        setIsProcessing(false);
+        setErrorOcurred(true);
+      }
+    } else {
+      try {
+        const { data: clientSecret } = await axios.post("/api/tickets", { id });
+        const cardElement = elements.getElement(CardElement);
+
+        setIsProcessing(true);
+
+        const paymentMethodReq = await stripe.createPaymentMethod({
+          type: "card",
+          card: cardElement!,
+        });
+        await stripe.confirmCardPayment(clientSecret, {
+          payment_method: paymentMethodReq.paymentMethod?.id,
+        });
+        setPaymentWasSuccessful(true);
+      } catch (error) {
+        setIsProcessing(false);
+        setErrorOcurred(true);
+      }
     }
   };
 
@@ -91,78 +127,83 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-        <InputLabel htmlFor="input__email">
-          Email: {errors.email && <span>{errors.email.message}</span>}
-        </InputLabel>
-        <Input
-          name="email"
-          type="email"
-          id="input__email"
-          autoComplete="off"
-          inputRef={register({
-            required: "Please specify email.",
-            pattern: {
-              value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-              message: "Invalid email.",
-            },
-          })}
-          required
-        />
-        <InputLabel htmlFor="input__firstName">
-          First Name:{" "}
-          {errors.firstName && <span>{errors.firstName.message}</span>}
-        </InputLabel>
-        <Input
-          name="firstName"
-          type="text"
-          id="input__firstName"
-          autoComplete="off"
-          inputRef={register({
-            required: "Please specify first name.",
-            pattern: {
-              value: /^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/,
-              message: "Invalid first name",
-            },
-            minLength: 2,
-          })}
-          required
-        />
-        <InputLabel htmlFor="input__lastName">
-          Last Name: {errors.lastName && <span>{errors.lastName.message}</span>}
-        </InputLabel>
-        <Input
-          name="lastName"
-          type="text"
-          id="input__lastName"
-          autoComplete="off"
-          inputRef={register({
-            required: "Please specify last name.",
-            pattern: {
-              value: /^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/,
-              message: "Invalid first name",
-            },
-            minLength: 2,
-          })}
-          required
-        />
-        <InputLabel htmlFor="input__phoneNumber">
-          Phone Number:{" "}
-          {errors.phoneNumber && <span>{errors.phoneNumber.message}</span>}
-        </InputLabel>
-        <Input
-          name="phoneNumber"
-          type="text"
-          id="input__phoneNumber"
-          autoComplete="off"
-          inputRef={register({
-            required: "Please specify phone number.",
-            pattern: {
-              value: /^((?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w))$/,
-              message: "Please specify phone number.",
-            },
-          })}
-          required
-        />
+        {!isLoggedIn && (
+          <Box>
+            <InputLabel htmlFor="input__email">
+              Email: {errors.email && <span>{errors.email.message}</span>}
+            </InputLabel>
+            <Input
+              name="email"
+              type="email"
+              id="input__email"
+              autoComplete="off"
+              inputRef={register({
+                required: "Please specify email.",
+                pattern: {
+                  value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                  message: "Invalid email.",
+                },
+              })}
+              required
+            />
+            <InputLabel htmlFor="input__firstName">
+              First Name:{" "}
+              {errors.firstName && <span>{errors.firstName.message}</span>}
+            </InputLabel>
+            <Input
+              name="firstName"
+              type="text"
+              id="input__firstName"
+              autoComplete="off"
+              inputRef={register({
+                required: "Please specify first name.",
+                pattern: {
+                  value: /^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/,
+                  message: "Invalid first name",
+                },
+                minLength: 2,
+              })}
+              required
+            />
+            <InputLabel htmlFor="input__lastName">
+              Last Name:{" "}
+              {errors.lastName && <span>{errors.lastName.message}</span>}
+            </InputLabel>
+            <Input
+              name="lastName"
+              type="text"
+              id="input__lastName"
+              autoComplete="off"
+              inputRef={register({
+                required: "Please specify last name.",
+                pattern: {
+                  value: /^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/,
+                  message: "Invalid first name",
+                },
+                minLength: 2,
+              })}
+              required
+            />
+            <InputLabel htmlFor="input__phoneNumber">
+              Phone Number:{" "}
+              {errors.phoneNumber && <span>{errors.phoneNumber.message}</span>}
+            </InputLabel>
+            <Input
+              name="phoneNumber"
+              type="text"
+              id="input__phoneNumber"
+              autoComplete="off"
+              inputRef={register({
+                required: "Please specify phone number.",
+                pattern: {
+                  value: /^((?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w))$/,
+                  message: "Please specify phone number.",
+                },
+              })}
+              required
+            />
+          </Box>
+        )}
         <CardElement
           options={cardElementOptions}
           onChange={handleCardElChange}
@@ -174,8 +215,14 @@ const PaymentForm = ({ id }: PaymentFormProps) => {
           Pay
         </Button>
       </form>
-      {errorOcurred && <Redirect to={{pathname: "/error", state: { isErrorView: true }}} />}
-      {paymentWasSuccessful && <Redirect to={{pathname: "/success", state: { isErrorView: false }}} />}
+      {errorOcurred && (
+        <Redirect to={{ pathname: "/error", state: { isErrorView: true } }} />
+      )}
+      {paymentWasSuccessful && (
+        <Redirect
+          to={{ pathname: "/success", state: { isErrorView: false } }}
+        />
+      )}
     </>
   );
 };

@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.checkCurrentUser = exports.verifyToken = void 0;
 const jsonwebtoken_1 = require("jsonwebtoken");
 const StatusError_1 = __importDefault(require("../StatusError"));
 const keys_1 = require("../config/keys");
@@ -31,6 +32,7 @@ const verifyToken = (req, res, next) => {
         }
     });
 };
+exports.verifyToken = verifyToken;
 const checkCurrentUser = (req, res, next) => {
     const token = req.cookies.jwt;
     if (!token) {
@@ -49,5 +51,5 @@ const checkCurrentUser = (req, res, next) => {
         }
     }));
 };
-exports.default = { verifyToken, checkCurrentUser };
+exports.checkCurrentUser = checkCurrentUser;
 //# sourceMappingURL=verifyToken.js.map

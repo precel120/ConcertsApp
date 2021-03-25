@@ -45,8 +45,8 @@ authRouter.post(
     const { email, password, firstName, lastName, phoneNumber } = req.body;
 
     //Check if user already in DB
-    const emailExists = await User.findOne({ email: req.body.email });
-    if (emailExists) {
+    const userExists = await User.findOne({ email: email });
+    if (userExists) {
       let err = new StatusError("Email already exists", 400);
       return next(err);
     }
@@ -63,7 +63,6 @@ authRouter.post(
         firstName: firstName,
         lastName: lastName,
         phoneNumber: phoneNumber,
-        orders: [],
       });
 
       const userSaved = await user.save();

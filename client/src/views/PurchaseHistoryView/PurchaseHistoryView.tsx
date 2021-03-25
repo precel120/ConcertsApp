@@ -8,7 +8,6 @@ const PurchaseHistoryView = () => {
   useEffect(() => {
     const fetchData = async () => {
         const { status, data } = await axios.get("/api/tickets");
-        console.log(data);
         if(status === 200){
             setOrders(data);
         }
