@@ -3,6 +3,7 @@ import axios from "axios";
 import NavBar from "../../components/NavBar/NavBar";
 
 const PurchaseHistoryView = () => {
+  let iterator = 0;
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -19,8 +20,8 @@ const PurchaseHistoryView = () => {
       <NavBar showFull={false} />
       <ol>
         {orders.map(({firstName, lastName, purchaseDate, qr}) => (
-          <li>
-            {firstName} {lastName} {purchaseDate} <img src={qr} />
+          <li key={iterator++}>
+            {firstName} {lastName} {purchaseDate} <img src={qr} alt="QR code for ticket" />
           </li>
         ))}
       </ol>

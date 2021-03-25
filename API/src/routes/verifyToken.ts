@@ -10,11 +10,10 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
     let err = new StatusError("Access Denied", 401);
     return next(err);
   }
-  verify(token, env.TOKEN_SECRET, (err: any, decodedToken: any) => {
+  verify(token, env.TOKEN_SECRET, (err: any) => {
     if (err) {
-      res.send(err.message);
+      return next(err);
     } else {
-      console.log(decodedToken);
       next();
     }
   });
@@ -29,10 +28,8 @@ const checkCurrentUser = (req: Request, res: Response, next: NextFunction) => {
   }
   verify(token, env.TOKEN_SECRET, async (err: any, decodedToken: any) => {
     if (err) {
-      res.send(err.message);
-      return next();
+      return next(err);
     } else {
-      console.log(decodedToken);
       let user = await User.findById(decodedToken.id);
       res.locals.user = user;
       return next();

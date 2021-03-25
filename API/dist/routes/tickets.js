@@ -142,8 +142,14 @@ ticketsRouter.post("/api/tickets", [
 }));
 ticketsRouter.get('/api/tickets', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const token = req.cookies.jwt;
+    if (!token) {
+        return next(new StatusError_1.default("Token not found", 400));
+    }
     const decoded = jsonwebtoken_1.default.decode(token, { complete: true });
     const tickets = yield Ticket_1.default.find({ userId: decoded === null || decoded === void 0 ? void 0 : decoded.payload._id });
+    if (!tickets) {
+        return next(new StatusError_1.default("Ticket not found", 404));
+    }
     res.status(200).send(tickets);
 }));
 exports.default = ticketsRouter;

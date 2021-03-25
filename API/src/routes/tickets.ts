@@ -4,9 +4,9 @@ import { body, validationResult } from "express-validator";
 import { Stripe } from "stripe";
 import { toDataURL } from "qrcode";
 import { createTransport } from "nodemailer";
-import jwt, { decode } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import { env } from "../config/keys";
-import checkCurrentUser from './verifyToken';
+import verifyToken from './verifyToken';
 import Ticket from "../models/Ticket";
 import StatusError from "../StatusError";
 import Event from "../models/Event";
@@ -148,8 +148,14 @@ ticketsRouter.post(
 
 ticketsRouter.get('/api/tickets', async (req: Request, res: Response, next: NextFunction) => {
   const token = req.cookies.jwt;
+  if(!token) {
+    return next(new StatusError("Token not found", 400));
+  }
   const decoded = jwt.decode(token, {complete: true});
   const tickets = await Ticket.find({userId: decoded?.payload._id});
+  if(!tickets) {
+    return next(new StatusError("Ticket not found", 404));
+  }
   res.status(200).send(tickets);
 });
 

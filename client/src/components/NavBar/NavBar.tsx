@@ -78,8 +78,8 @@ const NavBar = ({ showFull }: NavBarProps) => {
   const handleLogout = async () => {
     try {
       await axios.get(`/api/logout`);
-      dispatch(setIsLoggedIn(false));
       setRedirectToHome(true);
+      dispatch(setIsLoggedIn(false));
     } catch (err) {
       console.log("error has occured");
     }

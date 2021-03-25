@@ -42,14 +42,13 @@ const LoginSignView = (props: any) => {
       setIsProcessing(true);
       const cookies = new Cookies(["jwt"]);
       if (cookies.get("jwt")) {
-        dispatch(setIsLoggedIn(true));
         setRedirectToHome(true);
+        dispatch(setIsLoggedIn(true));
       } else {
         dispatch(setIsLoggedIn(false));
       }
     } catch (error) {
       dispatch(setIsLoggedIn(false));
-      console.log(error);
     }
   };
 
