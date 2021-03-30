@@ -432,8 +432,19 @@
     MongoDB jest typem nierelacyjnej bazy danych, posiada strukturę zbliżoną do JSON-a, czyli klucz-wartość. Oznacza to, że każdy dokument może mieć inną strukturę, 
     zupełnie inaczej niż jest to w relacyjnych bazach. MongoDB charakteryzuje się wysokim bezpieczeństwem, dużą skalowalnością i łatwością obsługi. 
     Świadczyć o tym może fakt, że z usług tej bazy danych korzystają takie firmy jak Google, Adobe czy ebay. \\
-    MySQL vs MongoDB\\
-    MySQL jest popularną, darmową i open-source relacyjną bazą danych stworzoną przez firmę Oracle. Jak w 
+    MySQL vs MongoDB (informacje pochodzą z \cite{mongovsmysql})\\
+    MySQL jest popularną, darmową i open-source relacyjną bazą danych stworzoną przez firmę Oracle. Jak to w relacyjnych bazach danych, informacje przechowywane są w formie tabel, 
+    wykorzystywany jest język zapytań SQL.\\
+    MongoDB również jest darmowy oraz open-source, dane przechowywane są w formie dokumentów, jako pary klucz-wartość.\\
+    Biorąc pod lupę wydajność obu baz, ciężko jest porównywać dwie zupełnie różne bazy, o dwóch różnych typach. Jendakże można zauważyć, że MySQL jest szybsze przy pobieraniu dużej liczby rekordów,
+    z kolei MongoDB jest zdecydowanie szybsze przy dodawaniu i aktualizjacji dużej liczby rekordów.\\
+    Innym istotnym aspektem porównawczym jest skalowalność. MongoDB zważywszy na fakt, iż jest bazą nierelacjną posiada strukturę dokumentu, zbliżoną do JSONa, jest wysoce skalowalna i 
+    można to robić w bardzo prosty sposób, bez obaw o utraty czy uszkodzenia danych. MySQL jest dużo bardziej ograniczone, ponieważ jest bazą relacyjną. 
+    Jedyne dostępne opcje na skalowanie to skalowanie pionowe lub tworzenie replik do odczytu.\\
+    Innym istotnym aspektem jest elastyczność bazy. Tutaj zdecydowanie króluje MongoDB, każdy z rekordów może posiadać inne pola, o innych typach, podczas gdy w MySQL 
+    nie jest to dostępne. Tam struktura tabeli jest sztywna i nie jest możliwe by choćby jeden rekord miał inne pole zamiast obecnie występującego. \\
+    Decyzja o wyborze MongoDB była dość prosta, biblioteka Mongoose do Node.JS, jest łatwa i przyjemna w obsłudze, dodatkowo korzyści płynące z korzystania z MongoDB są na tyle 
+    interesujące, że to na tę bazę danych padł wybór.
   }
   \subsection{JWT - JSON Web Token}
   {
