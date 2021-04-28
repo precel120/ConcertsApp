@@ -4,16 +4,17 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   AppBar,
   Toolbar,
-  InputBase,
   Select,
   MenuItem,
   FormControl,
   FormHelperText,
-  Button,
   Box,
+  TextField,
+  makeStyles
 } from "@material-ui/core";
 import axios from "axios";
 import { search, setEventType, setIsLoggedIn } from "../../actions";
+import NavBarButton from "./NavBarButton/NavBarButton";
 
 type Filter = {
   searchField: string;
@@ -36,6 +37,17 @@ enum RedirectOptions {
   PURCHASE_HISTORY,
 }
 
+const useStyles = makeStyles({
+  select: {
+    margin: "5px 5px 0 5px",
+    minWidth: 140,
+    maxHeight: 50,
+  },
+  searchField: {
+    margin: "auto 5px",
+  },
+});
+
 const NavBar = ({ showFull }: NavBarProps) => {
   //Redirect state
   const [redirectToLogin, setRedirectToLogin] = useState(false);
@@ -47,6 +59,8 @@ const NavBar = ({ showFull }: NavBarProps) => {
     (state: RootState) => state.navbar
   );
   const dispatch = useDispatch();
+
+  const classes = useStyles();
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     dispatch(setEventType(event.target.value as string));
@@ -90,17 +104,20 @@ const NavBar = ({ showFull }: NavBarProps) => {
       <Toolbar>
         <Link to="/">ConcertsApp</Link>
         {showFull && (
-          <InputBase
+          <TextField
             placeholder="Search..."
+            variant="outlined"
             value={searchField}
             onChange={handleSearch}
+            className={classes.searchField}
           />
         )}
         {showFull && (
-          <FormControl>
+          <FormControl variant="outlined">
             <Select
               value={eventType}
               defaultValue={"All"}
+              className={classes.select}
               onChange={handleChange}
             >
               <MenuItem value={"All"}>All</MenuItem>
@@ -113,33 +130,27 @@ const NavBar = ({ showFull }: NavBarProps) => {
         )}
         {!isLoggedIn ? (
           <Box>
-            <Button
-              variant="outlined"
-              onClick={() => handleRedirect(RedirectOptions.LOGIN)}
-            >
+            <NavBarButton onClick={() => handleRedirect(RedirectOptions.LOGIN)}>
               Sign In
-            </Button>
-            <Button
-              variant="outlined"
+            </NavBarButton>
+            <NavBarButton
               onClick={() => handleRedirect(RedirectOptions.SIGNUP)}
             >
               Sign Up
-            </Button>
+            </NavBarButton>
           </Box>
         ) : (
           <Box>
-            <Button
-              variant="outlined"
+            <NavBarButton
               onClick={() => handleRedirect(RedirectOptions.PURCHASE_HISTORY)}
             >
               Purchase History
-            </Button>
-            <Button
-              variant="outlined"
+            </NavBarButton>
+            <NavBarButton
               onClick={() => handleRedirect(RedirectOptions.LOGOUT)}
             >
               Logout
-            </Button>
+            </NavBarButton>
           </Box>
         )}
         {redirectToLogin && (

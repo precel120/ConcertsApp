@@ -65,33 +65,34 @@ const Root = () => {
   return (
     <>
       <NavBar showFull={true} />
-      <h1>Home Page</h1>
-      {eventsToDisplay.map(
-        ({
-          _id,
-          imageUrl,
-          nameOfEvent,
-          place,
-          dateOfEvent,
-          description,
-          longDescription,
-          type,
-          ticketPrice,
-        }: Event) => (
-          <EventCard
-            key={_id}
-            id={_id}
-            imageUrl={imageUrl}
-            nameOfEvent={nameOfEvent}
-            place={place}
-            dateOfEvent={new Date(dateOfEvent)}
-            description={description}
-            longDescription={longDescription}
-            type={type}
-            ticketPrice={ticketPrice}
-          />
-        )
-      )}
+      <div>
+        {eventsToDisplay.map(
+          ({
+            _id,
+            imageUrl,
+            nameOfEvent,
+            place,
+            dateOfEvent,
+            description,
+            longDescription,
+            type,
+            ticketPrice,
+          }: Event) => (
+            <EventCard
+              key={_id}
+              id={_id}
+              imageUrl={imageUrl}
+              nameOfEvent={nameOfEvent}
+              place={place}
+              dateOfEvent={new Date(dateOfEvent)}
+              description={description}
+              longDescription={longDescription}
+              type={type}
+              ticketPrice={ticketPrice}
+            />
+          )
+        )}
+      </div>
     </>
   );
 };

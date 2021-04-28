@@ -23,7 +23,10 @@ type EventCardProps = {
 
 const useStyles = makeStyles({
   root: {
+    display: "inline-block",
+    minWidth: 150,
     maxWidth: 345,
+    margin: "20px"
   },
   media: {
     height: 140,
