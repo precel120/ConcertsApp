@@ -222,7 +222,7 @@
           Rich, Complex User Interface Requirements & Limited & Well-Suited \\
           \hline
         \end{tabular}
-        \caption{\label{tab:decision-table}Tabela decyzyjna wyboru pomiędzy SPA, a MPA.}
+        \caption{\label{tab:decision-table}Tabela decyzyjna wyboru pomiędzy SPA, a MPA. \cite{mc-spa}}
       \end{table}
     \end{center}
     Do stworzenia aplikacji na potrzeby pracy inżynierskiej zostało wybrane podejście SPA, gwarantuje ono szybsze, przyjemniejsze oraz bardziej responsywne 
@@ -266,28 +266,22 @@
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.9\textwidth]{model_kaskadowy}
-      \caption{Model kaskadowy}
+      \caption{Model kaskadowy \cite{cascade}}
       \label{fig:cascade}
     \end{figure}
     Każda z faz cechuje się innym zestawem czynności jakie należy wykonać. 
-    W fazie strategicznej głównie zachodzi rozmowa z klientem, opracowywany jest cel przedsięwzięcia, zakres, ogólne wymagania i analiza rozwiązań.
-    Określony również zostaje wstępny harmonogram działań nad projektem.\\
     Faza określenia wymagań cechuje się, jak sama nazwa wskazuje, określeniem wymagań. Cele podane w fazie poprzedniej są zamieniane na faktyczne wymagania 
     jakie musi posiadać oprogramowanie. Wymagania dzielimy odpowiednio na funkcjonalne i niefunkcjonalne. 
     Wymagania funkcjonalne to takie, które opisują funkcję lub czynności wykonywane przez system. 
     Z koleji niefunkcjonalne opisują ograniczenia, przy zachowaniu których system powinien realizować swoje funkcję.\\
-    W fazie analizy odpowiada się na pytanie: jak system ma działać? 
-    W odpowiedzi na to pytanie otrzymujemy model systemu, opisujący jak postawione wymagania zostaną zrealizowane, nie wchodząc w szczegóły implementacyjne.\\
-    W fazie projektowania ponownie odpowiada się na pytanie, tym razem jak system ma być zaimplementowany. W wyniku czego powstaje projekt sposobu implementacji.\\
-    Kolejno przchodzi się do fazy implementacji, jest to moment, w którym wszystkie czynności związane z projektowaniem zostają zakończone i wcielone w faktyczny program.\\
+    W fazie projektowania odpowiada się na pytania, jak system ma działać i jak system ma być zaimplementowany. W wyniku czego powstaje projekt i projekt implementacji.\\
+    Kolejno przechodzi się do fazy implementacji, jest to moment, w którym wszystkie czynności związane z projektowaniem zostają zakończone i wcielone w faktyczny program.\\
     Po fazie implementacji następuje faza testowania. 
     W tej fazie następuje sprawdzenie systemu, czy jest zgodny z postawionymi wymaganiami, 
     oraz czy nie posiada jakichś błędów mogących doprowadzić do nieporządanego działania lub błędów z samym wykonywaniu się oprogramowania.\\
-    W kolejnej fazie, czyli fazie instalacji, następuje przekazanie systemu użytkownikowi, pod koniec czego staje się on właścicielem systemu. 
-    W skład tej fazy wchodzi dodatkowo: szkolenie użytkowników i administratorów, instalacja sprzętu i przeniesienie oprogramowania czy wypełenienie baz danych.\\
     Na samym końcu cyklu życia oprogramowania, znajduje się część przeznaczona na konserwację programu. 
     W tej fazie poprawiana jest jakość produktu, dostosowanie oprogramowania do zmian zachodzących w środowisku pracy oraz usuwanie wcześniej niewykrytych błędów.\\
-    Warto również wspomnieć o fazie dokumentacji, jak widać na obrazku \ref{fig:cascade}, jest on wykonywany równolegle z praktycznie wszystkimi pozostałymi czynnościami. 
+    Warto również wspomnieć o fazie dokumentacji, jest ona wykonywana równolegle z praktycznie wszystkimi pozostałymi czynnościami. 
     Tworzona jest dokumentacja, w której znajdują się takie elementy jak: podręcznik użytkownika, opis instalacji czy podręcznik administratora. 
     Dokumentacja jest integralną częścią projektu i nie powinna być pomijana lub traktowana bez należytej uwagi.
   }
@@ -379,6 +373,7 @@
     Wyglądem nie przypomina to kodu znanego z języków programowania typu Java czy C++, lecz spełnia dokładnie takie samo zadanie jak w tamtych językach.
   }
   \subsection{Najistotniejsze wykorzystane biblioteki}
+  \label{section:most-important-libraries}
   {
     W tej sekcji mogłoby znaleźć się ogromna ilość przeróżnych bibliotek, które są używane w projekcie. Create-React-App(służy do generowania projektów Reactowych), 
     sam w sobie pobiera kilkadziesiąt bibliotek. Tutaj jednak znajdą się tylko biblioteki, który zostały dodane na potrzeby projektu i warto o nich wspomnieć, a są to:
@@ -479,9 +474,62 @@
   }
 }
 
-\section{Proces tworzenia aplikacji}
+\section{Proces tworzenia aplikacji i obsługa aplikacji z perspektywy użytkownika}
 {
-
+    W niniejszym rozdziale, zostanie zaprezentowane, jak wyglądał proces powstawania aplikacji oraz krok po korku jak wygląda, proces przez, który przechodzi użytkownik aplikacji.
+    \subsection{Powstawanie aplikacji}
+    {
+      Dobrą praktyką i ogólnie przyjętą zasadą jest rozpoczęcie tworzenia aplikacji webowej od strony backendowej. Zgodnie z tym podejściem prace rozpoczeły się od backendu, 
+      został stworzony podstawowy serwer logujący proste hasło "działa". Kolejnym etapem było podpięcie bazy danych MongoDB.
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{Creation_process/DB_connected.PNG}
+        \caption{Kod odpowiadający za integrację z MongoDB.}
+        \label{fig:MongoDB-integration}
+      \end{figure}
+      Do połączenia z bazą danych wykorzystywana jest biblioteka Mongoose, o której szerzej w sekcji \ref{section:most-important-libraries}.
+      W następnej kolejności został wygenerowany za pomocą Create-React-App, projekt Reactowy, będący bazą dla frontendu aplikacji. 
+      Niezbędnym zabiegiem do połączenia obu stron aplikacji, jest dodanie oprogramowania pośredniczącego proxy, aby połączenie między serwerem stworzonym w Node.JS, a 
+      stroną Reactową mogło zostać nawiązane. Do tego została wykorzystana bibliotek http-proxy-middleware. Do funkcjonowania tego połączenia wystarczyło stworzyć nowy plik 
+      setupProxy.js, prezentujący się następująco.
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{Creation_process/Proxy_middleware.PNG}
+        \caption{Proxy Middleware do połączenia strony frontendowej z backendową.}
+        \label{fig:proxy-middleware}
+      \end{figure}
+      Kolejnym celem było stworzenie prostego forma, służącego do przyjmowania danych osobowych użytkownika oraz dane karty płatniczej. Następnie powstał cały system płatności, 
+      a dokładniej dane podane przez użytkownika są przekazywane do serwera, który następnie tworzy "Payment Intent", czyli Stripową(\ref{section:most-important-libraries}), 
+      nową płatność.
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{Creation_process/client_stripe.PNG}
+        \caption{Obsługa przekazywania danych klienta na serwer w celu dokonania nowej płatności.}
+        \label{fig:client-stripe}
+      \end{figure}
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{Creation_process/server_stripe.PNG}
+        \caption{Podstawowy system obsługi płatności przez serwer}
+        \label{fig:server-stripe}
+      \end{figure}
+      Jednakże sam system płatności to mało, niezbędne było aby był tworzony nowy rekord w bazie danych, odpowiadający biletowi dla danego wydarzenia. 
+      Warunkiem jaki musi zajść, aby bilet mógł zostać stworzony jest by liczba biletów, na wydarzenie nie przekroczyła określonej, maksymalnej liczby dostępnych biletów.
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{Creation_process/Ticket_DB.PNG}
+        \caption{Tworzenie nowego biletu w bazie danych.}
+        \label{fig:ticket-db}
+      \end{figure}
+      Kolejny etap odbył się po stronie frontendowej, została stworzana mała karta, prezentująca w skrócie każde z wydarzeń. Dla celów estetycznych, niezbędne było 
+      aby zdjęcia dla danych wydarzeń były pobierane z serwera.
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{Creation_process/static_folder.PNG}
+        \caption{Linijka kodu odpowiadająca za podpięcie folderu public, w którym znajdują się zdjęcia wydarzeń.}
+        \label{fig:static-folder}
+      \end{figure}
+    }
 }
 
 \section{Podsumowanie}
