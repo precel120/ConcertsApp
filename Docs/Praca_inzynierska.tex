@@ -474,62 +474,101 @@
   }
 }
 
-\section{Proces tworzenia aplikacji i obsługa aplikacji z perspektywy użytkownika}
+\section{Proces tworzenia aplikacji}
 {
-    W niniejszym rozdziale, zostanie zaprezentowane, jak wyglądał proces powstawania aplikacji oraz krok po korku jak wygląda, proces przez, który przechodzi użytkownik aplikacji.
-    \subsection{Powstawanie aplikacji}
-    {
-      Dobrą praktyką i ogólnie przyjętą zasadą jest rozpoczęcie tworzenia aplikacji webowej od strony backendowej. Zgodnie z tym podejściem prace rozpoczeły się od backendu, 
-      został stworzony podstawowy serwer logujący proste hasło "działa". Kolejnym etapem było podpięcie bazy danych MongoDB.
-      \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.9\textwidth]{Creation_process/DB_connected.PNG}
-        \caption{Kod odpowiadający za integrację z MongoDB.}
-        \label{fig:MongoDB-integration}
-      \end{figure}
-      Do połączenia z bazą danych wykorzystywana jest biblioteka Mongoose, o której szerzej w sekcji \ref{section:most-important-libraries}.
-      W następnej kolejności został wygenerowany za pomocą Create-React-App, projekt Reactowy, będący bazą dla frontendu aplikacji. 
-      Niezbędnym zabiegiem do połączenia obu stron aplikacji, jest dodanie oprogramowania pośredniczącego proxy, aby połączenie między serwerem stworzonym w Node.JS, a 
-      stroną Reactową mogło zostać nawiązane. Do tego została wykorzystana bibliotek http-proxy-middleware. Do funkcjonowania tego połączenia wystarczyło stworzyć nowy plik 
-      setupProxy.js, prezentujący się następująco.
-      \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.9\textwidth]{Creation_process/Proxy_middleware.PNG}
-        \caption{Proxy Middleware do połączenia strony frontendowej z backendową.}
-        \label{fig:proxy-middleware}
-      \end{figure}
-      Kolejnym celem było stworzenie prostego forma, służącego do przyjmowania danych osobowych użytkownika oraz dane karty płatniczej. Następnie powstał cały system płatności, 
-      a dokładniej dane podane przez użytkownika są przekazywane do serwera, który następnie tworzy "Payment Intent", czyli Stripową(\ref{section:most-important-libraries}), 
-      nową płatność.
-      \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.9\textwidth]{Creation_process/client_stripe.PNG}
-        \caption{Obsługa przekazywania danych klienta na serwer w celu dokonania nowej płatności.}
-        \label{fig:client-stripe}
-      \end{figure}
-      \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.9\textwidth]{Creation_process/server_stripe.PNG}
-        \caption{Podstawowy system obsługi płatności przez serwer}
-        \label{fig:server-stripe}
-      \end{figure}
-      Jednakże sam system płatności to mało, niezbędne było aby był tworzony nowy rekord w bazie danych, odpowiadający biletowi dla danego wydarzenia. 
-      Warunkiem jaki musi zajść, aby bilet mógł zostać stworzony jest by liczba biletów, na wydarzenie nie przekroczyła określonej, maksymalnej liczby dostępnych biletów.
-      \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.9\textwidth]{Creation_process/Ticket_DB.PNG}
-        \caption{Tworzenie nowego biletu w bazie danych.}
-        \label{fig:ticket-db}
-      \end{figure}
-      Kolejny etap odbył się po stronie frontendowej, została stworzana mała karta, prezentująca w skrócie każde z wydarzeń. Dla celów estetycznych, niezbędne było 
-      aby zdjęcia dla danych wydarzeń były pobierane z serwera.
-      \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.9\textwidth]{Creation_process/static_folder.PNG}
-        \caption{Linijka kodu odpowiadająca za podpięcie folderu public, w którym znajdują się zdjęcia wydarzeń.}
-        \label{fig:static-folder}
-      \end{figure}
-    }
+  Dobrą praktyką i ogólnie przyjętą zasadą jest rozpoczęcie tworzenia aplikacji webowej od strony backendowej. Zgodnie z tym podejściem prace rozpoczeły się od backendu, 
+  został stworzony podstawowy serwer logujący proste hasło "działa". Kolejnym etapem było podpięcie bazy danych MongoDB.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Creation_process/DB_connected.PNG}
+    \caption{Kod odpowiadający za integrację z MongoDB.}
+    \label{fig:MongoDB-integration}
+  \end{figure}
+  Do połączenia z bazą danych wykorzystywana jest biblioteka Mongoose, o której szerzej w sekcji \ref{section:most-important-libraries}.
+  W następnej kolejności został wygenerowany za pomocą Create-React-App, projekt Reactowy, będący bazą dla frontendu aplikacji. 
+  Niezbędnym zabiegiem do połączenia obu stron aplikacji, jest dodanie oprogramowania pośredniczącego proxy, aby połączenie między serwerem stworzonym w Node.JS, a 
+  stroną Reactową mogło zostać nawiązane. Do tego została wykorzystana bibliotek http-proxy-middleware. Do funkcjonowania tego połączenia wystarczyło stworzyć nowy plik 
+  setupProxy.js, prezentujący się następująco.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Creation_process/Proxy_middleware.PNG}
+    \caption{Proxy Middleware do połączenia strony frontendowej z backendową.}
+    \label{fig:proxy-middleware}
+  \end{figure}
+  Kolejnym celem było stworzenie prostego forma, służącego do przyjmowania danych osobowych użytkownika oraz dane karty płatniczej. Następnie powstał cały system płatności, 
+  a dokładniej dane podane przez użytkownika są przekazywane do serwera, który następnie tworzy "Payment Intent", czyli Stripową(\ref{section:most-important-libraries}), 
+  nową płatność.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Creation_process/client_stripe.PNG}
+    \caption{Obsługa przekazywania danych klienta na serwer w celu dokonania nowej płatności.}
+    \label{fig:client-stripe}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Creation_process/server_stripe.PNG}
+    \caption{Podstawowy system obsługi płatności przez serwer}
+    \label{fig:server-stripe}
+  \end{figure}
+  Jednakże sam system płatności to mało, niezbędne było aby był tworzony nowy rekord w bazie danych, odpowiadający biletowi dla danego wydarzenia. 
+  Warunkiem jaki musi zajść, aby bilet mógł zostać stworzony jest by liczba biletów, na wydarzenie nie przekroczyła określonej, maksymalnej liczby dostępnych biletów.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Creation_process/Ticket_DB.PNG}
+    \caption{Tworzenie nowego biletu w bazie danych.}
+    \label{fig:ticket-db}
+  \end{figure}
+  Kolejny etap odbył się po stronie frontendowej, została stworzana mała karta, prezentująca w skrócie każde z wydarzeń. Dla celów estetycznych, niezbędne było 
+  aby widoczne były na nich zdjęcia, co dodatkowo wymagało, aby były one pobierane z serwera.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Creation_process/static_folder.PNG}
+    \caption{Linijka kodu odpowiadająca za podpięcie folderu public, w którym znajdują się zdjęcia wydarzeń.}
+    \label{fig:static-folder}
+  \end{figure}
+  W następnej kolejności został wykonany wstępny Nav Bar z możliwością wyszukiwania wydarzenia po nazwie, jak również filtrowania po typach wydarzeń. Dla wygody 
+  programisty wymagało to podpięcia biblioteki Redux, w celu stworzenia globalnego stanu, który może być współdzielony przez wszystkie komponenty. 
+  Ponieważ, filtrowane wartości są, w poźniejszym etapie rozwoju aplikacji, użyteczne.\\
+  Następnym bardzo istotnym etapem, było stworzenie walidacji danych przesyłanych na serwer w formie do płatności, oraz danych wpisywanych przez użytkownika.
+  Do walidacji wykorzystane zostały biblioteki express-validator oraz React-Hook-Form, odpowiednio dla strony backendowej i frontendowej. 
+  Sprawdzane są typy danych podawane w formie oraz za pomocą REGEX, czy podana wartość, np. adres email, jest zgodny ze wzorem.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Creation_process/client_validation.PNG}
+    \caption{Przykładowy pattern walidacji numeru telefonu, po stronie klienta.}
+    \label{fig:client-validation}
+  \end{figure}
+  Kolejną funkcjonalnością zaimplementowaną, zostało wysyłanie maili. 
+  Do klient, po dokonaniu poprawnej płatności, zostaje wysłany email, z informacją o poprawnie dokonanej płatności i docelowo z kodem QR, będacy biletem.
+  Do tego została wykorzystana biblioteka nodemailer\ref{section:most-important-libraries}.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Creation_process/sending_email.PNG}
+    \caption{Kod odpowiadający za wysyłanie emaili.}
+    \label{fig:sending-email}
+  \end{figure}
+  Kolejnym, ale nieostatnim elementem, było generowanie, wysyłanie w mailu oraz przetrzymywanie kodów QR. 
+  Kod jest generowany na podstawie id biletu, znajdującego się w bazie danych. 
+  Do jego realizacji wyykorzystano bibliotekę QRCode\ref{section:most-important-libraries}.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Creation_process/qrcode.PNG}
+    \caption{Kod odpowiadający za generowanie kodów QR.}
+    \label{fig:qr-code}
+  \end{figure}
+  Ostatnią funkcjonalnością, ale nie ostatnim krokiem było logowanie się i rejestracja użytkowników. 
+  Do jej zrealizowania było potrzebne kilka bibliotek, a dokładniej: jsonwebtoken, bcrypt, o których szerzej w rozdziale \ref{section:most-important-libraries}. 
+  Logowanie się użytkownika, umożliwia mu dostęp do histori zakupionych biletów, na wydarzenia. Dodatkowo otrzymuje dostęp do kodów QR swoich biletów. 
+  Niezalogowany użytkownik ma możliwość zakupu biletu, kod QR otrzymuje na maila, ale w razie np. utraty maila nie ma innej opcji dostępu do niego. 
+  Co czyni rejestracje użytkownika bardzo atrakcyjnym.\\
+  Finalnym krokiem zostało dodanie styli CSS i w pełni wykorzystanie biblioteki komponentów Material-UI. 
+  Po wszystkich zmianach wizualnych, aplikacja prezentuje się następująco:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Creation_process/qrcode.PNG}
+    \caption{Finalny wygląd aplikacji.}
+    \label{fig:final-view}
+  \end{figure}
 }
 
 \section{Podsumowanie}
@@ -539,7 +578,7 @@
 
 \section{Możliwości dalszego rozwoju aplikacji}
 {
-
+  
 }
 
 \section{Bibliografia}
