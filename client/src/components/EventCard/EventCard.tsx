@@ -23,14 +23,16 @@ type EventCardProps = {
 
 const useStyles = makeStyles({
   root: {
-    display: "inline-block",
     minWidth: 150,
-    maxWidth: 345,
-    margin: "20px"
+    maxWidth: 340,
+    height: "40rem",
+    width: "20rem",
+    margin: "2rem",
   },
-  media: {
-    height: 140,
-  },
+  actionArea: {
+    width: "100%",
+    height: "100%",
+  }
 });
 
 const EventCard = ({
@@ -52,7 +54,7 @@ const EventCard = ({
   
   return (
     <Card className={classes.root}>
-      <CardActionArea onClick={redirectToForm}>
+      <CardActionArea onClick={redirectToForm} className={classes.actionArea}>
         {imageUrl && (
           <CardMedia
             src={`http://localhost:5000${imageUrl}`}
