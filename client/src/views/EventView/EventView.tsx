@@ -13,6 +13,11 @@ const useStyles = makeStyles({
     margin: "auto",
     textAlign: "center",
   },
+  centerWrap: {
+    margin: "auto",
+    textAlign: "center",
+    flexWrap: "wrap",
+  },
   container: {
     display: 'flex',
     flexDirection: 'column',
@@ -57,9 +62,10 @@ const EventView = (props: any) => {
   }, [dateOfEvent, id, setTicketsLeftClient]);
   const backgroundStyle = {
     display: "flex",
+    width: "40vw",
     height: "65vh",
     color: "white",
-    backgroundImage: "url(" + `http://localhost:5000${imageURL}` + ")",
+    backgroundImage: `url(http://localhost:5000${imageURL})`,
     backgroundSize: "contain",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -70,7 +76,7 @@ const EventView = (props: any) => {
       <NavBar showFull={false} />
       <div className={classes.center}>
         <div style={backgroundStyle} className={classes.center}>
-          <Typography variant="h1" component="h1" className={classes.center}>
+          <Typography variant="h1" component="h1" className={classes.centerWrap}>
             {nameOfEvent}
           </Typography>
         </div>

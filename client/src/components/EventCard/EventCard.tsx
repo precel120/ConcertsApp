@@ -23,15 +23,18 @@ type EventCardProps = {
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 150,
-    maxWidth: 340,
-    height: "40rem",
+    margin: "auto",
     width: "20rem",
-    margin: "2rem",
+    height: "35rem",
   },
   actionArea: {
     width: "100%",
-    height: "100%",
+    height: "100%"
+  },
+  media: {
+    width: '100%',
+    height: "70%",
+    objectFit: "cover",
   }
 });
 
@@ -60,6 +63,7 @@ const EventCard = ({
             src={`http://localhost:5000${imageUrl}`}
             title="placeholder"
             component="img"
+            className={classes.media}
           />
         )}
         <CardContent>

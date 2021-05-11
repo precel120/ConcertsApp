@@ -17,7 +17,7 @@ const NavBarButton = ({ onClick, children }: NavBarButtonProps) => {
 
   return (
     <Button
-      variant="outlined"
+      variant="contained"
       className={classes.button}
       onClick={() => onClick()}
     >

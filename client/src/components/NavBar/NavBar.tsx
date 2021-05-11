@@ -10,7 +10,7 @@ import {
   FormHelperText,
   Box,
   TextField,
-  makeStyles
+  makeStyles,
 } from "@material-ui/core";
 import axios from "axios";
 import { search, setEventType, setIsLoggedIn } from "../../actions";
@@ -38,13 +38,55 @@ enum RedirectOptions {
 }
 
 const useStyles = makeStyles({
+  container: {
+    display: "flex",
+    flexFlow: "row wrap",
+    alignItems: "center",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+  },
   select: {
-    margin: "5px 5px 0 5px",
+    flex: 1,
+    margin: "0.5rem 0.5rem 0 0.5rem",
     minWidth: 140,
     maxHeight: 50,
+    color: "white",
+    "&:before": {
+      borderColor: "white",
+    },
+    "&:after": {
+      borderColor: "white",
+    },
+  },
+  white: {
+    color: "white",
+    fill: "white",
+  },
+  link: {
+    color: "white",
+    fontSize: "1.6rem",
+    textDecoration: "none",
   },
   searchField: {
-    margin: "auto 5px",
+    margin: "auto 0.5rem",
+    borderColor: "white",
+    '& label.Mui-focused': {
+      color: 'white',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'black',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'white',
+      },
+      '&:hover fieldset': {
+        borderColor: 'white',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'black',
+      },
+    },
   },
 });
 
@@ -101,8 +143,10 @@ const NavBar = ({ showFull }: NavBarProps) => {
 
   return (
     <AppBar position="static">
-      <Toolbar>
-        <Link to="/">ConcertsApp</Link>
+      <Toolbar className={classes.container}>
+        <Link to="/" className={classes.link}>
+          ConcertsApp
+        </Link>
         {showFull && (
           <TextField
             placeholder="Search..."
@@ -113,19 +157,26 @@ const NavBar = ({ showFull }: NavBarProps) => {
           />
         )}
         {showFull && (
-          <FormControl variant="outlined">
+          <FormControl>
             <Select
               value={eventType}
               defaultValue={"All"}
               className={classes.select}
               onChange={handleChange}
+              inputProps={{
+                classes: {
+                  icon: classes.white,
+                },
+              }}
             >
               <MenuItem value={"All"}>All</MenuItem>
               <MenuItem value={"Concert"}>Concert</MenuItem>
               <MenuItem value={"Festival"}>Festival</MenuItem>
               <MenuItem value={"Museum"}>Museum</MenuItem>
             </Select>
-            <FormHelperText>Set event type</FormHelperText>
+            <FormHelperText className={classes.white}>
+              Set event type
+            </FormHelperText>
           </FormControl>
         )}
         {!isLoggedIn ? (
@@ -153,6 +204,7 @@ const NavBar = ({ showFull }: NavBarProps) => {
             </NavBarButton>
           </Box>
         )}
+
         {redirectToLogin && (
           <Redirect to={{ pathname: "/login", state: { isSignUp: false } }} />
         )}

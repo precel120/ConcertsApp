@@ -29,8 +29,11 @@ interface RootState {
 
 const useStyles = makeStyles({
   containerRow: {
+    margin: "0.7rem",
     display: "flex",
-
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    width: "100vw",
   },
   containerColumn: {
     display: "flex",
