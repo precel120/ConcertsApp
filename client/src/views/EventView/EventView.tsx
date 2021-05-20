@@ -63,7 +63,7 @@ const EventView = (props: any) => {
   const backgroundStyle = {
     display: "flex",
     width: "40vw",
-    height: "65vh",
+    height: "50vh",
     color: "white",
     backgroundImage: `url(http://localhost:5000${imageURL})`,
     backgroundSize: "contain",

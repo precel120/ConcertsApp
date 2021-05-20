@@ -69,12 +69,14 @@ const useStyles = makeStyles({
   },
   searchField: {
     margin: "auto 0.5rem",
-    borderColor: "white",
     '& label.Mui-focused': {
       color: 'white',
     },
     '& .MuiInput-underline:after': {
       borderBottomColor: 'black',
+    },
+    '& .MuiInputBase-input': {
+      color: "white"
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
