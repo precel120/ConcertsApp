@@ -24,7 +24,7 @@ type EventCardProps = {
 const useStyles = makeStyles({
   root: {
     margin: "auto",
-    width: "20rem",
+    width: "25rem",
     height: "35rem",
   },
   actionArea: {

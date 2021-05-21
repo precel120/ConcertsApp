@@ -9,6 +9,15 @@ interface IURLId {
 }
 
 const useStyles = makeStyles({
+  root: {
+    width: "50rem",
+    margin: "2rem auto",
+    padding: "2rem",
+    textAlign: "center",
+    border: "2px solid black",
+    borderRadius: "25px",
+    boxShadow: "10px 10px"
+  },
   center: {
     margin: "auto",
     textAlign: "center",
@@ -17,6 +26,7 @@ const useStyles = makeStyles({
     margin: "auto",
     textAlign: "center",
     flexWrap: "wrap",
+    textShadow: "2px 2px black"
   },
   container: {
     display: 'flex',
@@ -61,8 +71,9 @@ const EventView = (props: any) => {
     }
   }, [dateOfEvent, id, setTicketsLeftClient]);
   const backgroundStyle = {
+    margin: "auto",
     display: "flex",
-    width: "40vw",
+    width: "100%",
     height: "50vh",
     color: "white",
     backgroundImage: `url(http://localhost:5000${imageURL})`,
@@ -74,7 +85,7 @@ const EventView = (props: any) => {
   return (
     <>
       <NavBar showFull={false} />
-      <div className={classes.center}>
+      <div className={classes.root}>
         <div style={backgroundStyle} className={classes.center}>
           <Typography variant="h1" component="h1" className={classes.centerWrap}>
             {nameOfEvent}
