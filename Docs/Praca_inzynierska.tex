@@ -260,9 +260,9 @@
   \subsection{Projektowanie i tworzenie systemu informatycznego}
   {
     W inżynierii oprogramowania, czyli inaczej wiedzy technicznej, opisującej wszystkie fazy cyklu życia oprogramowania, istnieje wiele różnych modeli 
-    cyklu życia oprogramowania. Do najpopularnieszych należą: kaskadowy, piramidy oraz spiralny. Każdy z nich w podobny sposób przedstawia każdy krok, 
+    cyklu życia oprogramowania. Do najpopularniejszych należą: kaskadowy, piramidy oraz spiralny. Każdy z nich w podobny sposób przedstawia każdy krok, 
     jaki powinien przejść program, aby mógł zostać wypuszczony na rynek. Na poniższym rysunku przedstawiono jak wygląda model kaskadowy, w dalszej części zostaną 
-    omówione, po krótce, jego poszczególne etapy.
+    omówione, pokrótce, jego poszczególne etapy.
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.9\textwidth]{model_kaskadowy}
@@ -273,12 +273,12 @@
     Faza określenia wymagań cechuje się, jak sama nazwa wskazuje, określeniem wymagań. Cele podane w fazie poprzedniej są zamieniane na faktyczne wymagania 
     jakie musi posiadać oprogramowanie. Wymagania dzielimy odpowiednio na funkcjonalne i niefunkcjonalne. 
     Wymagania funkcjonalne to takie, które opisują funkcję lub czynności wykonywane przez system. 
-    Z koleji niefunkcjonalne opisują ograniczenia, przy zachowaniu których system powinien realizować swoje funkcję.\\
+    Z kolei niefunkcjonalne opisują ograniczenia, przy zachowaniu których system powinien realizować swoje funkcję.\\
     W fazie projektowania odpowiada się na pytania, jak system ma działać i jak system ma być zaimplementowany. W wyniku czego powstaje projekt i projekt implementacji.\\
     Kolejno przechodzi się do fazy implementacji, jest to moment, w którym wszystkie czynności związane z projektowaniem zostają zakończone i wcielone w faktyczny program.\\
     Po fazie implementacji następuje faza testowania. 
     W tej fazie następuje sprawdzenie systemu, czy jest zgodny z postawionymi wymaganiami, 
-    oraz czy nie posiada jakichś błędów mogących doprowadzić do nieporządanego działania lub błędów z samym wykonywaniu się oprogramowania.\\
+    oraz czy nie posiada jakichś błędów mogących doprowadzić do niepożądanego działania lub błędów z samym wykonywaniu się oprogramowania.\\
     Na samym końcu cyklu życia oprogramowania, znajduje się część przeznaczona na konserwację programu. 
     W tej fazie poprawiana jest jakość produktu, dostosowanie oprogramowania do zmian zachodzących w środowisku pracy oraz usuwanie wcześniej niewykrytych błędów.\\
     Warto również wspomnieć o fazie dokumentacji, jest ona wykonywana równolegle z praktycznie wszystkimi pozostałymi czynnościami. 
@@ -300,7 +300,7 @@
     \begin{itemize}
       \item wysoka wydajność, został zaprojektowany tak aby optymalizować wydajność i skalowalność aplikacji webowych
       \item pracując nad kodem po stronie klienta jak i po stronie serwera, poruszamy się w tym samym języku programowania
-      \item dostęp do manadżera pakietów np. Yarn czy NPM, dzięki niemu uzyskuje się dostęp do setek tysięcy przeróżnych pakietów.
+      \item dostęp do menadżera pakietów np. Yarn czy NPM, dzięki niemu uzyskuje się dostęp do setek tysięcy przeróżnych pakietów.
       \item jest przenośny. Można korzystać z niego zarówno na systemie macOS, Linux, jak również Windows.
       \item Dostęp do ogromnego community, gotowego służyć pomocą.
     \end{itemize}
@@ -335,16 +335,16 @@
     składnię taką jak HTML. \\
     Kolejnym wyjątkowym aspektem Reacta jest Virtual DOM. Jest to koncept programistyczny gdzie wirtualna reprezentacja UI jest 
     przetrzymywana w pamięci i synchronizowana z prawdziwym DOM-em. 
-    Umożliwia to podawanie UI w jakim stanie ma się znajdować i jakie komponenty mają być wyrenderowane, również upewnia się, że faktyczny DOM odowiada temu stanowi. 
-    Ściagą to z programisty konieczność stworzenia samemu takich elementów jak: obsługę wydarzeń np. kliknięcie przycisku, manualne aktualizowanie DOM-u oraz manipulację atrybutami.
+    Umożliwia to podawanie UI w jakim stanie ma się znajdować i jakie komponenty mają być wyrenderowane, również upewnia się, że faktyczny DOM odpowiada temu stanowi. 
+    Ściągą to z programisty konieczność stworzenia samemu takich elementów jak: obsługę wydarzeń np. kliknięcie przycisku, manualne aktualizowanie DOM-u oraz manipulację atrybutami.
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.9\textwidth]{how_react_works.PNG}
       \caption{Skrótowa prezentacja działania Reacta}
       \label{fig:how-react-works}
     \end{figure}
-    Konkurencje dla Reacta stanowi Angular i Vue, jednakże to React króluje zarówno jeśli chodzi o popularność, pobrania, gwiazdki na GitHubie, liczbe pakietów, które są zależne od Reacta. 
-    Niekwestionowym mistrzem jest również w kategoriach GitHub "Used by", tematach tworzonych na GitHubie.\cite{frontend-popularity} Dodatkowym atutem przemawiającym za Reactem jest 
+    Konkurencje dla Reacta stanowi Angular i Vue, jednakże to React króluje zarówno jeśli chodzi o popularność, pobrania, gwiazdki na GitHubie, liczbę pakietów, które są zależne od Reacta. 
+    Niekwestionowanym mistrzem jest również w kategoriach GitHub "Used by", tematach tworzonych na GitHubie.\cite{frontend-popularity} Dodatkowym atutem przemawiającym za Reactem jest 
     ilość pracy na rynku. Jak zostało zaprezentowane na obrazku poniżej, ponownie React króluje i w tej kategorii. 
     \begin{figure}[H]
       \centering
@@ -357,18 +357,18 @@
   {
     Czym jest TypeScript? W skrócie jest to JavaScript rozszerzający go o statyczne definicje typów, takie jak np. string, number czy boolean. 
     Został stworzony przez firmę Microsoft, przy wsparciu Google.
-    Pisząc w TypeScripcie nie trzeba używać typów, inteferfejsów, typów generycznych czy też innych elementów udostępnianych. 
+    Pisząc w TypeScripcie nie trzeba używać typów, interfejsów, typów generycznych czy też innych elementów udostępnianych. 
     Można pisać zwykły JavaScript i pomimo, że zostaną wyświetlone błędy informujące o nieokreślonym typie, cały kod wykona się mimo wszystko.
     Każdy kod napisany w JavaScripcie będzie w pełni funkcjonalnym kodem TypeScriptowym.
-    Jednakże pisząc w TypeScripcie przeglądarka nie rozumie tego języka, zna tylko i wyłącznie JavaScript, dlatego kod musi być kompilowany przy pomocy 
+    Jednakże pisząc w TypeScripcie przeglądarka nie rozumie tego języka, zna tylko i wyłącznie JavaScript, dlatego kod musi być skompilowany przy pomocy 
     TypeScriptowego kompilatora lub Babela.\cite{typescript-docs} 
     Dodatkowo sprawia to, że napisany kod będzie działał na dowolnym urządzeniu i przeglądarce, o ile te wspierają JavaScript.\\
     Dlaczego programiści decydują się na TypeScript?\\
     Wynika to przede wszystkim z obecności typów, pisząc w JavaScripcie należałoby pisać dodatkowe linijki kodu tylko i wyłącznie sprawdzające np. czy 
-    dane otrzymane przez serwer są odpowiednich typów, TypeScript robi wszystko za programiste. 
+    dane otrzymane przez serwer są odpowiednich typów, TypeScript robi wszystko za programistę. 
     Błędy związane z typami należą do najczęściej popełnianych wśród programistów JavaScript, szczególnie w projektach o większej skali bardzo łatwo o takie błędy.
-    Typować można nie tylko zmienne, ale też funkcje, zarówne argumenty jakie przyjmuje oraz typ zwracany.\\
-    TypeScript to nie tylko typy, posiada liczne dodatkowe funkcje, których JavaScript nie posiada. Są to chociażby wcześniej wspomnieniane interfejsy, 
+    Typować można nie tylko zmienne, ale też funkcje, zarówno argumenty jakie przyjmuje oraz typ zwracany.\\
+    TypeScript to nie tylko typy, posiada liczne dodatkowe funkcje, których JavaScript nie posiada. Są to chociażby wcześniej wspomniane interfejsy, 
     można deklarować własne typy, typy generyczne oraz typy wyliczeniowe - enumy. Inną niedostępna funkcją jest chociażby przeciążanie funkcji. 
     Wyglądem nie przypomina to kodu znanego z języków programowania typu Java czy C++, lecz spełnia dokładnie takie samo zadanie jak w tamtych językach.
   }
@@ -391,36 +391,36 @@
     Pierwsza z nich czyli Express, jest minimalistycznym, elastycznym frameworkiem do Node.js. Dostarcza takie mechanizmy jak\cite{express}:
     \begin{itemize}
       \item Tworzenie funkcji obsługujących żądania metod HTTP i routing.
-      \item Integrację z różnymi silnikami do generowania widowków, opartych na szablonach stron.
+      \item Integrację z różnymi silnikami do generowania widoków, opartych na szablonach stron.
       \item Konfiguracja podstawowych ustawień aplikacji webowych np. port.
       \item Dodatkowe przetwarzanie żądań warstwy pośredniej(Middleware).
     \end{itemize}
     Sam w sobie Express jest minimalistyczny i nie posiada wielu istotnych funkcji. Dopiero zewnętrzne biblioteki umożliwiają takie aspekty jak: logowanie użytkowników,
     walidacja danych, zarządzanie ciasteczkami czy też parsowanie.\\
-
+ 
     Drugi z nich czyli Mongoose, służy do porozumiewania się z bazą danych MongoDB. Umożliwia w prosty sposób tworzenie modeli danych, walidację, przeszukiwanie bazy danych 
     oraz zapisywanie zmian w bazie. Lecz sam w sobie jest zdefiniowany jako narzędzie do modelowanie danych.\\
-
+ 
     Kolejną spośród wymienionych bibliotek jest Stripe. Stripe jest biblioteką do obsługi płatności internetowych, poprzez podanie danych karty kradytowej lub debetowej, 
-    wysyłane jest zapytanie do API, które tworzy płatność, pobiera odpowiednią kwotę z konta i informuje o powodzeniu lub niepowodzeniu tranzakcji.\\
-
+    wysyłane jest zapytanie do API, które tworzy płatność, pobiera odpowiednią kwotę z konta i informuje o powodzeniu lub niepowodzeniu transakcji.\\
+ 
     Nodemailer jest prostym modułem dla aplikacji opartych na Node.js umożliwiającym i znacznie upraszczającym wysyłanie maili. Jest on o tyle niezbędny, że każdy bilet wysyłany jest na maila, 
-    jedynie zalogowani użytkownicy mają wgląd do histori tranzakcji i mogą podejrzeć kod QR z poziomu aplikacji. Użytkownicy goście nie mają innego dostępu do biletów, jedynie 
+    jedynie zalogowani użytkownicy mają wgląd do historii transakcji i mogą podejrzeć kod QR z poziomu aplikacji. Użytkownicy goście nie mają innego dostępu do biletów, jedynie 
     przychodzą one na maila.\\
-
+ 
     QRCode jest biblioteką do generowania kodów QR. Jest to technologia bardzo obecnie popularna i wygodna, praktycznie każdy obecny smartfon posiada czytnik kodów QR.\\
-
+ 
     Material UI jest jedną z najpopularniejszych bibliotek komponentów. Służy do tworzenia interfejsów użytkownika, bazując na gotowych komponentach, dodatkowo znacznie 
-    usprawniając tworzenie responsywnych interfejsów.\\
-
+    usprawniające tworzenie responsywnych interfejsów.\\
+ 
     React Redux jest to biblioteka do Reacta, udostępniająca przetrzymywanie globalnego stanu aplikacji i dostępu do niego z każdego jej poziomu. Jest to o tyle przydatne 
-    narzędzie, że bez jego wykorzytsania developer byłby zmuszony do przekazywania danych między komponentami w bardzo nieelegancki i toporny sposób. Redux umożliwia 
+    narzędzie, że bez jego wykorzystania developer byłby zmuszony do przekazywania danych między komponentami w bardzo nieelegancki i toporny sposób. Redux umożliwia 
     manipulację i dostęp do globalnego stanu z dowolnego komponentu.\\
-
+ 
     Jsonwebtoken jest biblioteką do tworzenia JWT, służący przede wszystkim do autoryzacji użytkownika, szczególnie przydatne jest to przy logowaniu. Szerzej o JWT 
     przedstawione zostanie w jednej z kolejnych podsekcji.\\
-
-    Bcrypt - prosta biblioteka do hashowania hasła użytkownika, wykorzystywana przy rejestracji nowych użytkwoników.
+ 
+    Bcrypt - prosta biblioteka do hashowania hasła użytkownika, wykorzystywana przy rejestracji nowych użytkowników.
   }
   \subsection{MongoDB}
   {
@@ -431,8 +431,8 @@
     MySQL jest popularną, darmową i open-source relacyjną bazą danych stworzoną przez firmę Oracle. Jak to w relacyjnych bazach danych, informacje przechowywane są w formie tabel, 
     wykorzystywany jest język zapytań SQL.\\
     MongoDB również jest darmowy oraz open-source, dane przechowywane są w formie dokumentów, jako pary klucz-wartość.\\
-    Biorąc pod lupę wydajność obu baz, ciężko jest porównywać dwie zupełnie różne bazy, o dwóch różnych typach. Jendakże można zauważyć, że MySQL jest szybsze przy pobieraniu dużej liczby rekordów,
-    z kolei MongoDB jest zdecydowanie szybsze przy dodawaniu i aktualizjacji dużej liczby rekordów.\\
+    Biorąc pod lupę wydajność obu baz, ciężko jest porównywać dwie zupełnie różne bazy, o dwóch różnych typach. Jednakże można zauważyć, że MySQL jest szybsze przy pobieraniu dużej liczby rekordów,
+    z kolei MongoDB jest zdecydowanie szybsze przy dodawaniu i aktualizacji dużej liczby rekordów.\\
     Innym istotnym aspektem porównawczym jest skalowalność. MongoDB zważywszy na fakt, iż jest bazą nierelacjną posiada strukturę dokumentu, zbliżoną do JSONa, jest wysoce skalowalna i 
     można to robić w bardzo prosty sposób, bez obaw o utraty czy uszkodzenia danych. MySQL jest dużo bardziej ograniczone, ponieważ jest bazą relacyjną. 
     Jedyne dostępne opcje na skalowanie to skalowanie pionowe lub tworzenie replik do odczytu.\\
@@ -447,14 +447,14 @@
     Informacje przekazywane za pomocą JWT są weryfikowalne i można im ufać, ponieważ są podpisywane cyfrowo. 
     JWT można podpisać za pomocą algorytmu HMAC przy wykorzystaniu sekretu lub pary klucza publicznego i prywatnego przy wykorzystaniu algorytmów RSA lub ECDSA. 
     Sekret jest tajnym hasłem przechowywanym przez serwer do podpisywania i autoryzacji tokenów.
-    Najczęstszym powodem wykorzystania JWT jest auotryzacja użytkownika, czy to przy logowaniu, czy też 
+    Najczęstszym powodem wykorzystania JWT jest autoryzacja użytkownika, czy to przy logowaniu, czy też 
     przy sprawdzaniu dostępu do np. jakiegoś url w aplikacji. Innym popularnym zastosowaniem jest wymiana informacji.\\
     JSON Web Token składa się z następujących elementów: nagłówka (Header), payloadu oraz podpisu, oddzielonych od siebie kropkami. 
     Przeważnie struktura JWT wygląda następująco: xxxxx.yyyyy.zzzzz\\
     Nagłówek przeważnie składa się z dwóch części: typu wygenerowanego tokena oraz algorytmu, jakim został podpisany.\\
     Payload jest odpowiedzialny za przetrzymywanie danych zawartych w tokenie.\\
     Zarówno nagłówek, jak i payload są kodowane za pomocą Base64-URL do stworzenia odpowiednio pierwszej i drugiej części JWT.\\
-    Do stworzenia podpisu należy wziąć zakodowany nagłówek i payload, spreyzować algorytm szyfrujący oraz prywatny klucz lub sekret i podpisać to.
+    Do stworzenia podpisu należy wziąć zakodowany nagłówek i payload, sprecyzować algorytm szyfrujący oraz prywatny klucz lub sekret i podpisać to.
     Przykładowo przy wykorzystaniu algorytmu HMAC SHA256, podpis zostanie stworzony w następujący sposób:\\
     \begin{figure}[H]
       \centering
@@ -470,13 +470,13 @@
       \item Użytkownik zatwierdza podane dane.
       \item Wysyłane jest zapytanie do serwera, gdzie tworzony jest token, hashowane jest hasło i tworzony nowy wpis w bazie danych.
     \end{enumerate}
-    Dzięki temu po zalogowaniu użytkownik ma dostęp do inaczej niedostępnej sekcji, czyli histori zamówień, gdzie można zaleźć wszystkie posiadane bilety wraz z ich kodami QR.
+    Dzięki temu po zalogowaniu użytkownik ma dostęp do inaczej niedostępnej sekcji, czyli historii zamówień, gdzie można znaleźć wszystkie posiadane bilety wraz z ich kodami QR.
   }
 }
 
 \section{Proces tworzenia aplikacji}
 {
-  Dobrą praktyką i ogólnie przyjętą zasadą jest rozpoczęcie tworzenia aplikacji webowej od strony backendowej. Zgodnie z tym podejściem prace rozpoczeły się od backendu, 
+  Dobrą praktyką i ogólnie przyjętą zasadą jest rozpoczęcie tworzenia aplikacji webowej od strony back endowej. Zgodnie z tym podejściem prace rozpoczęły się od backendu, 
   został stworzony podstawowy serwer logujący proste hasło "działa". Kolejnym etapem było podpięcie bazy danych MongoDB.
   \begin{figure}[H]
     \centering
@@ -492,7 +492,7 @@
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{Creation_process/Proxy_middleware.PNG}
-    \caption{Proxy Middleware do połączenia strony frontendowej z backendową.}
+    \caption{Proxy Middleware do połączenia strony front endowej z backendową.}
     \label{fig:proxy-middleware}
   \end{figure}
   Kolejnym celem było stworzenie prostego forma, służącego do przyjmowania danych osobowych użytkownika oraz dane karty płatniczej. Następnie powstał cały system płatności, 
@@ -518,7 +518,7 @@
     \caption{Tworzenie nowego biletu w bazie danych.}
     \label{fig:ticket-db}
   \end{figure}
-  Kolejny etap odbył się po stronie frontendowej, została stworzana mała karta, prezentująca w skrócie każde z wydarzeń. Dla celów estetycznych, niezbędne było 
+  Kolejny etap odbył się po stronie front endowej, została stworzona mała karta, prezentująca w skrócie każde z wydarzeń. Dla celów estetycznych, niezbędne było 
   aby widoczne były na nich zdjęcia, co dodatkowo wymagało, aby były one pobierane z serwera.
   \begin{figure}[H]
     \centering
@@ -528,9 +528,9 @@
   \end{figure}
   W następnej kolejności został wykonany wstępny Nav Bar z możliwością wyszukiwania wydarzenia po nazwie, jak również filtrowania po typach wydarzeń. Dla wygody 
   programisty wymagało to podpięcia biblioteki Redux, w celu stworzenia globalnego stanu, który może być współdzielony przez wszystkie komponenty. 
-  Ponieważ, filtrowane wartości są, w poźniejszym etapie rozwoju aplikacji, użyteczne.\\
+  Ponieważ, filtrowane wartości są, w późniejszym etapie rozwoju aplikacji, użyteczne.\\
   Następnym bardzo istotnym etapem, było stworzenie walidacji danych przesyłanych na serwer w formie do płatności, oraz danych wpisywanych przez użytkownika.
-  Do walidacji wykorzystane zostały biblioteki express-validator oraz React-Hook-Form, odpowiednio dla strony backendowej i frontendowej. 
+  Do walidacji wykorzystane zostały biblioteki express-validator oraz React-Hook-Form, odpowiednio dla strony back endowej i front endowej. 
   Sprawdzane są typy danych podawane w formie oraz za pomocą REGEX, czy podana wartość, np. adres email, jest zgodny ze wzorem.
   \begin{figure}[H]
     \centering
@@ -539,7 +539,7 @@
     \label{fig:client-validation}
   \end{figure}
   Kolejną funkcjonalnością zaimplementowaną, zostało wysyłanie maili. 
-  Do klient, po dokonaniu poprawnej płatności, zostaje wysłany email, z informacją o poprawnie dokonanej płatności i docelowo z kodem QR, będacy biletem.
+  Do klient, po dokonaniu poprawnej płatności, zostaje wysłany email, z informacją o poprawnie dokonanej płatności i docelowo z kodem QR, będący biletem.
   Do tego została wykorzystana biblioteka nodemailer\ref{section:most-important-libraries}.
   \begin{figure}[H]
     \centering
@@ -547,9 +547,9 @@
     \caption{Kod odpowiadający za wysyłanie emaili.}
     \label{fig:sending-email}
   \end{figure}
-  Kolejnym, ale nieostatnim elementem, było generowanie, wysyłanie w mailu oraz przetrzymywanie kodów QR. 
+  Kolejnym, ale nie ostatnim elementem, było generowanie, wysyłanie w mailu oraz przetrzymywanie kodów QR. 
   Kod jest generowany na podstawie id biletu, znajdującego się w bazie danych. 
-  Do jego realizacji wyykorzystano bibliotekę QRCode\ref{section:most-important-libraries}.
+  Do jego realizacji wykorzystano bibliotekę QRCode\ref{section:most-important-libraries}.
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{Creation_process/qrcode.PNG}
@@ -558,14 +558,14 @@
   \end{figure}
   Ostatnią funkcjonalnością, ale nie ostatnim krokiem było logowanie się i rejestracja użytkowników. 
   Do jej zrealizowania było potrzebne kilka bibliotek, a dokładniej: jsonwebtoken, bcrypt, o których szerzej w rozdziale \ref{section:most-important-libraries}. 
-  Logowanie się użytkownika, umożliwia mu dostęp do histori zakupionych biletów, na wydarzenia. Dodatkowo otrzymuje dostęp do kodów QR swoich biletów. 
+  Logowanie się użytkownika, umożliwia mu dostęp do historii zakupionych biletów, na wydarzenia. Dodatkowo otrzymuje dostęp do kodów QR swoich biletów. 
   Niezalogowany użytkownik ma możliwość zakupu biletu, kod QR otrzymuje na maila, ale w razie np. utraty maila nie ma innej opcji dostępu do niego. 
-  Co czyni rejestracje użytkownika bardzo atrakcyjnym.\\
+  Co czyni rejestrację użytkownika bardzo atrakcyjnym.\\
   Finalnym krokiem zostało dodanie styli CSS i w pełni wykorzystanie biblioteki komponentów Material-UI. 
   Po wszystkich zmianach wizualnych, aplikacja prezentuje się następująco:
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{Creation_process/qrcode.PNG}
+    \includegraphics[width=0.9\textwidth]{client_app/home.png}
     \caption{Finalny wygląd aplikacji.}
     \label{fig:final-view}
   \end{figure}
@@ -573,7 +573,71 @@
 
 \section{Aplikacja od strony użytkownika}
 {
-
+  Po otwarciu aplikacji oczom klienta ukaże się strona główna, zawierająca takie elementy jak:
+  \begin{itemize}
+    \item wyszukiwarkę wydarzeń po nazwie
+    \item filtr po typach wydarzeń
+    \item przyciski do logowania i rejestracji użytkownika
+    \item listę wszystkich dostępnych na stronie wydarzeń
+  \end{itemize}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{client_app/home.png}
+    \caption{Strona główna aplikacji.}
+    \label{fig:home-page}
+  \end{figure}
+  Z poziomu strony głównej użytkownik ma kilka opcji, może wybrać bezpośrednio interesujące go wydarzenie i przejść do niego, zarejestrować się, 
+  zalogować się oraz filtrować wydarzenia według jego uznania. 
+  Filtrowanie odbywa się po typie wydarzeń i jest to zrobione w formie listy rozwijanej, oraz wyszukiwać, w odpowiednim polu, po nazwie wydarzenia.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{client_app/search.png}
+    \caption{Wyszukiwanie po frazie.}
+    \label{fig:search-field}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{client_app/filter.png}
+    \caption{Filtrowanie po typie wydarzenia}
+    \label{fig:filter}
+  \end{figure}
+  Po naciśnięciu jednej z kart wydarzenia, widocznych na stronie głównej, klient zostaje przeniesiony na stronę konkretnego wydarzenia, 
+  gdzie może nieco więcej dowiedzieć się o danym evencie i kupić na nie bilet.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{client_app/event.png}
+    \caption{Strona konkretnego wydarzenia, w tym przypadku Orange Warsaw.}
+    \label{fig:event-page}
+  \end{figure} 
+  Kupowanie biletu jest dostępne zarówno dla użytkowników zalogowanych, jak i niezalogowanych. 
+  Po naciśnięciu na przycisk "Buy Ticket" klient jest przenoszony do forma, umożliwiającego podanie danych do realizacji zakupu.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{client_app/payment_guest.png}
+    \caption{Form do zebrania danych, niezbędnych do realizacji zakupu biletu.}
+    \label{fig:payment-guest}
+  \end{figure}
+  Po podanych poprawnych danych, w formacie wymaganym przez aplikacji, użytkownik jest informowany o pomyślnie zrealizowanym zakupie, lub w przypadku gdy coś poszło 
+  nie tak zostaje przeniesiony na stronę informującą o niepowodzeniu.\\
+  Użytkownik ma możliwość założenia konta lub jeśli już je posiada zalogowania się na nie. 
+  Minimalnie zmienia to widok aplikacji, zamiast przycisków "Sign In" oraz "Sign Up" pojawiają się dwa inne przyciski "Purchase history" oraz "Logout".
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{client_app/logged_in.png}
+    \caption{Strona główna aplikacji, po zalogowaniu.}
+    \label{fig:signed-in}
+  \end{figure}
+  Pierwszy z wymienionych nowych przycisków, daje użytkownikowi opcję niedostępną w innym przypadku, a konkretniej podgląd wszystkich biletów, które zakupił, wraz z ich kodem QR.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{client_app/purchase_history.png}
+    \caption{Lista biletów klienta, dostępna za pomocą Purchase History.}
+    \label{fig:purchase_his}
+  \end{figure}
+  Dodatkowym atutem zalogowanych użytkowników jest fakt, iż przy kupnie biletu nie muszą oni ponownie podawać tych samych danych, które podawali przy rejestracji np. imię czy numer telefonu. 
+  Jedyne dane jakie są zmuszeni podać to dane karty płatniczej. Co zdecydowanie przyśpiesza i ułatwia obcowanie z aplikacją, przy częstym jej użytkowaniu.\\
+  Tak prezentuję się aplikacja od strony klienta, jest wyjątkowo, prosta, czytelna i łatwa w obsłudze. 
+  Celem nie było sprawienie, aby użytkownik był przytłoczony tym co widzi, tylko w łatwy sposób, mógł osiągnąć cele takie jak: kupno biletu lub zdobycie informacji o wydarzeniu.
 }
 
 \section{Podsumowanie}
@@ -585,18 +649,18 @@
 {
   Możliwości dalszego rozwoju aplikacji są bardzo wielkie i różne. 
   Pierwszą przykładową jest stworzenie systemu newslettera, na który użytkownik mógłby się zapisać i otrzymywać maile z najnowszymi informacjami i zaproszeniami na wydarzenia.\\ 
-  Inną, istotną funkcjonalnością mogło by być resetowanie hasła użytkownika. W chwili obecnej nie występuję żadna możliwość resetu hasła, co stanowi bardzo ważny element 
+  Inną, istotną funkcjonalnością mogłoby być resetowanie hasła użytkownika. W chwili obecnej nie występuje żadna możliwość resetu hasła, co stanowi bardzo ważny element 
   każdej aplikacji, w której w grę wchodzi logowanie się użytkowników.\\
   Również bardzo przydatne byłaby obsługa innych typów płatności, aktualnie jest to tylko płatność danymi karty płatniczej. 
   Szczególnie wartymi dodania byłaby płatność PayPalem, Blikiem czy zwykłym przelewem bankowym.\\
   Bardzo istotnym jest stworzenie systemu sprawdzającego bilety i kody QR. 
   Aktualnie nie ma żadnej weryfikacji biletów, więc generowane kody są w zasadzie pustym zlepkiem pikseli. 
-  Jest to funkcja o tyle istotna, że żadna firma nie zdecyduje się na publikowanie swojego wydarzenia i dystrubucji biletów przez stronę, która nie daje możliwości, 
+  Jest to funkcja o tyle istotna, że żadna firma nie zdecyduje się na publikowanie swojego wydarzenia i dystrybucji biletów przez stronę, która nie daje możliwości, 
   sprawdzenia czy kod QR prezentowany przez klienta odpowiada temu, który został zakupiony i czy jest on powiązany z konkretnym wydarzeniem.\\
   Kluczową funkcją mogłaby okazać się obsługa płatności i języków innych krajów. 
   Aktualnie płatność odbywa się w złotówkach, a językiem figurującym w aplikacji jest język angielski. 
   Język angielski, ma to do siebie, że jest znany przez bardzo szerokie grono ludzi, jednakże płatność dla obcokrajowców, w innej walucie, może okazać się niekorzystna.
-  Dochodzą takto takie opłaty jak chociażby przewalutowanie, a dodatkowe opłaty nigdy nie są mile widziane przez klientów.\\
+  Dochodzą takie opłaty jak chociażby przewalutowanie, a dodatkowe opłaty nigdy nie są mile widziane przez klientów.\\
   Ostatnim przykładową możliwością rozwoju aplikacji jest stworzenie aplikacji mobilnej, w której nawet niezalogowany użytkownik, 
   miałby dostęp do wszystkich posiadanych przez siebie biletów, tak jak jest to chociażby w GoingApp.
 }
