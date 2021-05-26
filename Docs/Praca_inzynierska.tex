@@ -121,7 +121,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     dostępne na stronie dane firmy czy przejrzysta i funkcjonalna strona internetowa. Wydawać by się mogło, że to na te kolejne cechy portali, powinno się w pierwszej kolejności
     zwracać uwagę, bo to dzięki nim w pierwszej chwili można stwierdzić czy strona jest fałszywa, czy też nie.
     }
-    \subsection{Analiza najpopularniejszych internetowych metod płatności online} % strona 119 raportu, strona 80 wstep, strona 89 czynniki motywujace do robienia zakupow online
+    \subsection{Analiza najpopularniejszych internetowych metod płatności} % strona 119 raportu, strona 80 wstep, strona 89 czynniki motywujace do robienia zakupow online
   {
     Najpopularniejszymi metodami płatności w internecie, według raportu "E-commerce w Polsce 2020"\cite{gemius-report} są kolejno:
     \begin{itemize}
@@ -423,7 +423,6 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
       \item Material UI
       \item React Redux
       \item jsonwebtoken
-      \item bcrypt
     \end{itemize}
     Pierwsza z nich czyli Express, jest minimalistycznym, elastycznym frameworkiem do Node.js. Dostarcza takie mechanizmy jak\cite{express}:
     \begin{itemize}
@@ -456,8 +455,6 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
  
     Jsonwebtoken jest biblioteką do tworzenia JWT, służący przede wszystkim do autoryzacji użytkownika, szczególnie przydatne jest to przy logowaniu. Szerzej o JWT 
     przedstawione zostanie w jednej z kolejnych podsekcji.\\
- 
-    Bcrypt - prosta biblioteka do hashowania hasła użytkownika, wykorzystywana przy rejestracji nowych użytkowników.
   }
   \subsection{MongoDB}
   {
@@ -594,7 +591,8 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     \label{fig:qr-code}
   \end{figure}
   Ostatnią funkcjonalnością, ale nie ostatnim krokiem było logowanie się i rejestracja użytkowników. 
-  Do jej zrealizowania było potrzebne kilka bibliotek, a dokładniej: jsonwebtoken, bcrypt, o których szerzej w rozdziale \ref{section:most-important-libraries}. 
+  Do jej zrealizowania było potrzebne kilka bibliotek, a dokładniej: jsonwebtoken, bcrypt, o tej pierwszej szerzej w rozdziale \ref{section:most-important-libraries}, 
+  druga z kolei odpowiada za hashowanie hasła.
   Logowanie się użytkownika, umożliwia mu dostęp do historii zakupionych biletów, na wydarzenia. Dodatkowo otrzymuje dostęp do kodów QR swoich biletów. 
   Niezalogowany użytkownik ma możliwość zakupu biletu, kod QR otrzymuje na maila, ale w razie np. utraty maila nie ma innej opcji dostępu do niego. 
   Co czyni rejestrację użytkownika bardzo atrakcyjnym.\\
@@ -696,7 +694,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
 
 \section{Możliwości dalszego rozwoju aplikacji}
 {
-  Możliwości dalszego rozwoju aplikacji są bardzo wielkie i różne. 
+  Możliwości dalszego rozwoju aplikacji są ogromne i różne. 
   Pierwszą przykładową jest stworzenie systemu newslettera, na który użytkownik mógłby się zapisać i otrzymywać maile z najnowszymi informacjami i zaproszeniami na wydarzenia.\\ 
   Inną, istotną funkcjonalnością mogłoby być resetowanie hasła użytkownika. W chwili obecnej nie występuje żadna możliwość resetu hasła, co stanowi bardzo ważny element 
   każdej aplikacji, w której w grę wchodzi logowanie się użytkowników.\\
@@ -714,19 +712,24 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
   miałby dostęp do wszystkich posiadanych przez siebie biletów, tak jak jest to chociażby w GoingApp.
 }
 
+\clearpage
+
 \section{Bibliografia}
 {
   \printbibliography
+  \clearpage
 }
 
 \section{Spis rysunków}
 {
   \listoffigures
+  \clearpage
 }
 
 \section{Spis tabel}
 {
   \listoftables
+  \clearpage
 }
 
 \end{sloppypar}
