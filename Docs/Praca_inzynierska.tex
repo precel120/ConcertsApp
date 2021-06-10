@@ -11,6 +11,7 @@
 \usepackage[style=numeric, backend=biber]{biblatex}
 \usepackage{array}
 \usepackage{float}
+\usepackage{listings}
 
 \addbibresource{bibliography.bib}
 \graphicspath{{./images/}}
@@ -36,7 +37,7 @@
 The aim of this thesis is to design and implement web application for promoting cultural events and selling tickets for them. 
 There are plenty of similar applications, but this one was created with aim to simplify and shorten to maximum, user's experience and time spent with the app.
 User is presented with simple, yet very clear, interface and is provided with secure and effortless payments. \\
-This work compares apps from the competition, pointing out the best aspect of each, in order to show what features and functionalities where taken into 
+This work compares apps from the competition, pointing out the best aspects of each, in order to show what features and functionalities where taken into 
 consideration while designing the app. It provides information with current online shopping trends, as well as
 with the most popular online payment methods.\\
 The result of the analysis and designing is web application called ConcertsApp.
@@ -44,9 +45,9 @@ The result of the analysis and designing is web application called ConcertsApp.
 \bigbreak
 \textbf{Streszczenie:}
 Celem niniejszej pracy dyplomowej jest zaprojektowanie oraz zaimplementowanie aplikacji webowej do promocji wydarzeń kulturowych oraz sprzedaży biletów na nie.
-Na rynku jest wiele podobnych aplikacji, jednakże ta została stworzona, z celem by uprościć i zminimalizować do maksimum, 
+Na rynku jest wiele podobnych aplikacji, jednakże ta została stworzona, z myślą by uprościć i zminimalizować do maksimum, 
 czas i doświadczenie z obcowaniem z aplikacją.
-Użytkownik ma do czynienia, podczas obcowania z aplikacją, z prostym, jednakże bardzo czytelnym interfejsem aplikacji oraz z bezpiecznymi i niewymagającymi 
+Użytkownik ma do czynienia, z prostym, jednakże bardzo czytelnym interfejsem aplikacji oraz z bezpiecznymi i niewymagającymi 
 dużego zaangażowania płatnościami.\\
 Niniejsza praca porównuje aplikacje konkurencji i przedstawia ich najlepsze aspekty, 
 w celu pokazania, które ich cechy i funkcjonalności były brane pod uwagę podczas tworzenia aplikacji. 
@@ -59,7 +60,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
   do internetu. Nieinaczej jest z promowaniem i sprzedażą biletów na wydarzenie kulturowe pokroju:
   spektakli w teatrze, koncertów, festiwali. Aplikacja ConcertsApp ma służyć dokładnie temu,
   ma zminimalizować czas, jaki należałoby kiedyś przeznaczyć na zdobycie biletów. Czy też na uzyskanie
-  informacji o wydarzeniach z interesującej konsumenta dziedziny, lub odbywającę się w pobliżu.
+  informacji o wydarzeniach z interesującej konsumenta dziedziny, lub odbywających się w pobliżu.
   \subsection{Problematyka}
   {
     Czas pędzi nieustannie, w obecnych czasach wydawać by się mogło, że nawet pędzi niczym TGV. Ani człowiek się obejrzy i z poniedziałku staje się piątek. 
@@ -67,26 +68,29 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     skrócić czas, poświęcany na codzienne czynności.
     Dlatego też wiele usług, sklepów, serwisów przenoszonych jest w całości do sieci, lub mają sieciowy odpowiednik sklepu/oddziału stacjonarnego. 
     W obecnych czasach zdecydowanie ciężej jest prosperować firmom nie posiadającym strony lub sklepu internetowego. 
-    Na rynku jest zbyt duża konkurencja aby móc sobie pozwolić na brak obecności w sieci i/lub mediach społecznościowych. 
-    Poszukując, przykładowo, krawca w okolicy, wpisuje się odpowiednią frazę w wyszukiwarkę internetową i jeśli strona nie pojawi się w wynikach wyszukiwania, lub 
-    przynajmniej informacja o firmie i jej oceny na Google Maps, to nie ma możliwości, 
+    Na rynku jest zbyt duża konkurencja, aby móc sobie pozwolić na brak obecności w sieci i/lub mediach społecznościowych. 
+    Poszukując, przykładowo, krawca w okolicy, wpisuje się odpowiednią frazę w wyszukiwarkę internetową. Jeśli strona nie pojawi się w wynikach wyszukiwania, 
+    lub przynajmniej informacja o firmie i jej oceny na Google Maps, to nie ma możliwości, 
     żeby dana osoba skorzystała z usług krawca, który mimo posiadanego fachu, nie widnieje w sieci. 
-    Każda osoba/firma chcąca podbić rynek i osiągnąć sukces musi posiadać minimum stronę na jednym z portali społecznościowych, np. FaceBook, oraz widnieć w Google Maps. 
+    Każda osoba/firma chcąca podbić rynek i osiągnąć sukces musi posiadać minimum stronę na jednym z portali społecznościowych, np. FaceBook, 
+    oraz widnieć w Google Maps.\\
     Minimalizacja czasu poświęcanego na codzienne czynności dotyczy również, strefy takiej jak kultura. 
-    Chcąc wybrać się np. na spektakl w teatrze, są dwie możliwości: kupno biletu bezpośrednio w teatrze oraz zakup biletu przez stronę teatru lub stronę udostępniającą bilety na spektakle w danym teatrze.
+    Chcąc wybrać się np. na spektakl w teatrze, są dwie możliwości: kupno biletu bezpośrednio w teatrze oraz zakup biletu przez stronę teatru 
+    lub stronę udostępniającą bilety.
     Pierwszy z nich wymaga przebicia się przez zakorkowane miasto, możliwe, że nawet stania w kolejce po bilet i dopiero powrót do domu. 
     Potrafi to pochłonąć ogromną ilość czasu, na co nie każdy może sobie pozwolić. 
     Dlatego powstała alternatywa, czyli zakup biletu w internecie, zakup jest bez kolejek, bez wychodzenia z domu i cały proces może potrwać góra 10 minut. 
-    W usprawnienie tej części rynku celuje powstała na potrzeby niniejszej pracy inżynierskiej aplikacja, aby przyspieszyć i ułatwić dostęp do, jakże ważnej części ludzkiego życia jaką jest kultura i sztuka. 
+    W usprawnienie tej części rynku celuje powstała na potrzeby niniejszej pracy inżynierskiej aplikacja, 
+    aby przyspieszyć i ułatwić dostęp do jakże ważnej części ludzkiego życia, jaką jest kultura i sztuka. 
   }
   \subsection{Cel i założenia pracy}
   {
     Celem niniejszej pracy dyplomowej jest stworzenie aplikacji webowej, która umożliwi w łatwy i szybki
     sposób na promowanie wydarzeń kulturowych i zakup biletów na nie. Zakup odbywać się będzie za pomocą
-    płatności online, jedynie podając dane karty kredytowej lub debetowej, lub poprzez stworzenie konta.\par
+    płatności online, jedynie podając dane karty kredytowej lub debetowej.\par
     Zakres pracy obejmuję zaprojektowanie i implementację aplikacji klienckiej i serwerowej, przy
-    wykorzystaniu, najnowszych i bardzo popularnych na rynku pracy, technologii. Do strony klienckiej
-    został wykorzystany React, z koleji do stworzenia serwera użyto Node.JS.
+    wykorzystaniu, najnowszych i bardzo popularnych na rynku pracy technologii. Do strony klienckiej
+    został wykorzystany React, z kolei do stworzenia serwera użyto Node.JS.
   }
   \subsection{Struktura pracy inżynierskiej}
   {
@@ -95,7 +99,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     analiza najpopularniejszych metod płatności online, opowiada o bazach danych oraz przybliża
     metody tworzenie aplikacji webowych.
     Trzeci rozdział przedstawia wykorzystane technologie do implementacji aplikacji oraz uzasadnia dlaczego
-    akurat ona została wybrana a nie inna.
+    akurat ona została wybrana, a nie inna.
     Czwarty rozdział pokazuje jak przebiegał proces twórczy, czyli projektowanie i implementacja. 
     Piąty rozdział mówi o tym, jak wygląda proces obcowania z aplikacją, od strony klienta.
   }
@@ -108,20 +112,21 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     Sklepy internetowe z roku na rok rosną w siłę, przybywa ich liczba w zatrważającym tempie. 
     Aż 73\% ankietowanych w raporcie przygotowanym przez Gemius Polska\cite{gemius-report} deklaruje kupowanie online i ta forma zakupów cieszy się niezmiennie dobrym 
     wizerunkiem wśród kupujących. Brak sklepu internetowego stanowi ogromną niekorzyść dla obecnych przedsiębiorców. 
-    Zakupy online charakteryzują się dużo większym wyborem produktów, łatwością w porównywaniu ofert czy też łatwością w znalezieniu interesujących produktów. 
+    Zakupy online charakteryzują się dużo większym wyborem produktów, łatwością w porównywaniu ofert, czy też łatwością w znalezieniu interesujących produktów. 
     Lecz, to nie z wyżej wymienionych powodów, sklepy w sieci cieszą sie taką popularnością.
     Wśród najczęściej wymienianych powodów są: dostępność przez całą dobę (aż 82\% wybrało ten powód), brak konieczności wyjazdu do sklepu - 78\%, 
     nieograniczony czas wyboru - 72\% oraz atrakcyjniejsze ceny niż w sklepach tradycyjnych - 71\%.\\
     Niestety taka forma zakupów ma też swoje słabe strony, najpopularniejszymi
-    wymienianymi, napotkanymi problemami są: wysokie koszta dostawy, długi czas oczekiwania na dostawę, irytujące reklamy produktów, wcześniej poszukiwanych.
-    Również bardzo często wymienianą przeciwnością jest uszkodzona przesyłka w transporcie, wynikać to może ze źle zapakowanej i zabezpieczonej paczkim lub z winy 
+    wymienianymi problemami są: wysokie koszta dostawy, długi czas oczekiwania na dostawę, irytujące reklamy produktów, wcześniej poszukiwanych.
+    Również bardzo często wymienianą przeciwnością jest uszkodzona przesyłka w transporcie, wynikać to może ze źle zapakowanej i zabezpieczonej paczki lub z winy 
     firmy kurierskiej i jej pracowników.\\
     Co jednak sprawia, że klienci decydują się na wybór danego portalu na zakupy?\\
-    Najczęściej wybór sklepu pada dzięki kodom rabatowym, dopiero w dalszej kolejności padają hasła takie jak dokładne informacje o warunkach zamówienia,
-    dostępne na stronie dane firmy czy przejrzysta i funkcjonalna strona internetowa. Wydawać by się mogło, że to na te kolejne cechy portali, powinno się w pierwszej kolejności
-    zwracać uwagę, bo to dzięki nim w pierwszej chwili można stwierdzić czy strona jest fałszywa, czy też nie.
+    Najczęściej wybór sklepu pada dzięki kodom rabatowym, dopiero w dalszej kolejności, klienci patrzą na aspekty takie jak:
+    dokładne informacje o warunkach zamówienia, ostępne na stronie dane firmy czy przejrzysta i funkcjonalna strona internetowa. 
+    Wydawać by się mogło, że to na te kolejne cechy portali, powinno się w pierwszej kolejności
+    zwracać uwagę, bo to dzięki nim w od razu można stwierdzić czy strona może być oszutwem, czy też nie.
     }
-    \subsection{Analiza najpopularniejszych internetowych metod płatności} % strona 119 raportu, strona 80 wstep, strona 89 czynniki motywujace do robienia zakupow online
+    \subsection{Analiza najpopularniejszych internetowych metod płatności}
   {
     Najpopularniejszymi metodami płatności w internecie, według raportu "E-commerce w Polsce 2020"\cite{gemius-report} są kolejno:
     \begin{itemize}
@@ -135,17 +140,18 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     Zdecydowanie nie powinna dziwić obecność szybkich przelewów na pierwszym miejscu tego rankingu. Aż 70\% ankietowanych odpowiedziało, 
     że choć raz korzystało z tej metody, przy robieniu zakupów przez internet. Cechują się błyskawiczynym czasem realizacji, w przeciwieństwie do tradycyjnych
     przelewów. Zaledwie 46\% ankietowanych zdecydowało się choć raz na przelew tradycyjny. Różnica jest znaczna, jednakże nie powinna ona dziwić, ponieważ 
-    to oszczędność czasu, poniekąd sprawia, że klienci decydują się na zakupy online w pierwszej kolejności. Przelewy tradycyjne dodatkowo wydłużają czas realizacji 
+    to oszczędność czasu sprawia, że klienci decydują się na zakupy online w pierwszej kolejności. Przelewy tradycyjne dodatkowo wydłużają czas realizacji 
     zamówienia, ponieważ ich przetwarzanie odbywa się jedynie w dni robocze, o wyznaczonych godzinach, różnych, w zależności od banku.\\
-    Na płatność kartą decyduje się 40\% zapytanych, jest to dość zaskakujące, zważywszy na fakt, że jest to zdecydowanie jedna z najszybszych metod płatności. 
+    Na płatność kartą decyduje się 40\% pytanych, jest to dość zaskakujące, zważywszy na fakt, że jest to zdecydowanie jedna z najszybszych metod płatności. 
     Do jej realizacji niezbędne jest jedynie numer karty, data wygaśnięcia oraz kod CVV. Powodem na dość niską popularność tej metody, mogą być dwie rzeczy, 
-    strach przed podawaniem danych karty, żeby nie zostały skradzione. Inną alternatywą czemu, tak mało klientów sklepów internetowych decyduję się na inne metody, 
-    jest brak karty podczas składania zamówienia. Pierwsza z nich wydaję się być bardziej prawdopodobna, mało kto kupując 
+    strach przed podawaniem danych karty, żeby nie zostały skradzione, lub brak karty podczas składania zamówienia.
+    Druga z nich wydaję się być bardziej prawdopodobna, mało kto kupując 
     produkty przez internet ma akurat przy sobie kartę płatniczą, by odczytać z niej niezbędne liczby. 
-    Zdecydowanie łatwiej jest zalogować się do banku i wykonać przelew czy to tradycyjny czy szybki.\\
-    Dziwić może obecność płatności mobilnych na ostatnim miejscu z zaledwie 35\% wykorzystania. Jest to sposób bardzo wygodny, zważywszy na fakt iż mało kto 
-    nie posiada przy sobie telefonu. Potrzebna jest jeszcze tylko aplikacja banku i można dokonywać dowolnych płatności. W przypadku BLIK-u generowany jest sześcio 
-    cyfrowy ciąg liczb, który wystarczy wpisać w odpowienie pole, zatwierdzić płatność w aplikacji i gotowe.
+    Zdecydowanie łatwiej jest zalogować się do banku i wykonać przelew, czy to tradycyjny, czy szybki.\\
+    Dziwić może obecność płatności mobilnych, na ostatnim miejscu, z zaledwie 35\% wykorzystania. 
+    Jest to sposób bardzo wygodny, zważywszy na fakt iż mało kto nie posiada przy sobie telefonu. 
+    Potrzebna jest jeszcze tylko aplikacja banku i można dokonywać dowolnych płatności. 
+    W przypadku BLIK-u generowany jest sześciocyfrowy ciąg liczb, który wystarczy wpisać w odpowienie pole, zatwierdzić płatność w aplikacji i gotowe.
   }
   \subsection{Analiza istniejących portali do promowania i dystrybucji biletów na wydarzenia kulturowe}
   {
@@ -154,20 +160,19 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
       \item Eventim
       \item GoingApp
     \end{itemize}
-    Eventim jest znacznie starszym portalem, co można stwierdzić chociażby, po jego szacie graficznej,
-    łatwo to zauważyć porównująć do wyżej wymienionego GoingApp. 
+    Eventim jest znacznie starszym portalem, co można stwierdzić chociażby, po jego szacie graficznej, łatwo to zauważyć porównująć do wyżej wymienionego GoingApp. 
     W swojej ofercie ma wydarzenia pokroju: koncertów, przedstawień teatralnych, oper czy baletów.\\
-    Same bilety sprzedawane są w formie papierowej, przychodzą na maila, 
-    lub istnieje możliwość zakupu biletu mobilnego. Kupno może odbyć się zarówno poprzez strone internetową, 
-    jak również poprzez aplikację mobilną. Płatności można dokonać za pomocą przelewu tradycyjnego, karty kredytowej, szybkiego przelewu Dotpay\\
+    Same bilety sprzedawane są w formie papierowej, przychodzą na maila, lub istnieje możliwość zakupu biletu mobilnego. 
+    Kupno może odbyć się zarówno poprzez strone internetową, jak również poprzez aplikację mobilną. 
+    Płatności można dokonać za pomocą przelewu tradycyjnego, karty kredytowej, szybkiego przelewu Dotpay\\
     GoingApp charakteryzuje się bardziej nowoczesną i przejrzystą szatą graficzną w porównaniu do Eventim. 
     Oferty obu portali są bardzo do siebie zbliżone, lecz tutaj można znaleźć takie wydarzenia, jak chociażby imprezy związane z filmem czy jedzeniem.
     Jednakże nie posiada on biletów na balet lub opery.\\
     Wejściówki można, podobnie jak w Eventim nabyć poprzez ich stronę internetową lub aplikację mobilną. 
-    Sam bilet jest dostępny w formie dokumentu PDF, lub kodu QR, dostęp do niego mamy zarówno poprzez maila,którego otrzymujemy zaraz po zakupie, oraz aplikację.
+    Sam bilet jest dostępny w formie dokumentu PDF, lub kodu QR, dostęp do niego mamy zarówno poprzez maila, którego otrzymujemy zaraz po zakupie, oraz aplikację.
     Użytkownik może dokonać płatności za pomocą systemów płatniczych takich jak: payU, eCard, MasterPass oraz Paymento\textregistered \\
-    Aplikacja webowa tworzona na potrzeby niniejszej pracy inżynierskiej czerpie z obu portali najlepsze cechy. 
-    Z Eventim czerpie różnorodność wydarzeń, z koleji z GoingApp przejrzystość interfejsu i bilety w formie, bardzo popularnego kodu QR.
+    Aplikacja webowa, tworzona na potrzeby niniejszej pracy inżynierskiej, czerpie z obu portali najlepsze cechy. 
+    Z Eventim czerpie różnorodność wydarzeń, z kolei z GoingApp przejrzystość interfejsu i bilety w formie, bardzo popularnego kodu QR.
     Metody płatności zostają ograniczone do kart płatniczych: debetowej i kredytowej. Podawane są numer karty, data ważności oraz kod CVV.
   }
   \subsection{Bazy danych jako środek przechowywania danych}
@@ -175,12 +180,12 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     "Baza danych to zorganizowany zbiór ustrukturyzowanych informacji, czyli danych, zwykle przechowywany w systemie komputerowym w formie elektronicznej. 
     Bazą danych steruje zwykle system zarządzania bazami danych (DBMS). 
     Dane i system DBMS oraz powiązane z nimi aplikacje razem tworzą system bazodanowy, często nazywany w skrócie bazą danych.". \cite{oracle-db}
-    Innymi słowy jest to kontener na dane, w dowolnej postaci, mogą to być liczby, ciągi znaków, a nawet zdjęcia czy filmy. Dane te nie są, najczęściej, przetrzymywane
-    lokalnie na komputerach, tylko na serwerach czy w chmurze. \\
+    Innymi słowy jest to kontener na dane, o dowolnej postaci, mogą to być liczby, ciągi znaków, a nawet zdjęcia czy filmy. 
+    Dane te nie są, najczęściej, przetrzymywane lokalnie na komputerach, tylko na serwerach czy w chmurze. \\
     Dlaczego więc korzysta się z baz danych a nie np. z arkuszy kalkulacyjnych?\\
     Odpowiedź jest bardzo prosta, arkusze kalkulacyjne nie zostały stworzone do pracy z ogromną ilością danych, przy jednoczesnym dostępie, nawet kilkuset lub więcej użytkowników.
     Są wręcz idealne do pracy z mniejszą ilościa danych dla jednego lub małej grupy użytkowników, którzy nie potrzebują wielu skomplikowanych funkcji do manipulacji danymi.
-    Bazy danych z koleji, przeznaczone są do pracy z ogromnymi ilościami informacji, umożliwiając dodatkowo jednoczesny dostęp do nich, wielu użytkownikom na raz. 
+    Bazy danych z kolei, przeznaczone są do pracy z ogromnymi ilościami informacji, umożliwiając dodatkowo jednoczesny dostęp do nich, wielu użytkownikom na raz. 
     Co więcej praca z bazami danych, charakteryzuje się wysokim bezpieczeństwem i szybkością wykonywanych operacji. Operacje na danych, tworzenie zapytań odbywa się 
     za pomocą logiki i języka o wysokim stopniu złożoności. Jako przykład może posłużyć, zdecydowanie najpopularniejszy z nich, czyli język zapytań SQL.\\
     Bazy danych dzielimy, między innymi na:
@@ -193,11 +198,11 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     Relacyjne bazy danych zyskały ogromną popularność w latach 80\cite{oracle-db}. Dane zorganizowane są w tabelach, składające się z wierszy i kolumn. Po dziś dzień stanowią 
     jedne z najpopularniejszych baz danych, jak nie najpopularniejsze, dostępne na rynku. Przykładami relacyjnych baz danych są: MySQL i Microsoft SQL Server.\\
     Hurtownie danych, inaczej centralne repozytorium danych, to typ bazy danych wykorzystywany do wykonywania zapytań i analizy. 
-    Ma on umożliwić i wspierać działania z zakresu analizy biznesowej, w szczególności analityki. Często operuje na danych historycznych, pochadzących z wielu źródeł. 
-    Jej umiejętności analityczne pozwalają przedsiębiorstwom cenne dane biznesowe, które ułatwiają podejmowanie decyzji.\cite{oracle-warehouse}\\
-    Baza danych NoSQL, inaczej nierelacyjna, cechuje się przechowywaniem danych w nieuporządkowany i częściowo uporządkowanych oraz manipulowanie nimi. Od relacyjnych baz
-    różni je przede wszystkim to, że w relacyjnych mają jasną strukturę organizacji danych. W nierelacyjnych dane, pochodzące z tej samej kolekcji, mogą posiadać 
-    kompletnie różne atrybuty. Szerzej na temat baz NoSQL zostanie omówione w następnym podrodziale.\\
+    Ma on umożliwić i wspierać działania z zakresu analizy biznesowej, w szczególności analityki. Często operuje na danych historycznych, pochodzących z wielu źródeł. 
+    Jej umiejętności analityczne pozwalają przedsiębiorstwom przetrzymywać cenne dane biznesowe, które ułatwiają podejmowanie decyzji.\cite{oracle-warehouse}\\
+    Baza danych NoSQL, inaczej nierelacyjna, od relacyjnych baz różni je przede wszystkim to, że w relacyjnych mają jasną strukturę organizacji danych. 
+    W nierelacyjnych dane, pochodzące z tej samej kolekcji, mogą posiadać kompletnie różne atrybuty. 
+    Szerzej na temat baz NoSQL zostanie omówione w następnym podrodziale.\\
     Ostatnim typem bardzo popularnym na rynku baz danych są bazy chmurowe. Bazy te charakteryzują się przede wszystkim tym, że dane przetrzymywane są na prywatnej,
     publicznej lub hybrydowej platformie przetwarzania danych w chmurze. 
     Najpopularniejszymi bazami w chmurze są Microsoft Azure SQL Database, Oracle Database, Google Cloud SQL oraz Amazon Relational Database Service.
@@ -211,7 +216,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     każdy wiersz może zawierać różne kolumny (atrybuty opisujące dany obiekt), nie jest wymuszana relacja między obiektami.\\
     Bazy typu SQL są znacząco lepsze jeśli skalowalność zachodzi wertykalnie, a horyzontalnie atrybuty są jasno określone. Nie jest wskazane aby każdy obiekt, z jednej 
     tabeli, opisany był innymi atrybutami.\\
-    W przypadku prostych obiektów, opisanych małą ilością atrubutów, lepszym wyborem będą bazy typu NoSQL. Z koleji dla bardziej skomplikowanych encji, lepiej wykorzystać 
+    W przypadku prostych obiektów, opisanych małą ilością atrubutów, lepszym wyborem będą bazy typu NoSQL. Z kolei dla bardziej skomplikowanych encji, lepiej wykorzystać 
     bazy relacyjne, ze względu na ich schludność i uporządkowanie, zdecydowanie łatwiej uniknąć niechcianego bałaganu i błędów.\\
     Bazy NoSQL dzielimy, ze względu na typ na\cite{agh-nosql}:
     \begin{itemize}
@@ -289,7 +294,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     \end{itemize}
     W zależności od podanego URI, może zostać zwrócony zasób w formie kolekcji lub pojedynczego elementu. 
     Przykładowo podając URI \url{https://adventure-works.com/orders}, dla metody GET uzyskamy listę wszystkich zamówień. 
-    Z koleji podając URI \url{https://adventure-works.com/orders/1} uzyskamy pojedyncze zamówienie, np. o id = 1.
+    Z kolei podając URI \url{https://adventure-works.com/orders/1} uzyskamy pojedyncze zamówienie, np. o id = 1.
     Każda metoda będzie zachowywać się podobnie dla podanych wyżej URI, z tą różnicą, że przykładowo metoda POST zamiast pobrać listę wszystkich zamówień, utworzy nowe zamówienie, 
     metoda PUT zaktualizuje wszystkie zamówienia, w zadany sposób.\\
     Architektura REST API cieszy się ogromną popularnością, między innymi z tego powodu została wybrana do stworzenia aplikacji.
@@ -307,7 +312,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
       \label{fig:cascade}
     \end{figure}
     Każda z faz cechuje się innym zestawem czynności jakie należy wykonać. 
-    Faza określenia wymagań cechuje się, jak sama nazwa wskazuje, określeniem wymagań. Cele podane w fazie poprzedniej są zamieniane na faktyczne wymagania 
+    Faza określenia wymagań cechuje się, jak sama nazwa wskazuje, określeniem wymagań. Ustalane są cele, a następnie zamieniane są na faktyczne wymagania 
     jakie musi posiadać oprogramowanie. Wymagania dzielimy odpowiednio na funkcjonalne i niefunkcjonalne. 
     Wymagania funkcjonalne to takie, które opisują funkcję lub czynności wykonywane przez system. 
     Z kolei niefunkcjonalne opisują ograniczenia, przy zachowaniu których system powinien realizować swoje funkcję.\\
@@ -341,7 +346,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
       \item jest przenośny. Można korzystać z niego zarówno na systemie macOS, Linux, jak również Windows.
       \item Dostęp do ogromnego community, gotowego służyć pomocą.
     \end{itemize}
-    Node.JS jest bardzo uniwersalnym narzędziem, nie służy jedynie do tworzenia serwerów back endowych dla stron internetowych. Można za jego pomocą tworzyć 
+    Node.JS jest bardzo uniwersalnym narzędziem, nie służy jedynie do tworzenia serwerów backendowych dla stron internetowych. Można za jego pomocą tworzyć 
     zwykłe aplikacje, aplikacje z dziedziny IoT(Internet of Things), posiada nawet pakiety do uczenia maszynowego. Za pomocą Node jesteśmy w stanie 
     wykonać przeróżne rzeczy ogranicza jedynie znajomość JavaScript oraz własna wyobraźnia. \\
     \begin{figure}[H]
@@ -358,8 +363,8 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
       \caption{Najpopularniejsze webowe frameworki według ankiety Stack Overflow\cite{stack-survey}}
       \label{fig:web-frameworks}
     \end{figure}
-    Dodatkowo Express, czyli framework do Node.JS, za pomocą, którego został stworzony cały back end projektu, znajduje się na drugim miejscu w rankingu popularności 
-    wśród frameworków back endowych, osiągnął popularność na poziomie 20.9\%. Wyprzedza takie frameworki jak: Java Spring, Flask, Django, Laravel czy Ruby on Rails, 
+    Dodatkowo Express, czyli framework do Node.JS, za pomocą, którego został stworzony cały backend projektu, znajduje się na drugim miejscu w rankingu popularności 
+    wśród frameworków backendowych, osiągnął popularność na poziomie 20.9\%. Wyprzedza takie frameworki jak: Java Spring, Flask, Django, Laravel czy Ruby on Rails, 
     jedynie ASP.NET plasuje się wyżej w rankingu. 
   }
   \subsection{React.js}
@@ -367,8 +372,8 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     "React A JavaScript library for building user interfaces."\cite{react} Tłumacząc na polski, React jest biblioteką do tworzenia interfejsów użytkownika. 
     React jest oparty na komponentach, każdy komponent może posiadać własny stan i nim zarządzać, korzystając z komponentów można tworzyć bardzo złożone UI. 
     Sporym plusem Reacta jest fakt, że raz poznany umożliwia również tworzenie aplikacji mobilnych przy wykorzystaniu React Native. Co dodatkowo wyróżnia React 
-    jest własna składnia, zbliżona do XML-a, czyli JSX. Jest to wymieszanie HTML-a i JavaScriptu, możemy dzięki niemu bez najmniejszych przeszkód umieszczać 
-    tagi znane z HTML-a, w kodzie JavaScriptowym, przy tworzeniu komponentów. Dodatkowo własne komponenty, również podczas tworzenia struktury dokumenty, mają 
+    jest własna składnia, zbliżona do XML-a, czyli JSX. Jest to mieszanka HTML-a i JavaScriptu, możemy dzięki niemu bez najmniejszych przeszkód umieszczać 
+    tagi znane z HTML-a, w kodzie JavaScriptowym, podczas tworzeniu komponentów. Dodatkowo własne komponenty, również podczas tworzenia struktury dokumenty, mają 
     składnię taką jak HTML. \\
     Kolejnym wyjątkowym aspektem Reacta jest Virtual DOM. Jest to koncept programistyczny gdzie wirtualna reprezentacja UI jest 
     przetrzymywana w pamięci i synchronizowana z prawdziwym DOM-em. 
@@ -510,86 +515,169 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
 
 \section{Proces tworzenia aplikacji}
 {
-  Dobrą praktyką i ogólnie przyjętą zasadą jest rozpoczęcie tworzenia aplikacji webowej od strony back endowej. Zgodnie z tym podejściem prace rozpoczęły się od backendu, 
+  Dobrą praktyką i ogólnie przyjętą zasadą jest rozpoczęcie tworzenia aplikacji webowej od strony backendowej. Zgodnie z tym podejściem prace rozpoczęły się od backendu, 
   został stworzony podstawowy serwer logujący proste hasło "działa". Kolejnym etapem było podpięcie bazy danych MongoDB.
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Creation_process/DB_connected.PNG}
-    \caption{Kod odpowiadający za integrację z MongoDB.}
-    \label{fig:MongoDB-integration}
-  \end{figure}
+  \begin{lstlisting}[caption=Kod odpowiadający za integrację z MongoDB., captionpos=b]
+    import express from 'express';
+    import mongoose from 'mongoose';
+    import keys from './config/keys';
+    require('./models/Ticket');
+
+    mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+    const app = express();
+  \end{lstlisting}
   Do połączenia z bazą danych wykorzystywana jest biblioteka Mongoose, o której szerzej w sekcji \ref{section:most-important-libraries}.
   W następnej kolejności został wygenerowany za pomocą Create-React-App, projekt Reactowy, będący bazą dla frontendu aplikacji. 
   Niezbędnym zabiegiem do połączenia obu stron aplikacji, jest dodanie oprogramowania pośredniczącego proxy, aby połączenie między serwerem stworzonym w Node.JS, a 
   stroną Reactową mogło zostać nawiązane. Do tego została wykorzystana bibliotek http-proxy-middleware. Do funkcjonowania tego połączenia wystarczyło stworzyć nowy plik 
-  setupProxy.js, prezentujący się następująco.
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Creation_process/Proxy_middleware.PNG}
-    \caption{Proxy Middleware do połączenia strony front endowej z backendową.}
-    \label{fig:proxy-middleware}
-  \end{figure}
+  setupProxy.js, prezentujący się następująco:
+  \begin{lstlisting}[caption=Proxy Middleware do połączenia strony frontendowej z backendową., captionpos=b]
+    const {createProxyMiddleware} = require('http-proxy-middleware');
+
+    module.exports = function (app) {
+        app.use("/api", createProxyMiddleware({target: "http://localhost:5000"}));
+    } 
+  \end{lstlisting}
   Kolejnym celem było stworzenie prostego forma, służącego do przyjmowania danych osobowych użytkownika oraz dane karty płatniczej. Następnie powstał cały system płatności, 
   a dokładniej dane podane przez użytkownika są przekazywane do serwera, który następnie tworzy "Payment Intent", czyli Stripową(\ref{section:most-important-libraries}), 
   nową płatność.
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Creation_process/client_stripe.PNG}
-    \caption{Obsługa przekazywania danych klienta na serwer w celu dokonania nowej płatności.}
-    \label{fig:client-stripe}
-  \end{figure}
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Creation_process/server_stripe.PNG}
-    \caption{Podstawowy system obsługi płatności przez serwer}
-    \label{fig:server-stripe}
-  \end{figure}
+  \begin{lstlisting}[caption=Obsługa przekazywania danych klienta na serwer w celu dokonania nowej płatności., captionpos=b]
+      const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if(!stripe || !elements) {
+          return;
+        }
+
+        const { data: clientSecret } = await axios.get("/api/payment_intent");
+
+        const cardElement = elements.getElement(CardElement);
+        
+        setIsProcessing(true);
+        
+        const fullName = firstName + " " + lastName;
+        const paymentMethodReq = await stripe.createPaymentMethod({
+          type: 'card', 
+          card: cardElement!,
+          billing_details: {email: email, name: fullName, phone: phoneNumber}
+        });
+        if (paymentMethodReq.error) {
+          console.log('error', paymentMethodReq.error);
+          setIsProcessing(false);
+          return;
+        }
+        const { error } = await stripe.confirmCardPayment(clientSecret, {
+          payment_method: paymentMethodReq.paymentMethod?.id,
+        });
+        if (error) {
+          setIsProcessing(false);
+          return;
+        }
+        console.log('payment method', paymentMethodReq.paymentMethod);
+      }
+  \end{lstlisting}
+  \begin{lstlisting}[caption=Podstawowy system obsługi płatności przez serwer, captionpos=b]
+    app.get("/api/payment_intent", async (req, res) => {
+      try {
+        const paymentIntent = await stripe.paymentIntents.create({
+          amount: 400,
+          currency: "pln",
+          payment_method_types: ['card'],
+          metadata: {integration_check: "accept a payment"},
+        });
+        res.status(200).send(paymentIntent.client_secret);
+      } catch (error) {
+        res.status(500).json({ statusCode: 500, message: error.message });
+      }
+    });
+  \end{lstlisting}
   Jednakże sam system płatności to mało, niezbędne było aby był tworzony nowy rekord w bazie danych, odpowiadający biletowi dla danego wydarzenia. 
   Warunkiem jaki musi zajść, aby bilet mógł zostać stworzony jest by liczba biletów, na wydarzenie nie przekroczyła określonej, maksymalnej liczby dostępnych biletów.
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Creation_process/Ticket_DB.PNG}
-    \caption{Tworzenie nowego biletu w bazie danych.}
-    \label{fig:ticket-db}
-  \end{figure}
-  Kolejny etap odbył się po stronie front endowej, została stworzona mała karta, prezentująca w skrócie każde z wydarzeń. Dla celów estetycznych, niezbędne było 
+  \begin{lstlisting}[caption=Tworzenie nowego biletu w bazie danych., captionpos=b]
+    Ticket.find({ eventId: event?.id }, (error, tickets) => {
+      if (!error) {
+        if (event?.toJSON().maxTicketsAmount - 1 < tickets.length) {
+          res.status(403).send("No tickets left");
+          return;
+        }
+      } else res.status(404).send("No tickets found") 
+    });
+    const ticket = new Ticket({
+      email: email.trim(),
+      firstName: firstName.trim(),
+      lastName: lastName.trim(),
+      phoneNumber: phoneNumber.trim(),
+      eventId: eventFound.id,
+      purchaseDate: new Date(),
+    });
+    ticket.save((error) => {
+      if (error) {
+        res.status(500).send("Ticket cannot be added to database");
+        return;
+      }
+    });
+  \end{lstlisting}
+  Kolejny etap odbył się po stronie frontendowej, została stworzona mała karta, prezentująca w skrócie każde z wydarzeń. Dla celów estetycznych, niezbędne było 
   aby widoczne były na nich zdjęcia, co dodatkowo wymagało, aby były one pobierane z serwera.
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Creation_process/static_folder.PNG}
-    \caption{Linijka kodu odpowiadająca za podpięcie folderu public, w którym znajdują się zdjęcia wydarzeń.}
-    \label{fig:static-folder}
-  \end{figure}
+  \begin{lstlisting}[caption={Linijka kodu odpowiadająca za podpięcie folderu public, w którym znajdują się zdjęcia wydarzeń.}, captionpos=b]
+    app.use(express.static("public"));
+  \end{lstlisting}
   W następnej kolejności został wykonany wstępny Nav Bar z możliwością wyszukiwania wydarzenia po nazwie, jak również filtrowania po typach wydarzeń. Dla wygody 
   programisty wymagało to podpięcia biblioteki Redux, w celu stworzenia globalnego stanu, który może być współdzielony przez wszystkie komponenty. 
   Ponieważ, filtrowane wartości są, w późniejszym etapie rozwoju aplikacji, użyteczne.\\
   Następnym bardzo istotnym etapem, było stworzenie walidacji danych przesyłanych na serwer w formie do płatności, oraz danych wpisywanych przez użytkownika.
-  Do walidacji wykorzystane zostały biblioteki express-validator oraz React-Hook-Form, odpowiednio dla strony back endowej i front endowej. 
+  Do walidacji wykorzystane zostały biblioteki express-validator oraz React-Hook-Form, odpowiednio dla strony backendowej i frontendowej. 
   Sprawdzane są typy danych podawane w formie oraz za pomocą REGEX, czy podana wartość, np. adres email, jest zgodny ze wzorem.
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Creation_process/client_validation.PNG}
-    \caption{Przykładowy pattern walidacji numeru telefonu, po stronie klienta.}
-    \label{fig:client-validation}
-  \end{figure}
+  \begin{lstlisting}[caption={Przykładowy pattern walidacji emaila, po stronie klienta.}, captionpos=b]
+    <Input
+      name="email"
+      type="email"
+      id="input__email"
+      autoComplete="off"
+      inputRef={register({
+        required: "Please specify email.",
+        pattern: {
+          value:
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+          message: "Invalid email.",
+        },
+      })}
+      required
+    />
+  \end{lstlisting}
   Kolejną funkcjonalnością zaimplementowaną, zostało wysyłanie maili. 
   Do klient, po dokonaniu poprawnej płatności, zostaje wysłany email, z informacją o poprawnie dokonanej płatności i docelowo z kodem QR, będący biletem.
   Do tego została wykorzystana biblioteka nodemailer\ref{section:most-important-libraries}.
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Creation_process/sending_email.PNG}
-    \caption{Kod odpowiadający za wysyłanie emaili.}
-    \label{fig:sending-email}
-  \end{figure}
+  \begin{lstlisting}[caption=Kod odpowiadający za wysyłanie emaili., captionpos=b]
+    const mailTemplate = `
+        <h1>Hello ${firstName} ${lastName}</h1>
+        <p>Thanks for buying ticket for ${event.nameOfEvent}, in ${event.place}, taking place on ${event.dateOfEvent}</p>
+        <img src="${qr}">
+        `;
+
+      const message = {
+        from: env.email,
+        to: email,
+        subject: `Ticket for ${event.nameOfEvent}`,
+        html: mailTemplate,
+      };
+      transporter.sendMail(message, (error, info) => {
+        if (error) {
+          let err = new StatusError("Error while sending mail", 500);
+          return next(err);
+        } else console.log("Mail sent:", info.response);
+      });
+  \end{lstlisting}
   Kolejnym, ale nie ostatnim elementem, było generowanie, wysyłanie w mailu oraz przetrzymywanie kodów QR. 
   Kod jest generowany na podstawie id biletu, znajdującego się w bazie danych. 
   Do jego realizacji wykorzystano bibliotekę QRCode\ref{section:most-important-libraries}.
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Creation_process/qrcode.PNG}
-    \caption{Kod odpowiadający za generowanie kodów QR.}
-    \label{fig:qr-code}
-  \end{figure}
+  \begin{lstlisting}[caption=Kod odpowiadający za generowanie kodów QR., captionpos=b]
+    const qr = await toDataURL(ticket.id);
+    if (!qr) {
+      let err = new StatusError("Error while creating QR Code", 400);
+      return next(err);
+    }
+  \end{lstlisting}
   Ostatnią funkcjonalnością, ale nie ostatnim krokiem było logowanie się i rejestracja użytkowników. 
   Do jej zrealizowania było potrzebne kilka bibliotek, a dokładniej: jsonwebtoken, bcrypt, o tej pierwszej szerzej w rozdziale \ref{section:most-important-libraries}, 
   druga z kolei odpowiada za hashowanie hasła.
@@ -730,6 +818,10 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
 {
   \listoftables
   \clearpage
+}
+\section{Spis listingów}
+{
+  \lstlistoflistings
 }
 
 \end{sloppypar}
