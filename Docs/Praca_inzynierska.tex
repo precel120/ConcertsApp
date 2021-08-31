@@ -12,9 +12,12 @@
 \usepackage{array}
 \usepackage{float}
 \usepackage{listings}
+\usepackage{tocbibind}
 
 \addbibresource{bibliography.bib}
 \graphicspath{{./images/}}
+
+\renewcommand\lstlistlistingname{Listingi}
 
 \setstretch{1.5}
 
@@ -54,6 +57,7 @@ w celu pokazania, które ich cechy i funkcjonalności były brane pod uwagę pod
 Również zawiera informację o trendach jeśli chodzi o zakupy przez internet, jak również najpopularniejsze metody płatności w sieci.\\
 Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o nazwie ConcertsApp.
 
+\clearpage
 \section{Wprowadzenie}
 {
   W dobie trwającego rozwoju technologicznego, każdy aspekt życia codziennego jest usprawniany i przenoszony
@@ -689,7 +693,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{client_app/home.png}
-    \caption{Finalny wygląd aplikacji.}
+    \caption{Finalny wygląd aplikacji. (opracowanie własne)}
     \label{fig:final-view}
   \end{figure}
 }
@@ -706,7 +710,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{client_app/home.png}
-    \caption{Strona główna aplikacji.}
+    \caption{Strona główna aplikacji. (opracowanie własne)}
     \label{fig:home-page}
   \end{figure}
   Z poziomu strony głównej użytkownik ma kilka opcji, może wybrać bezpośrednio interesujące go wydarzenie i przejść do niego, zarejestrować się, 
@@ -715,13 +719,13 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{client_app/search.png}
-    \caption{Wyszukiwanie po frazie.}
+    \caption{Wyszukiwanie po frazie. (opracowanie własne)}
     \label{fig:search-field}
   \end{figure}
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{client_app/filter.png}
-    \caption{Filtrowanie po typie wydarzenia}
+    \caption{Filtrowanie po typie wydarzenia. (opracowanie własne)}
     \label{fig:filter}
   \end{figure}
   Po naciśnięciu jednej z kart wydarzenia, widocznych na stronie głównej, klient zostaje przeniesiony na stronę konkretnego wydarzenia, 
@@ -729,7 +733,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{client_app/event.png}
-    \caption{Strona konkretnego wydarzenia, w tym przypadku Orange Warsaw.}
+    \caption{Strona konkretnego wydarzenia, w tym przypadku Orange Warsaw. (opracowanie własne)}
     \label{fig:event-page}
   \end{figure} 
   Kupowanie biletu jest dostępne zarówno dla użytkowników zalogowanych, jak i niezalogowanych. 
@@ -737,7 +741,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{client_app/payment_guest.png}
-    \caption{Form do zebrania danych, niezbędnych do realizacji zakupu biletu.}
+    \caption{Form do zebrania danych, niezbędnych do realizacji zakupu biletu. (opracowanie własne)}
     \label{fig:payment-guest}
   \end{figure}
   Po podanych poprawnych danych, w formacie wymaganym przez aplikacji, użytkownik jest informowany o pomyślnie zrealizowanym zakupie, lub w przypadku gdy coś poszło 
@@ -747,14 +751,14 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{client_app/logged_in.png}
-    \caption{Strona główna aplikacji, po zalogowaniu.}
+    \caption{Strona główna aplikacji, po zalogowaniu. (opracowanie własne)}
     \label{fig:signed-in}
   \end{figure}
   Pierwszy z wymienionych nowych przycisków, daje użytkownikowi opcję niedostępną w innym przypadku, a konkretniej podgląd wszystkich biletów, które zakupił, wraz z ich kodem QR.
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{client_app/purchase_history.png}
-    \caption{Lista biletów klienta, dostępna za pomocą Purchase History.}
+    \caption{Lista biletów klienta, dostępna za pomocą Purchase History. (opracowanie własne)}
     \label{fig:purchase_his}
   \end{figure}
   Dodatkowym atutem zalogowanych użytkowników jest fakt, iż przy kupnie biletu nie muszą oni ponownie podawać tych samych danych, które podawali przy rejestracji np. imię czy numer telefonu. 
@@ -801,28 +805,20 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
 }
 
 \clearpage
+\printbibliography[
+  heading=bibintoc, 
+  title={Bibliografia}
+]
 
-\section{Bibliografia}
-{
-  \printbibliography
-  \clearpage
-}
+\clearpage
+\listoffigures
 
-\section{Spis rysunków}
-{
-  \listoffigures
-  \clearpage
-}
+\clearpage
+\listoftables
 
-\section{Spis tabel}
-{
-  \listoftables
-  \clearpage
-}
-\section{Spis listingów}
-{
-  \lstlistoflistings
-}
+\clearpage
+\addcontentsline{toc}{section}{Listingi}
+\lstlistoflistings
 
 \end{sloppypar}
 \end{document}
