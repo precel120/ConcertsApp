@@ -12,7 +12,6 @@
 \usepackage{array}
 \usepackage{float}
 \usepackage{listings}
-\usepackage{tocbibind}
 
 \addbibresource{bibliography.bib}
 \graphicspath{{./images/}}
@@ -111,6 +110,10 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
 
 \section{Zakupy internetowe, analiza konkurencji i techniczne aspekty aplikacji}
 {
+  W niniejszym rozdziale zostaną poruszone takie kwestie jak: czemu ludzie preferują zakupy przez internet od tych stacjonarnych, 
+  czemu decydują się na daną metodę płatności a nie inną. 
+  Jak również zostaną przeanalizowane aplikacje konkurencyjne do tworzonej na potrzeby niniejszej pracy dyplomowej 
+  oraz przybliżone zostaną techniczne aspekty takie jak: bazy danych czy Rest API.
   \subsection{Zakupy internetowe}
   {
     Sklepy internetowe z roku na rok rosną w siłę, przybywa ich liczba w zatrważającym tempie. 
@@ -252,9 +255,9 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     Praktycznie każde kliknięcie, w dowolną rzecz na stronie, wysyła zapytanie do serwera o wyrenderowanie nowej strony w przeglądarce.
     Każda strona jest innym plikiem, nie ma możliwości jak w SPA, że renderowany jest tylko wymagany komponent. Cała strona musi być ponownie rerenderowana. \\
     Kiedy należy używać jakiego podejścia? \\
-    Microsoft w poradniku do tworzenia aplikacji w .NET, proponuje poniższą tabelkę decyzyjną\cite{mc-spa}:
+    Microsoft w poradniku do tworzenia aplikacji w .NET\cite{mc-spa}, proponuje tabelkę decyzyjną numer \ref{tab:decision-table}:\\
     \begin{center}
-      \begin{table}
+      \begin{table}[h]
         \begin{tabular}{ | m{5cm} | m{5cm}| m{5cm} | } 
           \hline
           Factor & Traditional Web App & Single-Page Application \\
@@ -307,7 +310,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
   {
     W inżynierii oprogramowania, czyli inaczej wiedzy technicznej, opisującej wszystkie fazy cyklu życia oprogramowania, istnieje wiele różnych modeli 
     cyklu życia oprogramowania. Do najpopularniejszych należą: kaskadowy, piramidy oraz spiralny. Każdy z nich w podobny sposób przedstawia każdy krok, 
-    jaki powinien przejść program, aby mógł zostać wypuszczony na rynek. Na poniższym rysunku przedstawiono jak wygląda model kaskadowy, w dalszej części zostaną 
+    jaki powinien przejść program, aby mógł zostać wypuszczony na rynek. Na rysunku \ref{fig:cascade} przedstawiono jak wygląda model kaskadowy, w dalszej części zostaną 
     omówione, pokrótce, jego poszczególne etapy.
     \begin{figure}[H]
       \centering
@@ -335,6 +338,8 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
 
 \section{Narzędzia i technologie wybrane do realizacji projektu}
 {
+  W tym rozdziale zostaną przedstawione wszystkie narzędzia i technologie, niezbędne do stworzenia aplikacji.
+  Poruszone zostaną takie technologie jak: React.JS, TypeScript czy MongoDB.
   \subsection{Node.js}
   {
     "Node.JS jest jest wieloplatformowym oprogramowaniem o otwartym kodzie, 
@@ -391,7 +396,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
     \end{figure}
     Konkurencje dla Reacta stanowi Angular i Vue, jednakże to React króluje zarówno jeśli chodzi o popularność, pobrania, gwiazdki na GitHubie, liczbę pakietów, które są zależne od Reacta. 
     Niekwestionowanym mistrzem jest również w kategoriach GitHub "Used by", tematach tworzonych na GitHubie.\cite{frontend-popularity} Dodatkowym atutem przemawiającym za Reactem jest 
-    ilość pracy na rynku. Jak zostało zaprezentowane na obrazku poniżej, ponownie React króluje i w tej kategorii. 
+    ilość pracy na rynku. Jak zostało zaprezentowane na obrazku \ref{fig:frontend-jobs}, ponownie React króluje i w tej kategorii. 
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.9\textwidth]{frontend_jobs.jpg}
@@ -651,7 +656,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
   \end{lstlisting}
   Kolejną funkcjonalnością zaimplementowaną, zostało wysyłanie maili. 
   Do klient, po dokonaniu poprawnej płatności, zostaje wysłany email, z informacją o poprawnie dokonanej płatności i docelowo z kodem QR, będący biletem.
-  Do tego została wykorzystana biblioteka nodemailer\ref{section:most-important-libraries}.
+  Do tego została wykorzystana biblioteka nodemailer \ref{section:most-important-libraries}.
   \begin{lstlisting}[caption=Kod odpowiadający za wysyłanie emaili., captionpos=b]
     const mailTemplate = `
         <h1>Hello ${firstName} ${lastName}</h1>
@@ -674,7 +679,7 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
   \end{lstlisting}
   Kolejnym, ale nie ostatnim elementem, było generowanie, wysyłanie w mailu oraz przetrzymywanie kodów QR. 
   Kod jest generowany na podstawie id biletu, znajdującego się w bazie danych. 
-  Do jego realizacji wykorzystano bibliotekę QRCode\ref{section:most-important-libraries}.
+  Do jego realizacji wykorzystano bibliotekę QRCode \ref{section:most-important-libraries}.
   \begin{lstlisting}[caption=Kod odpowiadający za generowanie kodów QR., captionpos=b]
     const qr = await toDataURL(ticket.id);
     if (!qr) {
@@ -700,6 +705,9 @@ Rezultatem wyżej wymienionej analizy oraz projektowania jest aplikacja webowa o
 
 \section{Aplikacja od strony użytkownika}
 {
+  W niniejszym rozdziale po krótce zostanie opisane jak wygląda proces obcowania i korzystania z aplikacją.
+  Aplikacja jest bardzo prosta i przystępna w użyciu, jednakże warto wspomnieć parę słów jak się prezentuje.
+  \bigbreak
   Po otwarciu aplikacji oczom klienta ukaże się strona główna, zawierająca takie elementy jak:
   \begin{itemize}
     \item wyszukiwarkę wydarzeń po nazwie
